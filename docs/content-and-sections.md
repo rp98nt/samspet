@@ -21,7 +21,7 @@ Navigation anchors:
 
 ## 3. Hero (`Hero` + `ConsultationForm`)
 
-- Headline: Expert / Dog Training, grooming and breeding hostel
+- Hero: overlay nav, “Build a Better Bond With Your Dog.”, consultation form, feature bar (Obedience, Puppy, Behavior, Board & Train)
 - Form fields: name, email, phone, dog name, dog age (1–5 years), dog breed dropdown, interest dropdown
 - CTA: Request Now
 - Privacy note under form

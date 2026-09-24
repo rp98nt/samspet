@@ -12,7 +12,23 @@ export const site = {
   city: "Chhatrapati Sambhajinagar",
   behanceReference:
     "https://www.behance.net/gallery/199142029/Dog-Trainer-Website-Design-Website-Branding",
+  logoTagline: "TRAIN • CARE • BUILD BONDS",
+  hero: {
+    eyebrow: "Professional Dog Training",
+    titleLead: "Build a Better Bond With",
+    titleAccent: "Your Dog.",
+    description:
+      "Expert obedience training, behavior modification and personalized programs for a well-behaved, confident and happy dog.",
+    cta: "Book a Consultation",
+  },
 };
+
+export const heroFeatures = [
+  { label: "Obedience Training", icon: "shield" },
+  { label: "Puppy Training", icon: "paw" },
+  { label: "Behavior Modification", icon: "brain" },
+  { label: "Board & Train", icon: "house" },
+] as const;
 
 export const navLinks = [
   { label: "Home", href: "#home" },
