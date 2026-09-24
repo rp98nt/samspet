@@ -15,7 +15,7 @@ export function Hero() {
       <SiteHeader />
       <div className="absolute inset-0 overflow-hidden bg-[#1a1a1a]">
         <div
-          className="absolute left-1/2 top-1/2 h-full w-full -translate-x-1/2 -translate-y-1/2 scale-[0.84]"
+          className="absolute left-1/2 top-1/2 h-full w-full -translate-x-[calc(50%+20px)] -translate-y-[calc(50%-5px)] scale-[0.84]"
         >
           <Image
             src={heroImage}
