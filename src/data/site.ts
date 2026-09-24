@@ -1,8 +1,8 @@
 export const site = {
   name: "Sam's Pets",
   tagline: "Expert Dog Training",
-  phone: "(512) 796-5783",
-  phoneHref: "tel:+15127965783",
+  phone: "+91 85529 49196",
+  phoneHref: "tel:+918552949196",
   email: "info@samspet.com",
   hours: "Opening Hours: MON – SAT 10am – 9pm",
   address: "Austin, TX",
