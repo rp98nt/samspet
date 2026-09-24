@@ -1,6 +1,6 @@
 export const site = {
   name: "Sam's Pets",
-  tagline: "Expert Dog Training, Austin Style",
+  tagline: "Expert Dog Training",
   phone: "(512) 796-5783",
   phoneHref: "tel:+15127965783",
   email: "info@samspet.com",

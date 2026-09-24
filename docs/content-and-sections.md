@@ -21,7 +21,7 @@ Navigation anchors:
 
 ## 3. Hero (`Hero` + `ConsultationForm`)
 
-- Headline: Expert Dog Training, **Austin Style**
+- Headline: Expert Dog Training
 - Form fields: name, email, phone, dog details, interest dropdown
 - CTA: Request Now
 - Privacy note under form
