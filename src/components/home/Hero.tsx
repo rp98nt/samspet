@@ -16,8 +16,8 @@ export function Hero() {
       />
       <div className="absolute inset-0 bg-black/45" />
       <div className="relative mx-auto flex max-w-7xl flex-col gap-10 px-4 py-16 lg:flex-row lg:items-center lg:justify-between lg:px-6 lg:py-20">
-        <div className="max-w-xl text-white">
-          <h1 className="font-[family-name:var(--font-montserrat)] text-4xl font-semibold leading-tight sm:text-5xl lg:text-6xl">
+        <div className="text-white">
+          <h1 className="whitespace-nowrap font-[family-name:var(--font-montserrat)] text-4xl font-semibold leading-tight sm:text-5xl lg:text-6xl">
             Expert Dog Training
           </h1>
         </div>
