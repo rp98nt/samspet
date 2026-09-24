@@ -69,34 +69,10 @@ export const benefitStrip = [
 ] as const;
 
 export const scheduleColumns = [
-  {
-    title: "Puppy Start Right Preschool",
-    items: ["Sundays at 4pm"],
-    link: "#consultation",
-  },
-  {
-    title: "Middle School",
-    items: [
-      "Now Enrolling: Thursdays at 6:30pm",
-      "Starting May 4: Saturdays at 8am",
-      "Starting May 8: Wednesdays at 9am",
-    ],
-    link: "#consultation",
-  },
-  {
-    title: "Finishing School",
-    items: ["Saturdays at 9:30am"],
-    link: "#consultation",
-  },
-  {
-    title: "Upcoming Classes",
-    items: [
-      "Leashwalking Makeover",
-      "Off-Leash Reliability",
-      `Email ${site.email} to get on the waiting list`,
-    ],
-    link: `mailto:${site.email}`,
-  },
+  "Puppy Start Right Preschool",
+  "Middle School",
+  "Finishing School",
+  "Upcoming Classes",
 ] as const;
 
 export const afterTrainingGoals = [

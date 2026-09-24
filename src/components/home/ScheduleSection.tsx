@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { scheduleColumns } from "@/data/site";
 
 export function ScheduleSection() {
@@ -13,22 +12,11 @@ export function ScheduleSection() {
           <div className="rounded-lg border-[10px] border-white/90 bg-white/40 p-3 shadow-xl sm:p-4">
             <div className="chalkboard rounded-md px-4 py-8 text-white sm:px-6 sm:py-10">
               <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-4">
-                {scheduleColumns.map((column) => (
-                  <div key={column.title}>
+                {scheduleColumns.map((title) => (
+                  <div key={title}>
                     <h3 className="font-[family-name:var(--font-montserrat)] text-sm font-bold uppercase text-brand-chalk-accent">
-                      {column.title}
+                      {title}
                     </h3>
-                    <ul className="mt-3 space-y-2 text-sm leading-relaxed">
-                      {column.items.map((item) => (
-                        <li key={item}>{item}</li>
-                      ))}
-                    </ul>
-                    <Link
-                      href={column.link}
-                      className="mt-4 inline-block text-sm text-brand-link underline"
-                    >
-                      Find out more
-                    </Link>
                   </div>
                 ))}
               </div>
