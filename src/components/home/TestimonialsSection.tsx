@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { StarIcon } from "@/components/icons";
-import { testimonials } from "@/data/site";
+import { site, testimonials } from "@/data/site";
 
 export function TestimonialsSection() {
   return (
@@ -10,8 +10,8 @@ export function TestimonialsSection() {
           Our Satisfied Customers
         </h2>
         <p className="mx-auto mt-4 max-w-3xl text-center text-brand-muted">
-          We believe we offer the best dog training in Austin, TX. Don&apos;t just
-          take our word for it – here is what our clients have to say.
+          We believe we offer the best dog training in {site.city}, Don&apos;t
+          just take our word for it – here is what our clients have to say.
         </p>
 
         <div className="mt-12 grid gap-10 md:grid-cols-3">
