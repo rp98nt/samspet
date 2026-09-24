@@ -20,7 +20,7 @@ export function Hero() {
           <h1
             className="font-[family-name:var(--font-montserrat)] text-[2.925rem] font-semibold leading-tight sm:text-[3.9rem] lg:text-[4.875rem]"
           >
-            <span className="block text-[4.095rem] sm:text-[5.46rem] lg:text-[6.825rem]">
+            <span className="block text-[5.733rem] sm:text-[7.644rem] lg:text-[9.555rem]">
               Expert
             </span>
             Dog Training
