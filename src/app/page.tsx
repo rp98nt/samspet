@@ -1,12 +1,27 @@
+import { AfterTrainingSection } from "@/components/home/AfterTrainingSection";
+import { BenefitsStrip } from "@/components/home/BenefitsStrip";
+import { BlogSection } from "@/components/home/BlogSection";
+import { CertificationsSection } from "@/components/home/CertificationsSection";
+import { ConsultationBanner } from "@/components/home/ConsultationBanner";
+import { Hero } from "@/components/home/Hero";
+import { ScheduleSection } from "@/components/home/ScheduleSection";
+import { ServicesSection } from "@/components/home/ServicesSection";
+import { TestimonialsSection } from "@/components/home/TestimonialsSection";
+import { WhyChooseSection } from "@/components/home/WhyChooseSection";
+
 export default function Home() {
   return (
-    <section className="mx-auto flex max-w-5xl flex-1 flex-col justify-center px-6 py-16">
-      <h1 className="text-4xl font-semibold tracking-tight text-foreground">
-        Welcome
-      </h1>
-      <p className="mt-4 max-w-xl text-lg text-zinc-600 dark:text-zinc-400">
-        Site content coming soon. Replace this page when you are ready.
-      </p>
-    </section>
+    <>
+      <Hero />
+      <ServicesSection />
+      <WhyChooseSection />
+      <BenefitsStrip />
+      <ScheduleSection />
+      <AfterTrainingSection />
+      <CertificationsSection />
+      <TestimonialsSection />
+      <BlogSection />
+      <ConsultationBanner />
+    </>
   );
 }
