@@ -20,8 +20,9 @@ export function Hero() {
           <h1
             className="font-[family-name:var(--font-montserrat)] text-[2.925rem] font-semibold leading-tight sm:text-[3.9rem] lg:text-[4.875rem]"
           >
-            Expert
-            <br />
+            <span className="block text-[4.095rem] sm:text-[5.46rem] lg:text-[6.825rem]">
+              Expert
+            </span>
             Dog Training
           </h1>
         </div>
