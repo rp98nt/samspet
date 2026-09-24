@@ -4,7 +4,7 @@ export const site = {
   phone: "(512) 796-5783",
   phoneHref: "tel:+15127965783",
   email: "info@samspet.com",
-  hours: "Opening Hours: MON – SUN 8am – 6pm",
+  hours: "Opening Hours: MON – SAT 10am – 9pm",
   address: "Austin, TX",
   behanceReference:
     "https://www.behance.net/gallery/199142029/Dog-Trainer-Website-Design-Website-Branding",
