@@ -1,6 +1,6 @@
 export const site = {
   name: "Sam Pets & RP's Kennel",
-  tagline: "Expert Dog Training",
+  tagline: "Expert Dog Training, grooming and breeding hostel",
   phone: "(+91) 85529 49196 / 78881 82831",
   phones: [
     { display: "(+91) 85529 49196", href: "tel:+918552949196" },

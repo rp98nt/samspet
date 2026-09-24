@@ -21,7 +21,7 @@ Navigation anchors:
 
 ## 3. Hero (`Hero` + `ConsultationForm`)
 
-- Headline: Expert Dog Training
+- Headline: Expert / Dog Training, grooming and breeding hostel
 - Form fields: name, email, phone, dog name, dog age (1–5 years), dog breed dropdown, interest dropdown
 - CTA: Request Now
 - Privacy note under form
