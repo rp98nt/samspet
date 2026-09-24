@@ -1,8 +1,11 @@
 export const site = {
   name: "Sam Pets & RP's Kennel",
   tagline: "Expert Dog Training",
-  phone: "+91 85529 49196",
-  phoneHref: "tel:+918552949196",
+  phone: "+91 85529 49196 / 78881 82831",
+  phones: [
+    { display: "+91 85529 49196", href: "tel:+918552949196" },
+    { display: "78881 82831", href: "tel:+917888182831" },
+  ],
   email: "rpskennel@gmail.com",
   hours: "Opening Hours: MON – SAT 10am – 9pm",
   address: "Austin, TX",

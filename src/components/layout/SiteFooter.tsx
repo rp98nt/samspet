@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { MailIcon, PhoneIcon } from "@/components/icons";
+import { PhoneLink } from "@/components/PhoneLink";
 import { site, socialLinks } from "@/data/site";
 
 export function SiteFooter() {
@@ -9,12 +10,10 @@ export function SiteFooter() {
         <div className="text-center sm:text-left">
           <PhoneIcon className="mx-auto h-8 w-8 text-brand-green sm:mx-0" />
           <p className="mt-3 text-xs font-bold uppercase tracking-widest">Call Us</p>
-          <a
-            href={site.phoneHref}
-            className="mt-2 block text-lg font-semibold hover:text-brand-green"
-          >
-            {site.phone}
-          </a>
+          <PhoneLink
+            className="mt-2 block text-lg font-semibold"
+            linkClassName="hover:text-brand-green"
+          />
         </div>
         <div className="text-center">
           <MailIcon className="mx-auto h-8 w-8 text-brand-green" />

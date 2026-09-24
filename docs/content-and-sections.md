@@ -5,7 +5,7 @@ Home page order matches the Behance mock (see `design-reference.md`).
 ## 1. Top bar (`TopBar`)
 
 - Opening hours: MON – SAT 10am – 9pm
-- Phone: +91 85529 49196
+- Phone: +91 85529 49196 / 78881 82831
 - Email: rpskennel@gmail.com
 
 ## 2. Header (`SiteHeader`)

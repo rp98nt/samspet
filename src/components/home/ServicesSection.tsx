@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import { services, site } from "@/data/site";
+import { PhoneLink } from "@/components/PhoneLink";
+import { services } from "@/data/site";
 
 export function ServicesSection() {
   return (
@@ -36,9 +37,7 @@ export function ServicesSection() {
             Sign Up
           </Link>{" "}
           for a Customized Consultation or give us a call{" "}
-          <a href={site.phoneHref} className="font-semibold text-brand-green-dark">
-            {site.phone}
-          </a>
+          <PhoneLink linkClassName="font-semibold text-brand-green-dark hover:underline" />
         </p>
       </div>
     </section>

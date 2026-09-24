@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { PhoneLink } from "@/components/PhoneLink";
 import { site } from "@/data/site";
 
 const items = [
@@ -33,9 +34,7 @@ export function BenefitsStrip() {
         <div className="flex flex-col items-start gap-3 sm:flex-row sm:items-center lg:shrink-0">
           <p className="text-sm">
             Give us a call{" "}
-            <a href={site.phoneHref} className="font-bold text-brand-green">
-              {site.phone}
-            </a>
+            <PhoneLink linkClassName="font-bold text-brand-green hover:underline" />
           </p>
           <Link
             href="#consultation"

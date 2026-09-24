@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { CheckIcon } from "@/components/icons";
-import { afterTrainingGoals, site } from "@/data/site";
+import { PhoneLink } from "@/components/PhoneLink";
+import { afterTrainingGoals } from "@/data/site";
 
 const dogImage =
   "https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=600&q=80";
@@ -59,9 +60,7 @@ export function AfterTrainingSection() {
             Sign Up
           </Link>{" "}
           for a Customized Consultation or give us a call{" "}
-          <a href={site.phoneHref} className="font-semibold text-brand-green-dark">
-            {site.phone}
-          </a>
+          <PhoneLink linkClassName="font-semibold text-brand-green-dark hover:underline" />
         </p>
       </div>
     </section>

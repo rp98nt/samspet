@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { CheckIcon, PlayIcon } from "@/components/icons";
+import { PhoneLink } from "@/components/PhoneLink";
 import { site, whyChoosePoints } from "@/data/site";
 
 const videoThumb =
@@ -51,12 +52,10 @@ export function WhyChooseSection() {
           <p className="text-sm uppercase tracking-wide text-zinc-300">
             Ready to start training?
           </p>
-          <Link
-            href={site.phoneHref}
-            className="mt-2 block font-[family-name:var(--font-montserrat)] text-2xl font-bold text-brand-green sm:mt-0"
-          >
-            {site.phone}
-          </Link>
+          <PhoneLink
+            className="mt-2 block font-[family-name:var(--font-montserrat)] text-xl font-bold sm:mt-0 sm:text-2xl"
+            linkClassName="text-brand-green hover:underline"
+          />
         </div>
       </div>
     </section>

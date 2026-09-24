@@ -1,4 +1,5 @@
 import { ClockIcon, MailIcon, PhoneIcon } from "@/components/icons";
+import { PhoneLink } from "@/components/PhoneLink";
 import { site } from "@/data/site";
 
 export function TopBar() {
@@ -10,13 +11,10 @@ export function TopBar() {
           <span>{site.hours}</span>
         </p>
         <div className="flex flex-wrap items-center gap-4 sm:gap-6">
-          <a
-            href={site.phoneHref}
-            className="flex items-center gap-2 font-medium hover:text-brand-green-dark"
-          >
-            <PhoneIcon className="h-4 w-4 text-brand-green-dark" />
-            {site.phone}
-          </a>
+          <p className="flex items-center gap-2 font-medium">
+            <PhoneIcon className="h-4 w-4 shrink-0 text-brand-green-dark" />
+            <PhoneLink linkClassName="font-medium hover:text-brand-green-dark" />
+          </p>
           <a
             href={`mailto:${site.email}`}
             className="flex items-center gap-2 hover:text-brand-green-dark"
