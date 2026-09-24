@@ -13,14 +13,20 @@ export function Hero() {
   return (
     <section id="home" className="relative flex min-h-[640px] flex-col lg:min-h-[720px]">
       <SiteHeader />
-      <Image
-        src={heroImage}
-        alt="Dog trainer standing with a Doberman"
-        fill
-        priority
-        className="object-cover object-center"
-        sizes="100vw"
-      />
+      <div className="absolute inset-0 overflow-hidden bg-[#1a1a1a]">
+        <div
+          className="absolute left-1/2 top-1/2 h-full w-full -translate-x-1/2 -translate-y-1/2 scale-[0.7]"
+        >
+          <Image
+            src={heroImage}
+            alt="Dog trainer standing with a Doberman"
+            fill
+            priority
+            className="object-contain object-center"
+            sizes="100vw"
+          />
+        </div>
+      </div>
 
       {/* Darken left and right only — keep center bright for trainer + dog */}
       <div
