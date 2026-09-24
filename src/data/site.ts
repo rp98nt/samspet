@@ -1,5 +1,5 @@
 export const site = {
-  name: "Sam's Pets",
+  name: "Sam Pets & RP's Kennel",
   tagline: "Expert Dog Training",
   phone: "+91 85529 49196",
   phoneHref: "tel:+918552949196",
@@ -120,7 +120,7 @@ export const certifications = [
 export const testimonials = [
   {
     quote:
-      "Sam's Pets helped us achieve off-leash reliability at Bull Creek. We are so grateful for the team's patience and clear instruction.",
+      "Sam Pets & RP's Kennel helped us achieve off-leash reliability at Bull Creek. We are so grateful for the team's patience and clear instruction.",
     author: "B Jane and Josie",
     image:
       "https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=200&q=80",
@@ -134,7 +134,7 @@ export const testimonials = [
   },
   {
     quote:
-      "Sam's Pets' kind, positive, and gentle methods work with multiple dogs. Tessa and Mariah both love training days.",
+      "The kind, positive, and gentle methods at Sam Pets & RP's Kennel work with multiple dogs. Tessa and Mariah both love training days.",
     author: "Rick P. with Tessa and Mariah",
     image:
       "https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?auto=format&fit=crop&w=200&q=80",

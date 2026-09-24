@@ -1,6 +1,6 @@
-# Sam's Pets — Dog Trainer Website
+# Sam Pets & RP's Kennel — Dog Trainer Website
 
-Next.js marketing site for **Sam's Pets**, styled after the [Behance dog trainer website concept](https://www.behance.net/gallery/199142029/Dog-Trainer-Website-Design-Website-Branding).
+Next.js marketing site for **Sam Pets & RP's Kennel**, styled after the [Behance dog trainer website concept](https://www.behance.net/gallery/199142029/Dog-Trainer-Website-Design-Website-Branding).
 
 ## Run locally
 

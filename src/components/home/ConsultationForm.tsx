@@ -90,11 +90,13 @@ export function ConsultationForm() {
             required
             name="interest"
             defaultValue=""
-            className="w-full rounded border-0 bg-white px-4 py-3 text-sm text-zinc-800"
+            className={fieldClass}
           >
-            <option value="" disabled>I&apos;m interested in...</option>
+            <option value="" disabled hidden>I&apos;m interested in...</option>
             {interestOptions.map((option) => (
-              <option key={option} value={option}>{option}</option>
+              <option key={option} value={option} className="text-zinc-800">
+                {option}
+              </option>
             ))}
           </select>
           <button

@@ -30,7 +30,7 @@ Navigation anchors:
 
 Four cards: Puppy Training, Group Obedience Training, Private Lessons, Board & Train.
 
-## 5. Why Choose Sam's Pets (`WhyChooseSection`)
+## 5. Why Choose Sam Pets & RP's Kennel (`WhyChooseSection`)
 
 Intro paragraph + six bullet points (force-free training, guarantee, aggression specialty, certification, inclusive policy, reviews).
 

@@ -12,14 +12,16 @@ export function SiteHeader() {
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 lg:px-6">
         <Link href="#home" className="flex items-center gap-3">
           <span
-            className="flex h-14 w-14 items-center justify-center rounded-full border-2 border-zinc-300 bg-zinc-50 text-center text-[9px] font-bold uppercase leading-tight tracking-wide"
+            className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full border-2 border-zinc-300 bg-zinc-50 text-center text-[7px] font-bold uppercase leading-tight tracking-wide"
             aria-hidden
           >
-            Sam&apos;s
+            Sam Pets
             <br />
-            Pets
+            &amp; RP&apos;s
+            <br />
+            Kennel
           </span>
-          <span className="hidden font-[family-name:var(--font-montserrat)] text-sm font-bold uppercase tracking-wide sm:block">
+          <span className="hidden max-w-[11rem] font-[family-name:var(--font-montserrat)] text-xs font-bold uppercase leading-snug tracking-wide sm:block lg:max-w-none lg:text-sm">
             {site.name}
           </span>
         </Link>
