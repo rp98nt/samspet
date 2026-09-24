@@ -4,6 +4,9 @@ import { FormEvent, useState } from "react";
 import { ShieldIcon } from "@/components/icons";
 import { dogAgeOptions, dogBreeds, interestOptions } from "@/data/site";
 
+const fieldClass =
+  "w-full rounded border-0 bg-white px-4 py-3 text-sm text-zinc-800 placeholder:text-zinc-400 invalid:text-zinc-400";
+
 export function ConsultationForm() {
   const [submitted, setSubmitted] = useState(false);
 
@@ -31,39 +34,39 @@ export function ConsultationForm() {
             required
             name="name"
             placeholder="Your name"
-            className="w-full rounded border-0 bg-white px-4 py-3 text-sm text-zinc-800 placeholder:text-zinc-400"
+            className={fieldClass}
           />
           <input
             required
             type="email"
             name="email"
             placeholder="Email address"
-            className="w-full rounded border-0 bg-white px-4 py-3 text-sm text-zinc-800 placeholder:text-zinc-400"
+            className={fieldClass}
           />
           <input
             required
             type="tel"
             name="phone"
             placeholder="Contact number"
-            className="w-full rounded border-0 bg-white px-4 py-3 text-sm text-zinc-800 placeholder:text-zinc-400"
+            className={fieldClass}
           />
           <input
             required
             name="dogName"
             placeholder="Dog's name"
-            className="w-full rounded border-0 bg-white px-4 py-3 text-sm text-zinc-800 placeholder:text-zinc-400"
+            className={fieldClass}
           />
           <div className="grid grid-cols-2 gap-3">
             <select
               required
               name="dogAge"
               defaultValue=""
-              className="w-full rounded border-0 bg-white px-3 py-3 text-sm text-zinc-800"
+              className={fieldClass}
               aria-label="Dog's age in years"
             >
-              <option value="" disabled>Age (years)</option>
+              <option value="" disabled hidden>Age (years)</option>
               {dogAgeOptions.map((age) => (
-                <option key={age} value={age}>
+                <option key={age} value={age} className="text-zinc-800">
                   {age} {age === 1 ? "year" : "years"}
                 </option>
               ))}
@@ -72,12 +75,14 @@ export function ConsultationForm() {
               required
               name="dogBreed"
               defaultValue=""
-              className="w-full rounded border-0 bg-white px-3 py-3 text-sm text-zinc-800"
+              className={fieldClass}
               aria-label="Dog breed"
             >
-              <option value="" disabled>Breed</option>
+              <option value="" disabled hidden>Breed</option>
               {dogBreeds.map((breed) => (
-                <option key={breed} value={breed}>{breed}</option>
+                <option key={breed} value={breed} className="text-zinc-800">
+                  {breed}
+                </option>
               ))}
             </select>
           </div>
