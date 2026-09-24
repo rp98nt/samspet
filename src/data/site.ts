@@ -21,6 +21,7 @@ export const navLinks = [
 ] as const;
 
 export const interestOptions = [
+  "Dog Grooming",
   "Puppy Training",
   "Group Obedience Training",
   "Private Lessons",
