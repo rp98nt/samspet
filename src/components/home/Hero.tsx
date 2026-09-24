@@ -24,7 +24,10 @@ export function Hero() {
               Expert
             </span>
             <span className="block">
-              Dog Training, grooming and{" "}
+              Dog Training,{" "}
+              <span className="text-[2.6325rem] sm:text-[3.51rem] lg:text-[4.3875rem]">
+                grooming and{" "}
+              </span>
               <span className="text-[1.755rem] sm:text-[2.34rem] lg:text-[2.925rem]">
                 breeding hostel
               </span>
