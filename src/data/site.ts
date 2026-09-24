@@ -3,7 +3,7 @@ export const site = {
   tagline: "Expert Dog Training",
   phone: "+91 85529 49196",
   phoneHref: "tel:+918552949196",
-  email: "info@samspet.com",
+  email: "rpskennel@gmail.com",
   hours: "Opening Hours: MON – SAT 10am – 9pm",
   address: "Austin, TX",
   city: "Chhatrapati Sambhajinagar",
