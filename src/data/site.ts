@@ -1,9 +1,9 @@
 export const site = {
-  name: "Kim The Dog Trainer",
+  name: "Sam's Pet",
   tagline: "Expert Dog Training, Austin Style",
   phone: "(512) 796-5783",
   phoneHref: "tel:+15127965783",
-  email: "info@kimthedogtrainer.com",
+  email: "info@samspet.com",
   hours: "Opening Hours: MON – SUN 8am – 6pm",
   address: "Austin, TX",
   behanceReference:
@@ -14,8 +14,8 @@ export const navLinks = [
   { label: "Home", href: "#home" },
   { label: "Group & Private Obedience", href: "#services" },
   { label: "Puppy Training", href: "#services" },
-  { label: "Behavior Modification", href: "#why-kim" },
-  { label: "About Us", href: "#why-kim" },
+  { label: "Behavior Modification", href: "#about" },
+  { label: "About Us", href: "#about" },
   { label: "Blog", href: "#blog" },
 ] as const;
 
@@ -118,7 +118,7 @@ export const certifications = [
 export const testimonials = [
   {
     quote:
-      "Kim helped us achieve off-leash reliability at Bull Creek. We are so grateful for her patience and clear instruction.",
+      "Sam's Pet helped us achieve off-leash reliability at Bull Creek. We are so grateful for the team's patience and clear instruction.",
     author: "B Jane and Josie",
     image:
       "https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=200&q=80",
@@ -132,7 +132,7 @@ export const testimonials = [
   },
   {
     quote:
-      "Kim's kind, positive, and gentle methods work with multiple dogs. Tessa and Mariah both love training days.",
+      "Sam's Pet's kind, positive, and gentle methods work with multiple dogs. Tessa and Mariah both love training days.",
     author: "Rick P. with Tessa and Mariah",
     image:
       "https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?auto=format&fit=crop&w=200&q=80",

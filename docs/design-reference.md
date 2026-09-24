@@ -3,7 +3,7 @@
 ## Source
 
 - **Behance gallery:** [Dog Trainer Website Design & Website Branding](https://www.behance.net/gallery/199142029/Dog-Trainer-Website-Design-Website-Branding)
-- **Brand in mock:** Kim The Dog Trainer (Austin, TX)
+- **Original mock brand:** Kim The Dog Trainer (Austin, TX) — implemented for **Sam's Pet**
 - **Implementation:** Single-page marketing site in Next.js with section components matching the mock scroll order.
 
 ## Screenshot map (top → bottom)
@@ -12,7 +12,7 @@
 |------|----------------|
 | `01-section.jpg` | Top bar, navigation, hero + consultation form |
 | `02-section.jpg` | Services We Offer (wood texture, four cards) |
-| `03-section.jpg` | Why Choose Kim (video + checklist) |
+| `03-section.jpg` | Why Choose Us (video + checklist) |
 | `04-section.jpg` | Dark benefits strip + schedule intro |
 | `05-section.jpg` | Schedule & Upcoming Classes (chalkboard) |
 | `06-section.png` | After Our Training (goals around dog) |

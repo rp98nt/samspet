@@ -1,6 +1,6 @@
 # Sam's Pet — Dog Trainer Website
 
-Next.js implementation of the [Behance dog trainer website concept](https://www.behance.net/gallery/199142029/Dog-Trainer-Website-Design-Website-Branding) (Kim The Dog Trainer).
+Next.js marketing site for **Sam's Pet**, styled after the [Behance dog trainer website concept](https://www.behance.net/gallery/199142029/Dog-Trainer-Website-Design-Website-Branding).
 
 ## Run locally
 

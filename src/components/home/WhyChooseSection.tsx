@@ -8,14 +8,14 @@ const videoThumb =
 
 export function WhyChooseSection() {
   return (
-    <section id="why-kim" className="bg-white py-16 lg:py-20">
+    <section id="about" className="bg-white py-16 lg:py-20">
       <div className="mx-auto max-w-7xl px-4 lg:px-6">
         <h2 className="text-center font-[family-name:var(--font-montserrat)] text-3xl font-bold text-zinc-900">
-          Why Choose Kim
+          Why Choose {site.name}
         </h2>
         <p className="mx-auto mt-4 max-w-3xl text-center leading-relaxed text-brand-muted">
-          Kim Roche is a Certified Pet Dog Trainer in {site.address}, with two
-          decades of experience helping dogs and families thrive through
+          {site.name} is your trusted pet training partner in {site.address},
+          with years of experience helping dogs and families thrive through
           compassionate, science-based methods.
         </p>
 

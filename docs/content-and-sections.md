@@ -6,7 +6,7 @@ Home page order matches the Behance mock (see `design-reference.md`).
 
 - Opening hours: MON – SUN 8am – 6pm
 - Phone: (512) 796-5783
-- Email: info@kimthedogtrainer.com
+- Email: info@samspet.com
 
 ## 2. Header (`SiteHeader`)
 
@@ -15,8 +15,8 @@ Navigation anchors:
 - Home → `#home`
 - Group & Private Obedience → `#services`
 - Puppy Training → `#services`
-- Behavior Modification → `#why-kim`
-- About Us → `#why-kim`
+- Behavior Modification → `#about`
+- About Us → `#about`
 - Blog → `#blog`
 
 ## 3. Hero (`Hero` + `ConsultationForm`)
@@ -30,7 +30,7 @@ Navigation anchors:
 
 Four cards: Puppy Training, Group Obedience Training, Private Lessons, Board & Train.
 
-## 5. Why Choose Kim (`WhyChooseSection`)
+## 5. Why Choose Sam's Pet (`WhyChooseSection`)
 
 Intro paragraph + six bullet points (force-free training, guarantee, aggression specialty, certification, inclusive policy, reviews).
 

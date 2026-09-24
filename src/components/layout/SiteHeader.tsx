@@ -15,11 +15,9 @@ export function SiteHeader() {
             className="flex h-14 w-14 items-center justify-center rounded-full border-2 border-zinc-300 bg-zinc-50 text-center text-[9px] font-bold uppercase leading-tight tracking-wide"
             aria-hidden
           >
-            Kim
+            Sam&apos;s
             <br />
-            Dog
-            <br />
-            Trainer
+            Pet
           </span>
           <span className="hidden font-[family-name:var(--font-montserrat)] text-sm font-bold uppercase tracking-wide sm:block">
             {site.name}
