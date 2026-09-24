@@ -6,6 +6,7 @@ export const site = {
   email: "info@samspet.com",
   hours: "Opening Hours: MON – SAT 10am – 9pm",
   address: "Austin, TX",
+  city: "Chhatrapati Sambhajinagar",
   behanceReference:
     "https://www.behance.net/gallery/199142029/Dog-Trainer-Website-Design-Website-Branding",
 };

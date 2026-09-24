@@ -14,8 +14,8 @@ export function WhyChooseSection() {
           Why Choose {site.name}
         </h2>
         <p className="mx-auto mt-4 max-w-3xl text-center leading-relaxed text-brand-muted">
-          {site.name} is your trusted pet training partner in {site.address},
-          with years of experience helping dogs and families thrive through
+          {site.name} is your trusted pet training partner in {site.city}, with
+          years of experience helping dogs and families thrive through
           compassionate, science-based methods.
         </p>
 
