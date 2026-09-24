@@ -20,6 +20,30 @@ export const navLinks = [
   { label: "Blog", href: "#blog" },
 ] as const;
 
+export const dogAgeOptions = [1, 2, 3, 4, 5] as const;
+
+export const dogBreeds = [
+  "Labrador Retriever",
+  "German Shepherd",
+  "Golden Retriever",
+  "Indian Pariah Dog",
+  "Beagle",
+  "Pug",
+  "Shih Tzu",
+  "Rottweiler",
+  "Doberman",
+  "Siberian Husky",
+  "Boxer",
+  "Dachshund",
+  "Cocker Spaniel",
+  "Pomeranian",
+  "Bulldog",
+  "Great Dane",
+  "Maltese",
+  "Chihuahua",
+  "Other",
+] as const;
+
 export const interestOptions = [
   "Dog Grooming",
   "Puppy Training",

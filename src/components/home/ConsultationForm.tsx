@@ -2,7 +2,7 @@
 
 import { FormEvent, useState } from "react";
 import { ShieldIcon } from "@/components/icons";
-import { interestOptions } from "@/data/site";
+import { dogAgeOptions, dogBreeds, interestOptions } from "@/data/site";
 
 export function ConsultationForm() {
   const [submitted, setSubmitted] = useState(false);
@@ -49,10 +49,38 @@ export function ConsultationForm() {
           />
           <input
             required
-            name="dog"
-            placeholder="Your dogs name, age & breed"
+            name="dogName"
+            placeholder="Dog's name"
             className="w-full rounded border-0 bg-white px-4 py-3 text-sm text-zinc-800 placeholder:text-zinc-400"
           />
+          <div className="grid grid-cols-2 gap-3">
+            <select
+              required
+              name="dogAge"
+              defaultValue=""
+              className="w-full rounded border-0 bg-white px-3 py-3 text-sm text-zinc-800"
+              aria-label="Dog's age in years"
+            >
+              <option value="" disabled>Age (years)</option>
+              {dogAgeOptions.map((age) => (
+                <option key={age} value={age}>
+                  {age} {age === 1 ? "year" : "years"}
+                </option>
+              ))}
+            </select>
+            <select
+              required
+              name="dogBreed"
+              defaultValue=""
+              className="w-full rounded border-0 bg-white px-3 py-3 text-sm text-zinc-800"
+              aria-label="Dog breed"
+            >
+              <option value="" disabled>Breed</option>
+              {dogBreeds.map((breed) => (
+                <option key={breed} value={breed}>{breed}</option>
+              ))}
+            </select>
+          </div>
           <select
             required
             name="interest"
