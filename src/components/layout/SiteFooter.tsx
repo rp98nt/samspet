@@ -46,7 +46,7 @@ export function SiteFooter() {
       <div className="border-t border-white/10 px-4 py-4 text-xs text-zinc-400 lg:px-6">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 sm:flex-row">
           <p className="text-center sm:text-left">
-            © 2026 Sam&apos;s Pet. All rights reserved.
+            © 2026 Sam&apos;s Pets. All rights reserved.
           </p>
           <p className="text-center sm:text-right">
             Designed with{" "}

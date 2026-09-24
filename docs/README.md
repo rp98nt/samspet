@@ -1,4 +1,4 @@
-# Sam's Pet — Documentation
+# Sam's Pets — Documentation
 
 This folder documents the marketing site implementation based on the Behance concept **Dog Trainer Website Design & Website Branding**.
 

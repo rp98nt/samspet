@@ -17,7 +17,7 @@ export function SiteHeader() {
           >
             Sam&apos;s
             <br />
-            Pet
+            Pets
           </span>
           <span className="hidden font-[family-name:var(--font-montserrat)] text-sm font-bold uppercase tracking-wide sm:block">
             {site.name}

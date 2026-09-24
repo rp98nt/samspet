@@ -1,5 +1,5 @@
 export const site = {
-  name: "Sam's Pet",
+  name: "Sam's Pets",
   tagline: "Expert Dog Training, Austin Style",
   phone: "(512) 796-5783",
   phoneHref: "tel:+15127965783",
@@ -118,7 +118,7 @@ export const certifications = [
 export const testimonials = [
   {
     quote:
-      "Sam's Pet helped us achieve off-leash reliability at Bull Creek. We are so grateful for the team's patience and clear instruction.",
+      "Sam's Pets helped us achieve off-leash reliability at Bull Creek. We are so grateful for the team's patience and clear instruction.",
     author: "B Jane and Josie",
     image:
       "https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=200&q=80",
@@ -132,7 +132,7 @@ export const testimonials = [
   },
   {
     quote:
-      "Sam's Pet's kind, positive, and gentle methods work with multiple dogs. Tessa and Mariah both love training days.",
+      "Sam's Pets' kind, positive, and gentle methods work with multiple dogs. Tessa and Mariah both love training days.",
     author: "Rick P. with Tessa and Mariah",
     image:
       "https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?auto=format&fit=crop&w=200&q=80",
