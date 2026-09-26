@@ -21,23 +21,31 @@ export function Hero() {
     >
       <SiteHeader />
 
-      {/* Mobile: text → image → form */}
+      {/* Mobile: hero image as background; copy + form overlay (may overlap image) */}
       <div className="flex flex-col lg:hidden">
-        <div className="px-4 py-6 sm:px-5">
-          <HeroCopy layout="mobile" />
-        </div>
-        <div className="relative h-[min(52vw,320px)] w-full bg-[#1a1a1a] sm:h-[360px]">
-          <Image
-            src={heroImageMobile}
-            alt="Dog trainer standing with a Doberman"
-            fill
-            priority
-            className="object-contain object-center"
-            sizes="100vw"
+        <div className="relative flex min-h-[calc(100vw*725/575)] flex-col">
+          <div className="pointer-events-none absolute inset-0 z-0 bg-[#1a1a1a]">
+            <Image
+              src={heroImageMobile}
+              alt="Dog trainer standing with a Doberman"
+              fill
+              priority
+              className="object-contain object-center"
+              sizes="100vw"
+            />
+          </div>
+          <div
+            className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-b from-black/75 via-black/35 to-black/65"
+            aria-hidden
           />
-        </div>
-        <div className="px-4 py-5 sm:px-5">
-          <ConsultationForm />
+          <div className="relative z-10 flex flex-col">
+            <div className="px-4 py-6 sm:px-5">
+              <HeroCopy layout="mobile" />
+            </div>
+            <div className="px-4 pb-5 pt-2 sm:px-5">
+              <ConsultationForm />
+            </div>
+          </div>
         </div>
         <HeroFeatureBar />
       </div>
