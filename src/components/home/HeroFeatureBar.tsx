@@ -50,7 +50,7 @@ function FeatureIcon({ type }: { type: (typeof heroFeatures)[number]["icon"] }) 
 export function HeroFeatureBar() {
   return (
     <div className="relative z-10 border-t border-white/10 bg-black/55 backdrop-blur-sm">
-      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-3 px-4 py-4 min-[480px]:grid-cols-2 lg:grid-cols-4 lg:gap-4 lg:px-6 lg:py-5">
+      <div className="mx-auto grid max-w-7xl grid-cols-2 gap-2 px-3 py-2 min-[480px]:grid-cols-2 lg:grid-cols-4 lg:gap-4 lg:px-6 lg:py-5">
         {heroFeatures.map((feature) => (
           <div
             key={feature.label}

@@ -67,7 +67,11 @@ function ChatIcon({ className }: { className?: string }) {
   );
 }
 
-export function ConsultationForm() {
+type ConsultationFormProps = {
+  compact?: boolean;
+};
+
+export function ConsultationForm({ compact = false }: ConsultationFormProps) {
   const [submitted, setSubmitted] = useState(false);
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
@@ -78,27 +82,42 @@ export function ConsultationForm() {
   return (
     <div
       id="consultation"
-      className="mx-auto w-full max-w-md rounded-xl border border-zinc-700/80 bg-black/80 p-4 shadow-2xl backdrop-blur-md sm:p-6 lg:ml-auto lg:bg-black/75 lg:p-7"
+      className={`mx-auto w-full max-w-md rounded-xl border border-zinc-700/80 bg-black/70 shadow-2xl backdrop-blur-md lg:ml-auto lg:bg-black/75 ${
+        compact
+          ? "max-h-[min(52vh,420px)] overflow-y-auto p-3"
+          : "p-4 sm:p-6 lg:p-7"
+      }`}
     >
-      <div className="flex items-start gap-3">
-        <PawIcon className="mt-0.5 h-6 w-6 shrink-0 text-brand-green" />
+      <div className={`flex items-start gap-2 ${compact ? "" : "gap-3"}`}>
+        <PawIcon
+          className={`shrink-0 text-brand-green ${compact ? "mt-0.5 h-5 w-5" : "mt-0.5 h-6 w-6"}`}
+        />
         <div>
-          <h2 className="font-[family-name:var(--font-montserrat)] text-base font-bold uppercase tracking-wide text-white">
+          <h2
+            className={`font-[family-name:var(--font-montserrat)] font-bold uppercase tracking-wide text-white ${
+              compact ? "text-xs" : "text-base"
+            }`}
+          >
             Start Your Dog&apos;s Journey
           </h2>
-          <p className="mt-1 text-xs leading-relaxed text-zinc-400">
-            Tell us a little about your dog and we&apos;ll recommend the right
-            training program.
-          </p>
+          {!compact && (
+            <p className="mt-1 text-xs leading-relaxed text-zinc-400">
+              Tell us a little about your dog and we&apos;ll recommend the right
+              training program.
+            </p>
+          )}
         </div>
       </div>
 
       {submitted ? (
-        <p className="mt-6 text-center text-sm leading-relaxed text-zinc-300">
+        <p className={`text-center text-sm leading-relaxed text-zinc-300 ${compact ? "mt-4" : "mt-6"}`}>
           Thank you! We received your request and will contact you shortly.
         </p>
       ) : (
-        <form className="mt-5 space-y-3" onSubmit={handleSubmit}>
+        <form
+          className={`${compact ? "mt-3 space-y-2" : "mt-5 space-y-3"}`}
+          onSubmit={handleSubmit}
+        >
           <div className="relative">
             <FieldIcon><UserIcon className="h-4 w-4" /></FieldIcon>
             <input required name="name" placeholder="Your name" className={fieldClass} />
@@ -186,7 +205,9 @@ export function ConsultationForm() {
           </div>
           <button
             type="submit"
-            className="flex w-full items-center justify-center gap-2 rounded-md bg-brand-green py-3.5 font-[family-name:var(--font-montserrat)] text-sm font-bold uppercase tracking-wide text-black transition hover:bg-brand-green-dark"
+            className={`flex w-full items-center justify-center gap-2 rounded-md bg-brand-green font-[family-name:var(--font-montserrat)] text-sm font-bold uppercase tracking-wide text-black transition hover:bg-brand-green-dark ${
+              compact ? "py-2.5" : "py-3.5"
+            }`}
           >
             Request Now
             <span aria-hidden>→</span>
@@ -194,7 +215,11 @@ export function ConsultationForm() {
         </form>
       )}
 
-      <p className="mt-4 flex items-center justify-center gap-2 text-[10px] uppercase tracking-wide text-zinc-500">
+      <p
+        className={`flex items-center justify-center gap-2 uppercase tracking-wide text-zinc-500 ${
+          compact ? "mt-2 text-[9px]" : "mt-4 text-[10px]"
+        }`}
+      >
         <ShieldIcon className="h-3.5 w-3.5 shrink-0" />
         We do not share your information
       </p>

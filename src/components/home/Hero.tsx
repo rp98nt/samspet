@@ -1,30 +1,38 @@
 import Image from "next/image";
-import Link from "next/link";
 import { ConsultationForm } from "@/components/home/ConsultationForm";
+import { HeroCopy } from "@/components/home/HeroCopy";
 import { HeroFeatureBar } from "@/components/home/HeroFeatureBar";
 import { SiteHeader } from "@/components/layout/SiteHeader";
-import { site } from "@/data/site";
 
 const heroImage = "/images/hero/man-with-dog.png";
 
-/** Fixed px size — background does not shrink with viewport; crops overflow horizontally */
+/** Fixed px size — desktop background does not shrink with viewport */
 const HERO_BG_WIDTH_PX = 1659;
 const HERO_BG_HEIGHT_PX = 598;
 const HERO_BG_OFFSET_LEFT_PX = 20;
 const HERO_BG_OFFSET_DOWN_PX = 5;
 
 export function Hero() {
-  const { hero } = site;
-
   return (
     <section
       id="home"
-      className="relative flex flex-col overflow-hidden lg:h-[720px]"
+      className="relative flex h-[100svh] max-h-[920px] flex-col overflow-hidden lg:h-[720px] lg:max-h-none"
     >
       <SiteHeader />
+
       <div className="absolute inset-0 overflow-hidden bg-[#1a1a1a]">
+        {/* Mobile: full-bleed cover — no top/bottom letterboxing */}
+        <Image
+          src={heroImage}
+          alt="Dog trainer standing with a Doberman"
+          fill
+          priority
+          className="object-cover object-[center_38%] lg:hidden"
+          sizes="100vw"
+        />
+        {/* Desktop: fixed-frame image */}
         <div
-          className="absolute left-1/2 top-1/2"
+          className="absolute left-1/2 top-1/2 hidden lg:block"
           style={{
             width: HERO_BG_WIDTH_PX,
             height: HERO_BG_HEIGHT_PX,
@@ -42,12 +50,12 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Mobile: vertical scrim for readable stacked content */}
+      {/* Mobile: light edge scrims — keep center clear for trainer + dog */}
       <div
-        className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-b from-black/90 via-black/55 to-black/85 lg:hidden"
+        className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-b from-black/70 from-0% via-black/15 via-35% to-black/75 to-100% lg:hidden"
         aria-hidden
       />
-      {/* Desktop: darken left and right only — keep center bright for trainer + dog */}
+      {/* Desktop side scrims */}
       <div
         className="pointer-events-none absolute inset-0 z-[1] hidden lg:block"
         aria-hidden
@@ -60,43 +68,30 @@ export function Hero() {
         />
       </div>
 
-      <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-col px-4 py-6 sm:px-5 lg:min-h-0 lg:flex-1 lg:px-6 lg:py-4">
-        <div className="flex flex-col gap-6 lg:grid lg:min-h-0 lg:flex-1 lg:grid-cols-12 lg:items-center lg:gap-6 lg:py-4">
-          <div className="text-center text-white lg:col-span-4 lg:max-w-xl lg:pr-2 lg:text-left">
-            <div className="rounded-lg bg-black/35 p-4 sm:p-5 lg:bg-transparent lg:p-0">
-              <p className="flex items-center justify-center gap-3 font-[family-name:var(--font-montserrat)] text-[10px] font-semibold uppercase tracking-[0.18em] text-white/90 sm:text-xs lg:justify-start">
-                <span className="h-px w-6 bg-brand-green sm:w-8" aria-hidden />
-                {hero.eyebrow}
-              </p>
-              <h1
-                className="mt-3 font-[family-name:var(--font-montserrat)] text-3xl font-bold leading-[1.12] sm:mt-4 sm:text-4xl lg:mt-5 lg:text-[3.25rem]"
-              >
-                {hero.titleLead}
-                <br />
-                <span className="text-brand-green">{hero.titleAccent}</span>
-              </h1>
-              <p className="mx-auto mt-3 max-w-md text-sm leading-relaxed text-white/90 sm:mt-4 sm:text-base lg:mx-0">
-                {hero.description}
-              </p>
-              <Link
-                href="#consultation"
-                className="mt-5 inline-flex items-center gap-2 rounded-full bg-brand-green px-6 py-3 font-[family-name:var(--font-montserrat)] text-xs font-bold uppercase tracking-wide text-black transition hover:bg-brand-green-dark sm:mt-6 sm:px-8 sm:py-3.5 sm:text-sm lg:mt-8"
-              >
-                {hero.cta}
-                <span aria-hidden>→</span>
-              </Link>
-            </div>
+      {/* Mobile: overlay copy + form on the photo */}
+      <div
+        className="relative z-10 flex min-h-0 flex-1 flex-col justify-between gap-2 px-3 pb-2 pt-1 lg:hidden"
+      >
+        <HeroCopy layout="mobile" />
+        <ConsultationForm compact />
+      </div>
+
+      {/* Desktop layout */}
+      <div
+        className="relative z-10 mx-auto hidden w-full max-w-7xl min-h-0 flex-1 flex-col px-6 py-4 lg:flex"
+      >
+        <div className="grid min-h-0 flex-1 grid-cols-12 items-center gap-6 py-4">
+          <div className="lg:col-span-4">
+            <HeroCopy layout="desktop" />
           </div>
-
           <div className="hidden lg:block lg:col-span-4" aria-hidden />
-
-          <div className="w-full lg:col-span-4 lg:flex lg:justify-end">
+          <div className="flex justify-end lg:col-span-4">
             <ConsultationForm />
           </div>
         </div>
       </div>
 
-      <div className="relative z-10 mt-2 shrink-0 lg:mt-0">
+      <div className="relative z-10 shrink-0">
         <HeroFeatureBar />
       </div>
     </section>
