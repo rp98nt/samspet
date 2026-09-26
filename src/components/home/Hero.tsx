@@ -21,31 +21,27 @@ export function Hero() {
     >
       <SiteHeader />
 
-      {/* Mobile: hero image as background; copy + form overlay (may overlap image) */}
+      {/* Mobile: copy over image; form below image */}
       <div className="flex flex-col lg:hidden">
-        <div className="relative flex min-h-[calc(100vw*725/575)] flex-col">
-          <div className="pointer-events-none absolute inset-0 z-0 bg-[#1a1a1a]">
-            <Image
-              src={heroImageMobile}
-              alt="Dog trainer standing with a Doberman"
-              fill
-              priority
-              className="object-contain object-center"
-              sizes="100vw"
-            />
-          </div>
+        <div className="relative aspect-[575/725] w-full bg-[#1a1a1a]">
+          <Image
+            src={heroImageMobile}
+            alt="Dog trainer standing with a Doberman"
+            fill
+            priority
+            className="object-contain object-center"
+            sizes="100vw"
+          />
           <div
-            className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-b from-black/75 via-black/35 to-black/65"
+            className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/80 via-black/25 to-transparent"
             aria-hidden
           />
-          <div className="relative z-10 flex flex-col">
-            <div className="px-4 py-6 sm:px-5">
-              <HeroCopy layout="mobile" />
-            </div>
-            <div className="px-4 pb-5 pt-2 sm:px-5">
-              <ConsultationForm />
-            </div>
+          <div className="absolute inset-x-0 top-0 z-10 px-4 pb-4 pt-5 sm:px-5 sm:pt-6">
+            <HeroCopy layout="mobile" />
           </div>
+        </div>
+        <div className="bg-brand-charcoal px-4 py-5 sm:px-5">
+          <ConsultationForm />
         </div>
         <HeroFeatureBar />
       </div>
