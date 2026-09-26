@@ -11,21 +11,30 @@ export function HeroCopy({ layout }: HeroCopyProps) {
 
   if (isMobile) {
     return (
-      <div
-        className="rounded-xl border border-white/15 bg-black/40 px-3 py-2.5 text-white shadow-lg backdrop-blur-md"
-      >
+      <div className="text-center text-white">
         <p
-          className="flex items-center gap-2 font-[family-name:var(--font-montserrat)] text-[9px] font-semibold uppercase tracking-[0.16em] text-white/90"
+          className="flex items-center justify-center gap-2 font-[family-name:var(--font-montserrat)] text-[10px] font-semibold uppercase tracking-[0.18em] text-white/90 sm:text-xs"
         >
-          <span className="h-px w-5 bg-brand-green" aria-hidden />
+          <span className="h-px w-6 bg-brand-green sm:w-8" aria-hidden />
           {hero.eyebrow}
         </p>
         <h1
-          className="mt-1.5 font-[family-name:var(--font-montserrat)] text-[1.65rem] font-bold leading-[1.1]"
+          className="mt-3 font-[family-name:var(--font-montserrat)] text-3xl font-bold leading-[1.12] sm:text-4xl"
         >
-          {hero.titleLead}{" "}
+          {hero.titleLead}
+          <br />
           <span className="text-brand-green">{hero.titleAccent}</span>
         </h1>
+        <p className="mx-auto mt-4 max-w-md text-sm leading-relaxed text-white/90 sm:text-base">
+          {hero.description}
+        </p>
+        <Link
+          href="#consultation"
+          className="mt-6 inline-flex items-center gap-2 rounded-full bg-brand-green px-7 py-3 font-[family-name:var(--font-montserrat)] text-xs font-bold uppercase tracking-wide text-black transition hover:bg-brand-green-dark sm:px-8 sm:py-3.5 sm:text-sm"
+        >
+          {hero.cta}
+          <span aria-hidden>→</span>
+        </Link>
       </div>
     );
   }
