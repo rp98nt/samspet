@@ -78,14 +78,14 @@ export function Hero() {
           </div>
 
           <div
-            className="relative z-10 mx-auto flex w-full max-w-7xl min-h-0 flex-1 flex-col px-6 py-4"
+            className="relative z-10 mx-auto flex w-full max-w-7xl min-h-0 flex-1 flex-col px-6 lg:py-0"
           >
-            <div className="grid min-h-0 flex-1 grid-cols-12 items-center gap-6 py-4">
-              <div className="lg:col-span-4">
+            <div className="grid min-h-0 flex-1 grid-cols-12 gap-6 lg:items-stretch">
+              <div className="flex items-center lg:col-span-4">
                 <HeroCopy layout="desktop" />
               </div>
               <div className="hidden lg:block lg:col-span-4" aria-hidden />
-              <div className="flex justify-end lg:col-span-4">
+              <div className="flex h-full min-h-0 items-center justify-end lg:col-span-4">
                 <ConsultationForm />
               </div>
             </div>
