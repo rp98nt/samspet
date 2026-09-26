@@ -8,8 +8,8 @@ import { site } from "@/data/site";
 const heroImage = "/images/hero/man-with-dog.png";
 
 /** Fixed px size — background does not shrink with viewport; crops overflow horizontally */
-const HERO_BG_WIDTH_PX = 1680;
-const HERO_BG_HEIGHT_PX = 605;
+const HERO_BG_WIDTH_PX = 1764;
+const HERO_BG_HEIGHT_PX = 635;
 const HERO_BG_OFFSET_LEFT_PX = 20;
 const HERO_BG_OFFSET_DOWN_PX = 5;
 
