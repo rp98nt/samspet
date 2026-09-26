@@ -7,6 +7,12 @@ import { site } from "@/data/site";
 
 const heroImage = "/images/hero/man-with-dog.png";
 
+/** Fixed px size — background does not shrink with viewport; crops overflow horizontally */
+const HERO_BG_WIDTH_PX = 1680;
+const HERO_BG_HEIGHT_PX = 605;
+const HERO_BG_OFFSET_LEFT_PX = 20;
+const HERO_BG_OFFSET_DOWN_PX = 5;
+
 export function Hero() {
   const { hero } = site;
 
@@ -18,7 +24,12 @@ export function Hero() {
       <SiteHeader />
       <div className="absolute inset-0 overflow-hidden bg-[#1a1a1a]">
         <div
-          className="absolute left-1/2 top-1/2 h-full w-full -translate-x-[calc(50%+20px)] -translate-y-[calc(50%-5px)] scale-[0.84]"
+          className="absolute left-1/2 top-1/2"
+          style={{
+            width: HERO_BG_WIDTH_PX,
+            height: HERO_BG_HEIGHT_PX,
+            transform: `translate(calc(-50% - ${HERO_BG_OFFSET_LEFT_PX}px), calc(-50% + ${HERO_BG_OFFSET_DOWN_PX}px))`,
+          }}
         >
           <Image
             src={heroImage}
@@ -26,7 +37,7 @@ export function Hero() {
             fill
             priority
             className="object-contain object-center"
-            sizes="100vw"
+            sizes={`${HERO_BG_WIDTH_PX}px`}
           />
         </div>
       </div>
