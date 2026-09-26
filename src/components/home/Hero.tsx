@@ -11,7 +11,10 @@ export function Hero() {
   const { hero } = site;
 
   return (
-    <section id="home" className="relative flex min-h-[640px] flex-col lg:min-h-[720px]">
+    <section
+      id="home"
+      className="relative flex h-[720px] flex-col overflow-hidden"
+    >
       <SiteHeader />
       <div className="absolute inset-0 overflow-hidden bg-[#1a1a1a]">
         <div
@@ -41,8 +44,8 @@ export function Hero() {
         />
       </div>
 
-      <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-1 flex-col px-4 pb-0 pt-4 lg:px-6 lg:pt-6">
-        <div className="grid flex-1 items-center gap-8 py-6 lg:grid-cols-12 lg:gap-6 lg:py-10">
+      <div className="relative z-10 mx-auto flex min-h-0 w-full max-w-7xl flex-1 flex-col px-4 pb-0 pt-2 lg:px-6 lg:pt-4">
+        <div className="grid min-h-0 flex-1 items-center gap-4 py-2 lg:grid-cols-12 lg:gap-6 lg:py-4">
           <div className="max-w-xl text-white lg:col-span-4 lg:pr-2">
             <div className="rounded-lg bg-black/25 p-1 sm:bg-transparent sm:p-0">
               <p className="flex items-center gap-3 font-[family-name:var(--font-montserrat)] text-xs font-semibold uppercase tracking-[0.2em] text-white/90">
@@ -77,7 +80,9 @@ export function Hero() {
         </div>
       </div>
 
-      <HeroFeatureBar />
+      <div className="relative z-10 shrink-0">
+        <HeroFeatureBar />
+      </div>
     </section>
   );
 }
