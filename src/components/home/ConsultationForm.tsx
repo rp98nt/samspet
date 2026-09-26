@@ -82,7 +82,7 @@ export function ConsultationForm({ compact = false }: ConsultationFormProps) {
   return (
     <div
       id="consultation"
-      className={`mx-auto w-full max-w-md rounded-xl border border-zinc-700/80 bg-black/70 shadow-2xl backdrop-blur-md lg:ml-auto lg:bg-black/75 ${
+      className={`glass-morphism mx-auto w-full max-w-md rounded-2xl lg:ml-auto ${
         compact
           ? "max-h-[min(52vh,420px)] overflow-y-auto p-3"
           : "p-4 sm:p-6 lg:p-7"
