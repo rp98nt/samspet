@@ -216,7 +216,7 @@ export function ConsultationForm({ compact = false }: ConsultationFormProps) {
       )}
 
       <p
-        className={`flex items-center justify-center gap-2 uppercase tracking-wide text-zinc-500 ${
+        className={`flex items-center justify-center gap-2 uppercase tracking-wide text-white ${
           compact ? "mt-2 text-[9px]" : "mt-4 text-[10px]"
         }`}
       >
