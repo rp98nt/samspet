@@ -19,7 +19,7 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="relative flex h-[720px] flex-col overflow-hidden"
+      className="relative flex flex-col overflow-hidden lg:h-[720px]"
     >
       <SiteHeader />
       <div className="absolute inset-0 overflow-hidden bg-[#1a1a1a]">
@@ -42,9 +42,14 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Darken left and right only — keep center bright for trainer + dog */}
+      {/* Mobile: vertical scrim for readable stacked content */}
       <div
-        className="pointer-events-none absolute inset-0 z-[1]"
+        className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-b from-black/90 via-black/55 to-black/85 lg:hidden"
+        aria-hidden
+      />
+      {/* Desktop: darken left and right only — keep center bright for trainer + dog */}
+      <div
+        className="pointer-events-none absolute inset-0 z-[1] hidden lg:block"
         aria-hidden
       >
         <div
@@ -55,27 +60,27 @@ export function Hero() {
         />
       </div>
 
-      <div className="relative z-10 mx-auto flex min-h-0 w-full max-w-7xl flex-1 flex-col px-4 pb-0 pt-2 lg:px-6 lg:pt-4">
-        <div className="grid min-h-0 flex-1 items-center gap-4 py-2 lg:grid-cols-12 lg:gap-6 lg:py-4">
-          <div className="max-w-xl text-white lg:col-span-4 lg:pr-2">
-            <div className="rounded-lg bg-black/25 p-1 sm:bg-transparent sm:p-0">
-              <p className="flex items-center gap-3 font-[family-name:var(--font-montserrat)] text-xs font-semibold uppercase tracking-[0.2em] text-white/90">
-                <span className="h-px w-8 bg-brand-green" aria-hidden />
+      <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-col px-4 py-6 sm:px-5 lg:min-h-0 lg:flex-1 lg:px-6 lg:py-4">
+        <div className="flex flex-col gap-6 lg:grid lg:min-h-0 lg:flex-1 lg:grid-cols-12 lg:items-center lg:gap-6 lg:py-4">
+          <div className="text-center text-white lg:col-span-4 lg:max-w-xl lg:pr-2 lg:text-left">
+            <div className="rounded-lg bg-black/35 p-4 sm:p-5 lg:bg-transparent lg:p-0">
+              <p className="flex items-center justify-center gap-3 font-[family-name:var(--font-montserrat)] text-[10px] font-semibold uppercase tracking-[0.18em] text-white/90 sm:text-xs lg:justify-start">
+                <span className="h-px w-6 bg-brand-green sm:w-8" aria-hidden />
                 {hero.eyebrow}
               </p>
               <h1
-                className="mt-5 font-[family-name:var(--font-montserrat)] text-4xl font-bold leading-[1.1] sm:text-5xl lg:text-[3.25rem]"
+                className="mt-3 font-[family-name:var(--font-montserrat)] text-3xl font-bold leading-[1.12] sm:mt-4 sm:text-4xl lg:mt-5 lg:text-[3.25rem]"
               >
                 {hero.titleLead}
                 <br />
                 <span className="text-brand-green">{hero.titleAccent}</span>
               </h1>
-              <p className="mt-5 max-w-md text-sm leading-relaxed text-white/90 sm:text-base">
+              <p className="mx-auto mt-3 max-w-md text-sm leading-relaxed text-white/90 sm:mt-4 sm:text-base lg:mx-0">
                 {hero.description}
               </p>
               <Link
                 href="#consultation"
-                className="mt-8 inline-flex items-center gap-2 rounded-full bg-brand-green px-8 py-3.5 font-[family-name:var(--font-montserrat)] text-sm font-bold uppercase tracking-wide text-black transition hover:bg-brand-green-dark"
+                className="mt-5 inline-flex items-center gap-2 rounded-full bg-brand-green px-6 py-3 font-[family-name:var(--font-montserrat)] text-xs font-bold uppercase tracking-wide text-black transition hover:bg-brand-green-dark sm:mt-6 sm:px-8 sm:py-3.5 sm:text-sm lg:mt-8"
               >
                 {hero.cta}
                 <span aria-hidden>→</span>
@@ -85,13 +90,13 @@ export function Hero() {
 
           <div className="hidden lg:block lg:col-span-4" aria-hidden />
 
-          <div className="lg:col-span-4 lg:flex lg:justify-end">
+          <div className="w-full lg:col-span-4 lg:flex lg:justify-end">
             <ConsultationForm />
           </div>
         </div>
       </div>
 
-      <div className="relative z-10 shrink-0">
+      <div className="relative z-10 mt-2 shrink-0 lg:mt-0">
         <HeroFeatureBar />
       </div>
     </section>

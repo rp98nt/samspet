@@ -25,9 +25,17 @@ export function SiteHeader() {
   return (
     <header className="relative z-20 border-b border-white/10 bg-black/25 backdrop-blur-sm">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 lg:px-6">
-        <Link href="#home" className="flex items-center gap-3 text-white">
-          <LogoMark className="h-12 w-12 shrink-0 text-white" />
-          <span className="hidden sm:block">
+        <Link href="#home" className="flex min-w-0 items-center gap-2 text-white sm:gap-3">
+          <LogoMark className="h-10 w-10 shrink-0 text-white sm:h-12 sm:w-12" />
+          <span className="min-w-0 sm:hidden">
+            <span className="block truncate font-[family-name:var(--font-montserrat)] text-[11px] font-bold uppercase leading-tight tracking-wide">
+              Sam Pets &amp; RP&apos;s
+            </span>
+            <span className="mt-0.5 block text-[9px] font-medium uppercase tracking-[0.12em] text-white/70">
+              {site.logoTagline}
+            </span>
+          </span>
+          <span className="hidden min-w-0 sm:block">
             <span className="block font-[family-name:var(--font-montserrat)] text-sm font-bold uppercase leading-tight tracking-wide">
               {site.name}
             </span>

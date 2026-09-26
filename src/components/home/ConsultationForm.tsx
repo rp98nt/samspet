@@ -9,7 +9,7 @@ import {
 import { dogAgeOptions, dogBreeds, interestOptions } from "@/data/site";
 
 const fieldClass =
-  "w-full rounded-md border border-zinc-600/80 bg-zinc-900/90 py-3 pl-10 pr-4 text-sm text-white placeholder:text-zinc-500 invalid:text-zinc-500 focus:border-brand-green focus:outline-none focus:ring-1 focus:ring-brand-green";
+  "w-full rounded-md border border-zinc-600/80 bg-zinc-900/90 py-2.5 pl-10 pr-3 text-sm text-white placeholder:text-zinc-500 invalid:text-zinc-500 focus:border-brand-green focus:outline-none focus:ring-1 focus:ring-brand-green sm:py-3 sm:pr-4";
 
 function FieldIcon({ children }: { children: ReactNode }) {
   return (
@@ -78,7 +78,7 @@ export function ConsultationForm() {
   return (
     <div
       id="consultation"
-      className="w-full max-w-md rounded-xl border border-zinc-700/80 bg-black/75 p-6 shadow-2xl backdrop-blur-md sm:p-7 lg:ml-auto"
+      className="mx-auto w-full max-w-md rounded-xl border border-zinc-700/80 bg-black/80 p-4 shadow-2xl backdrop-blur-md sm:p-6 lg:ml-auto lg:bg-black/75 lg:p-7"
     >
       <div className="flex items-start gap-3">
         <PawIcon className="mt-0.5 h-6 w-6 shrink-0 text-brand-green" />
@@ -132,7 +132,7 @@ export function ConsultationForm() {
               className={fieldClass}
             />
           </div>
-          <div className="grid grid-cols-2 gap-3">
+          <div className="grid grid-cols-1 gap-3 min-[420px]:grid-cols-2">
             <div className="relative">
               <FieldIcon><CalendarIcon className="h-4 w-4" /></FieldIcon>
               <select
