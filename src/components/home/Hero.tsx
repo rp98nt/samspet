@@ -4,7 +4,8 @@ import { HeroCopy } from "@/components/home/HeroCopy";
 import { HeroFeatureBar } from "@/components/home/HeroFeatureBar";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 
-const heroImage = "/images/hero/man-with-dog.png";
+const heroImageDesktop = "/images/hero/man-with-dog.png";
+const heroImageMobile = "/images/hero/man-with-dog-mobile.png";
 
 /** Fixed px size — desktop background does not shrink with viewport */
 const HERO_BG_WIDTH_PX = 1659;
@@ -27,7 +28,7 @@ export function Hero() {
         </div>
         <div className="relative h-[min(52vw,320px)] w-full bg-[#1a1a1a] sm:h-[360px]">
           <Image
-            src={heroImage}
+            src={heroImageMobile}
             alt="Dog trainer standing with a Doberman"
             fill
             priority
@@ -54,7 +55,7 @@ export function Hero() {
               }}
             >
               <Image
-                src={heroImage}
+                src={heroImageDesktop}
                 alt="Dog trainer standing with a Doberman"
                 fill
                 priority
