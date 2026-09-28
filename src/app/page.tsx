@@ -19,6 +19,7 @@ export default function Home() {
       <AboutUsSection />
       <PuppyTrainingSection />
       <GroupPrivateTrainingSection />
+      <BlogSection />
       <ServicesSection />
       <WhyChooseSection />
       <BenefitsStrip />
@@ -26,7 +27,6 @@ export default function Home() {
       <AfterTrainingSection />
       <CertificationsSection />
       <TestimonialsSection />
-      <BlogSection />
       <ConsultationBanner />
     </>
   );

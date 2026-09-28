@@ -281,26 +281,69 @@ export const testimonials = [
   },
 ] as const;
 
+export const blogPage = {
+  hero: {
+    title: "Our Blog",
+    subtitle:
+      "Training tips, dog care advice and stories from our community — for a happier, healthier pack.",
+    portraitImage:
+      "https://images.unsplash.com/photo-1568572933382-74d440642117?auto=format&fit=crop&w=900&q=80",
+    backgroundImage:
+      "https://images.unsplash.com/photo-1448375240586-882707db889b?auto=format&fit=crop&w=1920&q=80",
+  },
+} as const;
+
+export const blogCategories = [
+  "All",
+  "Training Tips",
+  "Behavior",
+  "Health & Care",
+  "Success Stories",
+  "News",
+] as const;
+
 export const blogPosts = [
   {
-    title: "Choosing a Collar for Your Dog",
+    title: "Essential Commands Every Dog Should Know",
+    category: "Training Tips" as const,
+    date: "Apr 15, 2025",
     image:
-      "https://images.unsplash.com/photo-1608093278320-b12f74d78706?auto=format&fit=crop&w=600&q=80",
+      "https://images.unsplash.com/photo-1601758228041-f3b2795255f1?auto=format&fit=crop&w=800&q=80",
   },
   {
-    title: "Causes of Aggression",
+    title: "Understanding Aggression in Dogs",
+    category: "Behavior" as const,
+    date: "Mar 28, 2025",
     image:
-      "https://images.unsplash.com/photo-1558788353-f76d92427f16?auto=format&fit=crop&w=600&q=80",
+      "https://images.unsplash.com/photo-1558788353-f76d92427f16?auto=format&fit=crop&w=800&q=80",
   },
   {
-    title: "Building a Relationship Before Training",
+    title: "Puppy Socialization: The First 16 Weeks",
+    category: "Training Tips" as const,
+    date: "Mar 10, 2025",
     image:
-      "https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=600&q=80",
+      "https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=800&q=80",
   },
   {
-    title: "Dog Parks",
+    title: "Choosing the Right Collar and Leash",
+    category: "Health & Care" as const,
+    date: "Feb 22, 2025",
     image:
-      "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=600&q=80",
+      "https://images.unsplash.com/photo-1608093278320-b12f74d78706?auto=format&fit=crop&w=800&q=80",
+  },
+  {
+    title: "From Reactive to Relaxed: Max's Story",
+    category: "Success Stories" as const,
+    date: "Feb 5, 2025",
+    image:
+      "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=800&q=80",
+  },
+  {
+    title: "New Group Classes Starting This Spring",
+    category: "News" as const,
+    date: "Jan 18, 2025",
+    image:
+      "https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=800&q=80",
   },
 ] as const;
 
