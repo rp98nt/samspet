@@ -122,8 +122,8 @@ export function PuppyTrainingSection() {
           priority={false}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-black/25 to-transparent" />
-        <div className="absolute inset-0 flex items-center px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl">
+        <div className="absolute inset-0 flex items-center">
+          <div className="site-container">
             <h2
               id="puppy-training-title"
               className="font-[family-name:var(--font-montserrat)] text-2xl font-bold text-white sm:text-3xl lg:text-4xl"
@@ -137,7 +137,7 @@ export function PuppyTrainingSection() {
         </div>
       </div>
 
-      <div className="mx-auto flex min-h-0 flex-1 w-full max-w-7xl flex-col justify-center px-4 py-4 sm:px-6 sm:py-5 lg:grid lg:grid-cols-2 lg:items-center lg:gap-10 lg:px-8 lg:py-6">
+      <div className="site-container flex min-h-0 flex-1 flex-col justify-center py-4 sm:py-5 lg:grid lg:grid-cols-2 lg:items-center lg:gap-10 lg:py-6">
         <div>
           <h3
             className="font-[family-name:var(--font-montserrat)] text-xl font-bold text-zinc-900 sm:text-2xl"
@@ -194,13 +194,15 @@ export function PuppyTrainingSection() {
           sizes="100vw"
         />
         <div className="absolute inset-0 bg-black/25" />
-        <div className="absolute inset-0 flex items-center justify-end px-4 sm:px-6 lg:px-8">
+        <div className="absolute inset-0 flex items-center">
+          <div className="site-container flex justify-end">
           <p
             className="flex items-center gap-2 font-[family-name:var(--font-montserrat)] text-base italic text-white sm:text-lg lg:text-xl"
           >
             {tagline.text}
             <PawAccent className="h-5 w-5 text-brand-green sm:h-6 sm:w-6" />
           </p>
+          </div>
         </div>
       </div>
     </section>

@@ -112,7 +112,7 @@ export function GroupPrivateTrainingSection() {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/45 to-black/80" />
 
-        <div className="relative z-10 px-4 pt-5 sm:px-6 sm:pt-6 lg:px-8 lg:pt-8">
+        <div className="site-container relative z-10 pt-5 sm:pt-6 lg:pt-8">
           <h2
             id="group-private-training-title"
             className="max-w-3xl font-[family-name:var(--font-montserrat)] text-xl font-bold leading-tight text-white sm:text-2xl lg:text-3xl xl:text-4xl"
@@ -124,7 +124,7 @@ export function GroupPrivateTrainingSection() {
           </p>
         </div>
 
-        <div className="relative z-10 mx-auto mt-auto flex w-full max-w-5xl flex-1 flex-col justify-end px-4 pb-3 sm:px-6 sm:pb-4 lg:px-8 lg:pb-5">
+        <div className="site-container relative z-10 mt-auto flex flex-1 flex-col justify-end pb-3 sm:pb-4 lg:pb-5">
           <div className="grid gap-3 sm:grid-cols-2 sm:gap-4 lg:gap-5">
             <TrainingCard
               icon="group"
@@ -147,8 +147,9 @@ export function GroupPrivateTrainingSection() {
       </div>
 
       <div
-        className="relative z-10 flex h-14 shrink-0 items-center gap-4 bg-[#141f14]/95 px-4 sm:h-16 sm:px-6 lg:h-[4.5rem] lg:px-8"
+        className="relative z-10 shrink-0 bg-[#141f14]/95 sm:h-16 lg:h-[4.5rem]"
       >
+        <div className="site-container flex h-14 items-center gap-4 sm:h-16 lg:h-[4.5rem]">
         <div className="relative h-10 w-10 shrink-0 overflow-hidden rounded-full border-2 border-brand-green/40 sm:h-12 sm:w-12">
           <Image
             src={quote.portrait}
@@ -164,6 +165,7 @@ export function GroupPrivateTrainingSection() {
           {quote.text}
           <PawAccent className="h-5 w-5 shrink-0 text-brand-green sm:h-6 sm:w-6" />
         </p>
+        </div>
       </div>
     </section>
   );

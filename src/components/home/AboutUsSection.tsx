@@ -87,7 +87,7 @@ export function AboutUsSection() {
         </div>
 
         <div
-          className="relative mx-auto grid max-w-7xl items-center gap-4 px-4 py-[1.575rem] sm:gap-4 sm:py-[1.8rem] lg:grid-cols-2 lg:gap-5 lg:px-6 lg:py-9"
+          className="site-container relative grid items-center gap-4 py-[1.575rem] sm:gap-4 sm:py-[1.8rem] lg:grid-cols-2 lg:gap-5 lg:py-9"
         >
           <div className="text-white">
             <h2
@@ -114,7 +114,7 @@ export function AboutUsSection() {
       </section>
 
       <section className="bg-white py-[2.625rem] lg:py-[3.75rem]">
-        <div className="mx-auto max-w-7xl px-4 lg:px-6">
+        <div className="site-container">
           <div className="grid items-start gap-7 lg:grid-cols-12 lg:gap-6">
             <div className="lg:col-span-4">
               <h3
@@ -170,7 +170,8 @@ export function AboutUsSection() {
       </section>
 
       <section className="border-t border-zinc-200 bg-[#f3f4f2] py-7 lg:py-9">
-        <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 px-4 sm:grid-cols-3 sm:gap-3 lg:px-6">
+        <div className="site-container">
+          <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 sm:grid-cols-3 sm:gap-3">
           {stats.map((stat, index) => (
             <div
               key={stat.label}
@@ -186,6 +187,7 @@ export function AboutUsSection() {
               <p className="mt-1.5 text-sm text-brand-muted sm:text-base">{stat.label}</p>
             </div>
           ))}
+          </div>
         </div>
       </section>
     </div>

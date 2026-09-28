@@ -6,7 +6,7 @@ import { HeroFeatureBar } from "@/components/home/HeroFeatureBar";
 const heroImageDesktop = "/images/hero/man-with-dog.png";
 const heroImageMobile = "/images/hero/man-with-dog-mobile.png";
 
-/** man-with-dog.png from media/manWithDog2.png â fixed px frame, scaled for display */
+/** man-with-dog.png from media/manWithDog2.png Ã¢ÂÂ fixed px frame, scaled for display */
 const HERO_BG_NATIVE_WIDTH_PX = 1959;
 const HERO_BG_NATIVE_HEIGHT_PX = 725;
 const HERO_BG_DISPLAY_SCALE = 1.35 * 0.8;
@@ -85,7 +85,7 @@ export function Hero() {
           </div>
 
           <div
-            className="relative z-10 mx-auto flex w-full max-w-7xl min-h-0 flex-1 flex-col px-6 lg:py-0"
+            className="site-container relative z-10 flex min-h-0 flex-1 flex-col lg:py-0"
           >
             <div className="grid min-h-0 flex-1 grid-cols-12 gap-6 lg:items-stretch">
               <div className="flex items-center lg:col-span-4">
