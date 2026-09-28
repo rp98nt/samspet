@@ -2,7 +2,6 @@ import Image from "next/image";
 import { ConsultationForm } from "@/components/home/ConsultationForm";
 import { HeroCopy } from "@/components/home/HeroCopy";
 import { HeroFeatureBar } from "@/components/home/HeroFeatureBar";
-import { SiteHeader } from "@/components/layout/SiteHeader";
 
 const heroImageDesktop = "/images/hero/man-with-dog.png";
 const heroImageMobile = "/images/hero/man-with-dog-mobile.png";
@@ -24,8 +23,6 @@ export function Hero() {
       id="home"
       className="relative flex flex-col bg-brand-charcoal lg:h-[720px] lg:overflow-hidden"
     >
-      <SiteHeader />
-
       {/* Mobile: copy over image; form below image */}
       <div className="flex flex-col lg:hidden">
         <div className="relative aspect-[575/725] w-full bg-[#1a1a1a]">
