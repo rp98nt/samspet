@@ -7,10 +7,16 @@ import { SiteHeader } from "@/components/layout/SiteHeader";
 const heroImageDesktop = "/images/hero/man-with-dog.png";
 const heroImageMobile = "/images/hero/man-with-dog-mobile.png";
 
-/** Fixed px size — desktop background does not shrink with viewport */
-/** man-with-dog.png from media/manWithDog2.png */
-const HERO_BG_WIDTH_PX = 1959;
-const HERO_BG_HEIGHT_PX = 725;
+/** man-with-dog.png from media/manWithDog2.png — fixed px frame, scaled for display */
+const HERO_BG_NATIVE_WIDTH_PX = 1959;
+const HERO_BG_NATIVE_HEIGHT_PX = 725;
+const HERO_BG_DISPLAY_SCALE = 0.9;
+const HERO_BG_WIDTH_PX = Math.round(
+  HERO_BG_NATIVE_WIDTH_PX * HERO_BG_DISPLAY_SCALE,
+);
+const HERO_BG_HEIGHT_PX = Math.round(
+  HERO_BG_NATIVE_HEIGHT_PX * HERO_BG_DISPLAY_SCALE,
+);
 
 export function Hero() {
   return (
