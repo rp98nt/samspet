@@ -16,6 +16,7 @@ const HERO_BG_WIDTH_PX = Math.round(
 const HERO_BG_HEIGHT_PX = Math.round(
   HERO_BG_NATIVE_HEIGHT_PX * HERO_BG_DISPLAY_SCALE,
 );
+const HERO_BG_OFFSET_DOWN_PX = 10;
 
 export function Hero() {
   return (
@@ -57,7 +58,7 @@ export function Hero() {
               style={{
                 width: HERO_BG_WIDTH_PX,
                 height: HERO_BG_HEIGHT_PX,
-                transform: "translate(-50%, -50%)",
+                transform: `translate(-50%, calc(-50% + ${HERO_BG_OFFSET_DOWN_PX}px))`,
               }}
             >
               <Image
