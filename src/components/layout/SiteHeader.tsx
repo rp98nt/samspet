@@ -86,10 +86,9 @@ export function SiteHeader() {
 
         <Link
           href="#consultation"
-          className="hidden shrink-0 items-center gap-2 rounded-full bg-brand-green px-6 py-3 font-[family-name:var(--font-montserrat)] text-xs font-bold uppercase tracking-wide text-black transition hover:bg-brand-green-dark lg:inline-flex xl:px-8 xl:py-3.5 xl:text-sm"
+          className="hidden shrink-0 items-center rounded-full bg-brand-green px-4 py-2.5 font-[family-name:var(--font-montserrat)] text-[10px] font-bold uppercase tracking-wide text-black transition hover:bg-brand-green-dark lg:inline-flex xl:px-5 xl:text-xs"
         >
           {site.hero.cta}
-          <span aria-hidden>→</span>
         </Link>
       </div>
     </header>
