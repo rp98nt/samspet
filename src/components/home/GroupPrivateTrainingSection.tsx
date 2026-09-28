@@ -99,7 +99,7 @@ export function GroupPrivateTrainingSection() {
   return (
     <section
       id="group-private-training"
-      className="flex h-[calc((100svh-var(--site-header-height))*0.7)] min-h-0 flex-col overflow-hidden bg-[#0a120a]"
+      className="flex h-[calc((100svh-var(--site-header-height))*0.91)] min-h-0 flex-col overflow-hidden bg-[#0a120a]"
       aria-labelledby="group-private-training-title"
     >
       <div className="relative flex min-h-0 flex-1 flex-col">
