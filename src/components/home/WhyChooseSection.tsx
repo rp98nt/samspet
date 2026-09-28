@@ -9,7 +9,7 @@ const videoThumb =
 
 export function WhyChooseSection() {
   return (
-    <section id="about" className="bg-white py-16 lg:py-20">
+    <section id="why-choose" className="bg-white py-16 lg:py-20">
       <div className="mx-auto max-w-7xl px-4 lg:px-6">
         <h2 className="text-center font-[family-name:var(--font-montserrat)] text-3xl font-bold text-zinc-900">
           Why Choose {site.name}

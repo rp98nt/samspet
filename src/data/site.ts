@@ -30,6 +30,54 @@ export const heroFeatures = [
   { label: "Board & Train", icon: "house" },
 ] as const;
 
+export const aboutPage = {
+  hero: {
+    title: "About Us",
+    subtitle: "More than just training — we build lasting bonds.",
+    portraitImage:
+      "https://images.unsplash.com/photo-1568572933382-74d440642117?auto=format&fit=crop&w=900&q=80",
+    backgroundImage:
+      "https://images.unsplash.com/photo-1448375240586-882707db889b?auto=format&fit=crop&w=1920&q=80",
+  },
+  story: {
+    title: "Our Story",
+    paragraphs: [
+      "At Sam Pets & RP's Kennel, we believe every dog deserves to be loved, understood, and guided with patience. What started as a passion for helping families connect with their pets has grown into a trusted training and care destination in Chhatrapati Sambhajinagar.",
+      "We use modern, positive training techniques tailored to each dog's personality and your goals — from puppy foundations to behavior modification — so your companion becomes confident, calm, and happy at home and in the community.",
+    ],
+    cta: "Learn More",
+    ctaHref: "#services",
+    trainerImage: "/images/hero/man-with-dog.png",
+  },
+  values: [
+    {
+      title: "Positive Reinforcement",
+      description: "Builds confidence & trust.",
+      icon: "paw-gear" as const,
+    },
+    {
+      title: "Expert Trainers",
+      description: "Certified & experienced.",
+      icon: "trainer" as const,
+    },
+    {
+      title: "Healthy & Safe",
+      description: "Clean, spacious facility.",
+      icon: "shield" as const,
+    },
+    {
+      title: "Lifetime Support",
+      description: "Ongoing guidance for lifetime success.",
+      icon: "support" as const,
+    },
+  ],
+  stats: [
+    { value: "5+", label: "Years of Experience" },
+    { value: "500+", label: "Happy Dogs" },
+    { value: "300+", label: "Successful Transformations" },
+  ],
+} as const;
+
 export const navLinks = [
   { label: "Home", href: "#home" },
   { label: "About Us", href: "#about" },
