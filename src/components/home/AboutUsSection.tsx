@@ -3,7 +3,7 @@ import Link from "next/link";
 import { aboutPage } from "@/data/site";
 
 function ValueIcon({ type }: { type: (typeof aboutPage.values)[number]["icon"] }) {
-  const className = "h-8 w-8 shrink-0 text-brand-green";
+  const className = "h-6 w-6 shrink-0 text-brand-green sm:h-7 sm:w-7";
   switch (type) {
     case "paw-gear":
       return (
@@ -69,8 +69,8 @@ export function AboutUsSection() {
   const { hero, story, values, stats } = aboutPage;
 
   return (
-    <div id="about">
-      <section className="relative overflow-hidden bg-[#141f14]">
+    <section id="about" className="section-viewport flex flex-col bg-white">
+      <div className="relative min-h-0 shrink-0 basis-[22%] overflow-hidden bg-[#141f14]">
         <div className="absolute inset-0">
           <Image
             src={hero.backgroundImage}
@@ -78,95 +78,95 @@ export function AboutUsSection() {
             fill
             className="object-cover object-center opacity-50 blur-sm"
             sizes="100vw"
-            priority={false}
           />
           <div
             className="absolute inset-0 bg-gradient-to-r from-[#141f14]/95 via-[#141f14]/75 to-[#141f14]/40"
             aria-hidden
           />
         </div>
-
-        <div className="relative mx-auto grid max-w-7xl items-center gap-8 px-4 py-14 sm:py-16 lg:grid-cols-2 lg:gap-12 lg:px-6 lg:py-20">
+        <div
+          className="relative mx-auto flex h-full max-w-7xl items-center gap-4 px-4 lg:grid lg:grid-cols-2 lg:gap-8 lg:px-6"
+        >
           <div className="text-white">
             <h2
-              className="font-[family-name:var(--font-montserrat)] text-4xl font-bold sm:text-5xl lg:text-[3.25rem]"
+              className="font-[family-name:var(--font-montserrat)] text-[clamp(1.5rem,4vh,2.5rem)] font-bold"
             >
               {hero.title}
             </h2>
-            <p className="mt-4 max-w-md text-base leading-relaxed text-white/90 sm:text-lg">
+            <p className="mt-1 max-w-md text-[clamp(0.75rem,1.8vh,1rem)] leading-snug text-white/90">
               {hero.subtitle}
             </p>
           </div>
-          <div className="relative mx-auto aspect-[4/3] w-full max-w-lg lg:mx-0 lg:ml-auto lg:aspect-auto lg:h-[280px] lg:max-w-none">
+          <div className="relative hidden h-full min-h-[80px] lg:block">
             <Image
               src={hero.portraitImage}
               alt="Doberman portrait"
               fill
-              className="object-contain object-center lg:object-right"
-              sizes="(max-width: 1024px) 90vw, 480px"
+              className="object-contain object-right"
+              sizes="320px"
             />
           </div>
         </div>
-      </section>
+      </div>
 
-      <section className="bg-white py-14 lg:py-20">
-        <div className="mx-auto max-w-7xl px-4 lg:px-6">
-          <div className="grid items-start gap-10 lg:grid-cols-12 lg:gap-8">
-            <div className="lg:col-span-4">
-              <h3
-                className="font-[family-name:var(--font-montserrat)] text-3xl font-bold text-zinc-900 sm:text-4xl"
-              >
-                {story.title}
-              </h3>
-              <div className="mt-6 space-y-4 text-sm leading-relaxed text-brand-muted sm:text-base">
-                {story.paragraphs.map((paragraph) => (
-                  <p key={paragraph.slice(0, 40)}>{paragraph}</p>
-                ))}
-              </div>
-              <Link
-                href={story.ctaHref}
-                className="mt-8 inline-flex items-center gap-2 rounded-full bg-brand-green px-8 py-3 font-[family-name:var(--font-montserrat)] text-xs font-bold uppercase tracking-wide text-black transition hover:bg-brand-green-dark sm:text-sm"
-              >
-                {story.cta}
-                <span aria-hidden>→</span>
-              </Link>
-            </div>
-
-            <div className="relative aspect-[3/4] overflow-hidden rounded-2xl shadow-lg lg:col-span-4 lg:aspect-auto lg:min-h-[420px]">
-              <Image
-                src={story.trainerImage}
-                alt="Trainer with a dog"
-                fill
-                className="object-cover object-center"
-                sizes="(max-width: 1024px) 100vw, 33vw"
-              />
-            </div>
-
-            <div
-              className="rounded-2xl bg-[#1a2618] px-5 py-6 shadow-xl sm:px-6 sm:py-8 lg:col-span-4"
+      <div className="flex min-h-0 flex-1 flex-col justify-center py-2">
+        <div className="mx-auto grid h-full max-h-full w-full max-w-7xl min-h-0 grid-cols-1 gap-3 px-4 lg:grid-cols-12 lg:items-stretch lg:gap-4 lg:px-6">
+          <div className="flex min-h-0 flex-col justify-center lg:col-span-4">
+            <h3
+              className="font-[family-name:var(--font-montserrat)] text-[clamp(1.25rem,2.5vh,2rem)] font-bold text-zinc-900"
             >
-              <ul className="space-y-6">
-                {values.map((item) => (
-                  <li key={item.title} className="flex gap-4">
-                    <ValueIcon type={item.icon} />
-                    <div>
-                      <p
-                        className="font-[family-name:var(--font-montserrat)] text-sm font-bold text-brand-green sm:text-base"
-                      >
-                        {item.title}
-                      </p>
-                      <p className="mt-1 text-sm text-white/85">{item.description}</p>
-                    </div>
-                  </li>
-                ))}
-              </ul>
+              {story.title}
+            </h3>
+            <div className="mt-2 space-y-2 text-[clamp(0.7rem,1.5vh,0.875rem)] leading-snug text-brand-muted">
+              {story.paragraphs.map((paragraph) => (
+                <p key={paragraph.slice(0, 40)} className="line-clamp-3 lg:line-clamp-none">
+                  {paragraph}
+                </p>
+              ))}
             </div>
+            <Link
+              href={story.ctaHref}
+              className="mt-3 inline-flex w-fit items-center gap-2 rounded-full bg-brand-green px-5 py-2 font-[family-name:var(--font-montserrat)] text-[10px] font-bold uppercase tracking-wide text-black transition hover:bg-brand-green-dark sm:text-xs"
+            >
+              {story.cta}
+              <span aria-hidden>→</span>
+            </Link>
+          </div>
+
+          <div className="relative min-h-[120px] overflow-hidden rounded-xl shadow-lg lg:col-span-4 lg:min-h-0 lg:h-full">
+            <Image
+              src={story.trainerImage}
+              alt="Trainer with a dog"
+              fill
+              className="object-cover object-center"
+              sizes="(max-width: 1024px) 100vw, 33vw"
+            />
+          </div>
+
+          <div
+            className="flex min-h-0 flex-col justify-center rounded-xl bg-[#1a2618] px-4 py-3 shadow-xl sm:px-5 lg:col-span-4 lg:py-4"
+          >
+            <ul className="space-y-3">
+              {values.map((item) => (
+                <li key={item.title} className="flex gap-3">
+                  <ValueIcon type={item.icon} />
+                  <div>
+                    <p
+                      className="font-[family-name:var(--font-montserrat)] text-xs font-bold text-brand-green sm:text-sm"
+                    >
+                      {item.title}
+                    </p>
+                    <p className="text-[11px] text-white/85 sm:text-xs">{item.description}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
-      </section>
+      </div>
 
-      <section className="border-t border-zinc-200 bg-[#f3f4f2] py-10 lg:py-12">
-        <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 px-4 sm:grid-cols-3 sm:gap-4 lg:px-6">
+      <div className="shrink-0 border-t border-zinc-200 bg-[#f3f4f2] py-3 lg:py-4">
+        <div className="mx-auto grid max-w-5xl grid-cols-1 gap-4 px-4 sm:grid-cols-3 sm:gap-2 lg:px-6">
           {stats.map((stat, index) => (
             <div
               key={stat.label}
@@ -175,15 +175,15 @@ export function AboutUsSection() {
               }`}
             >
               <p
-                className="font-[family-name:var(--font-montserrat)] text-4xl font-bold text-zinc-900 sm:text-5xl"
+                className="font-[family-name:var(--font-montserrat)] text-[clamp(1.5rem,3.5vh,2.5rem)] font-bold text-zinc-900"
               >
                 {stat.value}
               </p>
-              <p className="mt-2 text-sm text-brand-muted sm:text-base">{stat.label}</p>
+              <p className="text-[11px] text-brand-muted sm:text-xs">{stat.label}</p>
             </div>
           ))}
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
   );
 }
