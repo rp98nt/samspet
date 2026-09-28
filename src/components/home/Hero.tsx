@@ -16,7 +16,7 @@ const HERO_BG_WIDTH_PX = Math.round(
 const HERO_BG_HEIGHT_PX = Math.round(
   HERO_BG_NATIVE_HEIGHT_PX * HERO_BG_DISPLAY_SCALE,
 );
-const HERO_BG_OFFSET_DOWN_PX = 20;
+const HERO_BG_OFFSET_DOWN_PX = 35;
 
 export function Hero() {
   return (
