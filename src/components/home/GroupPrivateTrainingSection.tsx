@@ -69,16 +69,19 @@ function TrainingCard({ icon, title, tagline, items, cta, ctaHref }: TrainingCar
           <p className="mt-1 text-sm text-white/70 sm:text-base">{tagline}</p>
         </div>
       </div>
-      <ul className="mt-5 flex min-h-0 flex-1 flex-col justify-center gap-3 sm:mt-6 sm:gap-3.5 lg:gap-4">
+      <ul className="mt-5 flex min-h-0 flex-1 flex-col justify-evenly py-1 sm:mt-6 sm:py-2">
         {items.map((item) => (
-          <li key={item} className="flex items-start gap-2.5 text-sm leading-snug text-white/90 sm:text-base">
+          <li
+            key={item}
+            className="flex items-center gap-3 text-base font-medium leading-relaxed text-white/95 sm:gap-3.5 sm:text-lg"
+          >
             <span
-              className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand-green text-[10px] font-bold text-black"
+              className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand-green text-[11px] font-bold text-black sm:h-7 sm:w-7 sm:text-xs"
               aria-hidden
             >
               ✓
             </span>
-            {item}
+            <span className="min-w-0 flex-1">{item}</span>
           </li>
         ))}
       </ul>
