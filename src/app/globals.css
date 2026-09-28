@@ -101,17 +101,22 @@ body {
   scroll-margin-top: var(--site-header-height);
 }
 
-/* Home: top bar + main nav + hero (+ feature strip) = one screen */
-.home-section-viewport {
+/* First snap screen: top bar + sticky nav + hero (+ feature strip) */
+.site-first-screen {
   display: flex;
   flex-direction: column;
-  height: calc(100svh - var(--site-topbar-height) - var(--site-header-height));
-  min-height: calc(100svh - var(--site-topbar-height) - var(--site-header-height));
-  max-height: calc(100svh - var(--site-topbar-height) - var(--site-header-height));
+  height: 100svh;
+  min-height: 100svh;
+  max-height: 100svh;
   overflow: hidden;
   scroll-snap-align: start;
   scroll-snap-stop: always;
   scroll-margin-top: 0;
+}
+
+.home-hero-fill {
+  min-height: 0;
+  flex: 1 1 0;
 }
 
 .section-viewport-inner {
