@@ -107,14 +107,14 @@ export function BlogSection() {
           })}
         </div>
 
-        <div className="mt-3 flex min-h-0 flex-1 flex-col sm:mt-4">
+        <div className="mt-3 sm:mt-4">
           <div
-            className="grid min-h-0 flex-1 gap-3 sm:grid-cols-2 lg:grid-cols-3 lg:gap-4"
+            className="grid items-start gap-3 sm:grid-cols-2 lg:grid-cols-3 lg:gap-4"
           >
             {filteredPosts.map((post) => (
               <article
                 key={post.title}
-                className="flex min-h-0 flex-col overflow-hidden rounded-xl bg-white shadow-md ring-1 ring-zinc-100"
+                className="flex flex-col overflow-hidden rounded-xl bg-white shadow-md ring-1 ring-zinc-100"
               >
                 <div className="relative aspect-[2/1] w-full shrink-0 sm:aspect-[5/2]">
                   <Image
@@ -125,7 +125,7 @@ export function BlogSection() {
                     sizes="(max-width: 1024px) 50vw, 33vw"
                   />
                 </div>
-                <div className="flex min-h-0 flex-1 flex-col px-3 py-2.5 sm:px-4 sm:py-3">
+                <div className="flex flex-col px-3 py-2.5 sm:px-4 sm:py-3">
                   <span
                     className="inline-flex w-fit rounded bg-brand-green/20 px-2 py-0.5 text-[9px] font-bold uppercase tracking-wide text-brand-green-dark sm:text-[10px]"
                   >
@@ -139,7 +139,7 @@ export function BlogSection() {
                   <p className="mt-1 text-[11px] text-brand-muted sm:text-xs">{post.date}</p>
                   <Link
                     href="#blog"
-                    className="mt-auto pt-2 inline-flex items-center gap-1 text-[11px] font-bold text-brand-green-dark hover:text-brand-green sm:text-xs"
+                    className="mt-2 inline-flex items-center gap-1 text-[11px] font-bold text-brand-green-dark hover:text-brand-green sm:mt-2.5 sm:text-xs"
                   >
                     Read More
                     <span aria-hidden>→</span>
