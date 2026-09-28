@@ -1,4 +1,5 @@
 import { AboutUsSection } from "@/components/home/AboutUsSection";
+import { PuppyTrainingSection } from "@/components/home/PuppyTrainingSection";
 import { AfterTrainingSection } from "@/components/home/AfterTrainingSection";
 import { BenefitsStrip } from "@/components/home/BenefitsStrip";
 import { BlogSection } from "@/components/home/BlogSection";
@@ -15,6 +16,7 @@ export default function Home() {
     <>
       <Hero />
       <AboutUsSection />
+      <PuppyTrainingSection />
       <ServicesSection />
       <WhyChooseSection />
       <BenefitsStrip />

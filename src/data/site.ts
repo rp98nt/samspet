@@ -78,10 +78,45 @@ export const aboutPage = {
   ],
 } as const;
 
+export const puppyTrainingPage = {
+  hero: {
+    title: "Puppy Training",
+    subtitle: "The right start for a lifetime of good behavior.",
+    image:
+      "https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=1920&q=80",
+  },
+  cover: {
+    title: "What We Cover",
+    items: [
+      { label: "Basic commands (sit, stay, come)", icon: "commands" as const },
+      { label: "House training", icon: "house" as const },
+      { label: "Socialization", icon: "social" as const },
+      { label: "Leash training", icon: "leash" as const },
+      { label: "Positive reinforcement", icon: "shield" as const },
+    ],
+  },
+  early: {
+    title: "Why Start Early?",
+    benefits: [
+      "Builds good habits",
+      "Prevents behavioral issues",
+      "Boosts confidence",
+      "Makes adult training easier",
+    ],
+    cta: "Book Puppy Class",
+    ctaHref: "#consultation",
+  },
+  tagline: {
+    text: "Small Steps. Big Results.",
+    image:
+      "https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=1920&q=80",
+  },
+} as const;
+
 export const navLinks = [
   { label: "Home", href: "#home" },
   { label: "About Us", href: "#about" },
-  { label: "Training", href: "#services" },
+  { label: "Training", href: "#puppy-training" },
   { label: "Group & Private", href: "#schedule" },
   { label: "Blog", href: "#blog" },
   { label: "Contact", href: "#contact" },
