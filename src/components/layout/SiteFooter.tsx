@@ -5,8 +5,10 @@ import { site, socialLinks } from "@/data/site";
 
 export function SiteFooter() {
   return (
-    <footer id="contact" className="bg-brand-charcoal text-white">
-      <div className="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:grid-cols-3 lg:px-6">
+    <footer id="contact" className="section-viewport bg-brand-charcoal text-white">
+      <div
+        className="section-viewport-inner mx-auto grid w-full max-w-7xl gap-8 px-4 sm:grid-cols-3 sm:gap-10 lg:px-6"
+      >
         <div className="text-center sm:text-left">
           <PhoneIcon className="mx-auto h-8 w-8 text-brand-green sm:mx-0" />
           <p className="mt-3 text-xs font-bold uppercase tracking-widest">Call Us</p>
@@ -42,7 +44,9 @@ export function SiteFooter() {
           </ul>
         </div>
       </div>
-      <div className="border-t border-white/10 px-4 py-4 text-xs text-zinc-400 lg:px-6">
+      <div
+        className="shrink-0 border-t border-white/10 px-4 py-4 text-xs text-zinc-400 lg:px-6"
+      >
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 sm:flex-row">
           <p className="text-center sm:text-left">
             © 2026 {site.name}. All rights reserved.

@@ -42,12 +42,13 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: var(--site-header-height);
-  scroll-snap-type: y proximity;
+  scroll-snap-type: y mandatory;
 }
 
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+    scroll-snap-type: none;
   }
 }
 
