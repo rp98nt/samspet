@@ -32,11 +32,11 @@ export const heroFeatures = [
 
 export const navLinks = [
   { label: "Home", href: "#home" },
-  { label: "Group & Private Obedience", href: "#services" },
-  { label: "Puppy Training", href: "#services" },
-  { label: "Behavior Modification", href: "#about" },
   { label: "About Us", href: "#about" },
+  { label: "Training", href: "#services" },
+  { label: "Group & Private", href: "#schedule" },
   { label: "Blog", href: "#blog" },
+  { label: "Contact", href: "#contact" },
 ] as const;
 
 export const dogAgeOptions = [1, 2, 3, 4, 5] as const;
