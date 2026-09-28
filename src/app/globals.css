@@ -13,14 +13,7 @@
   --brand-link: #4a90e2;
   --brand-chalk: #2d3436;
   --brand-chalk-accent: #a3c644;
-  --site-topbar-height: 5.5rem;
   --site-header-height: 4.5rem;
-}
-
-@media (min-width: 640px) {
-  :root {
-    --site-topbar-height: 2.875rem;
-  }
 }
 
 @theme inline {
@@ -42,13 +35,11 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: var(--site-header-height);
-  scroll-snap-type: y mandatory;
 }
 
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
-    scroll-snap-type: none;
   }
 }
 
@@ -86,57 +77,6 @@ body {
     ),
     var(--brand-chalk);
   box-shadow: inset 0 0 60px rgba(0, 0, 0, 0.35);
-}
-
-/*
- * Full-viewport snap sections stack at 0, 100svh, 200svh, …
- * Padding-top reserves space under the sticky main nav (no scroll-margin overlap).
- */
-.section-viewport {
-  display: flex;
-  box-sizing: border-box;
-  flex-direction: column;
-  height: 100svh;
-  min-height: 100svh;
-  max-height: 100svh;
-  overflow: hidden;
-  padding-top: var(--site-header-height);
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
-  scroll-margin-top: 0;
-}
-
-/* Home hero only: top bar + nav live in layout above this block */
-.home-hero-snap {
-  display: flex;
-  box-sizing: border-box;
-  flex-direction: column;
-  height: calc(100svh - var(--site-topbar-height) - var(--site-header-height));
-  min-height: calc(100svh - var(--site-topbar-height) - var(--site-header-height));
-  max-height: calc(100svh - var(--site-topbar-height) - var(--site-header-height));
-  overflow: hidden;
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
-  scroll-margin-top: 0;
-}
-
-.section-viewport-inner {
-  display: flex;
-  width: 100%;
-  min-height: 0;
-  flex: 1;
-  flex-direction: column;
-  justify-content: center;
-  padding-block: clamp(0.35rem, 1.5vh, 1.25rem);
-  padding-inline: clamp(0.75rem, 2.5vw, 1.5rem);
-}
-
-.section-viewport-scale {
-  min-height: 0;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
 
 .glass-morphism {

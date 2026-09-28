@@ -6,7 +6,7 @@ import { HeroFeatureBar } from "@/components/home/HeroFeatureBar";
 const heroImageDesktop = "/images/hero/man-with-dog.png";
 const heroImageMobile = "/images/hero/man-with-dog-mobile.png";
 
-/** man-with-dog.png from media/manWithDog2.png — fixed px frame, scaled for display */
+/** man-with-dog.png from media/manWithDog2.png â fixed px frame, scaled for display */
 const HERO_BG_NATIVE_WIDTH_PX = 1959;
 const HERO_BG_NATIVE_HEIGHT_PX = 725;
 const HERO_BG_DISPLAY_SCALE = 1.35 * 0.8;
@@ -22,13 +22,11 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="home-hero-snap relative flex min-h-0 flex-col bg-brand-charcoal"
+      className="relative flex flex-col bg-brand-charcoal lg:h-[720px] lg:overflow-hidden"
     >
-      {/* Mobile: one viewport — image + copy, form, feature bar */}
-      <div
-        className="grid min-h-0 flex-1 grid-rows-[minmax(0,34%)_minmax(0,1fr)_auto] lg:hidden"
-      >
-        <div className="relative min-h-0 w-full bg-[#1a1a1a]">
+      {/* Mobile: copy over image; form below image */}
+      <div className="flex flex-col lg:hidden">
+        <div className="relative aspect-[575/725] w-full bg-[#1a1a1a]">
           <Image
             src={heroImageMobile}
             alt="Dog trainer standing with a Doberman"
@@ -41,21 +39,19 @@ export function Hero() {
             className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/80 via-black/25 to-transparent"
             aria-hidden
           />
-          <div className="absolute inset-x-0 top-0 z-10 px-3 pb-2 pt-3 sm:px-4">
+          <div className="absolute inset-x-0 top-0 z-10 px-4 pb-4 pt-5 sm:px-5 sm:pt-6">
             <HeroCopy layout="mobile" />
           </div>
         </div>
-        <div className="flex min-h-0 items-center bg-brand-charcoal px-3 py-1 sm:px-4">
-          <ConsultationForm fitViewport />
+        <div className="bg-brand-charcoal px-4 py-5 sm:px-5">
+          <ConsultationForm />
         </div>
-        <div className="row-start-3">
-          <HeroFeatureBar />
-        </div>
+        <HeroFeatureBar />
       </div>
 
-      {/* Desktop: main hero + feature strip (both inside one viewport) */}
-      <div className="relative hidden min-h-0 flex-1 lg:grid lg:grid-rows-[1fr_auto]">
-        <div className="relative flex min-h-0 flex-col overflow-hidden">
+      {/* Desktop: hero image + copy/form live above the feature bar (image not behind strip) */}
+      <div className="relative hidden min-h-0 flex-1 flex-col lg:flex">
+        <div className="relative flex min-h-0 flex-1 flex-col overflow-hidden">
           <div className="absolute inset-0 bg-[#1a1a1a]">
             <div
               className="absolute left-1/2 top-1/2"
@@ -89,21 +85,21 @@ export function Hero() {
           </div>
 
           <div
-            className="relative z-10 mx-auto flex w-full max-w-7xl min-h-0 flex-1 flex-col px-4 lg:px-6 lg:py-0"
+            className="relative z-10 mx-auto flex w-full max-w-7xl min-h-0 flex-1 flex-col px-6 lg:py-0"
           >
-            <div className="grid min-h-0 flex-1 grid-cols-12 gap-4 lg:items-stretch lg:gap-6">
+            <div className="grid min-h-0 flex-1 grid-cols-12 gap-6 lg:items-stretch">
               <div className="flex items-center lg:col-span-4">
                 <HeroCopy layout="desktop" />
               </div>
               <div className="hidden lg:block lg:col-span-4" aria-hidden />
-              <div className="flex h-full min-h-0 items-center justify-end lg:col-span-4 lg:py-1">
+              <div className="flex h-full min-h-0 items-center justify-end lg:col-span-4">
                 <ConsultationForm />
               </div>
             </div>
           </div>
         </div>
 
-        <div className="relative z-10 row-start-2 bg-brand-charcoal">
+        <div className="relative z-10 shrink-0 bg-brand-charcoal">
           <HeroFeatureBar />
         </div>
       </div>
