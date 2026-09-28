@@ -113,11 +113,49 @@ export const puppyTrainingPage = {
   },
 } as const;
 
+export const groupPrivateTrainingPage = {
+  hero: {
+    title: "Group & Private Obedience Training",
+    subtitle: "Well-behaved dogs. Happier homes.",
+    image:
+      "https://images.unsplash.com/photo-1601758228041-f3b2795255f1?auto=format&fit=crop&w=1920&q=80",
+  },
+  group: {
+    title: "Group Obedience Training",
+    tagline: "Socialize. Learn. Grow. Together.",
+    items: [
+      "Basic commands (sit, stay, come, heel)",
+      "Improved social behavior",
+      "Builds confidence & focus",
+      "Suitable for all breeds & ages",
+    ],
+    cta: "View Group Classes",
+    ctaHref: "#schedule",
+  },
+  private: {
+    title: "Private Obedience Training",
+    tagline: "Personalized. Focused. Faster results.",
+    items: [
+      "Customized training plans",
+      "One-on-one with expert trainers",
+      "Addresses specific behavior issues",
+      "Flexible scheduling",
+    ],
+    cta: "Book Private Training",
+    ctaHref: "#consultation",
+  },
+  quote: {
+    text: "Disciplined today, freedom tomorrow.",
+    portrait:
+      "https://images.unsplash.com/photo-1558787532-7ed2d0a32f1f?auto=format&fit=crop&w=400&q=80",
+  },
+} as const;
+
 export const navLinks = [
   { label: "Home", href: "#home" },
   { label: "About Us", href: "#about" },
   { label: "Training", href: "#puppy-training" },
-  { label: "Group & Private", href: "#schedule" },
+  { label: "Group & Private", href: "#group-private-training" },
   { label: "Blog", href: "#blog" },
   { label: "Contact", href: "#contact" },
 ] as const;
