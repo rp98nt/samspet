@@ -48,13 +48,13 @@ export function HeroCopy({ layout }: HeroCopyProps) {
         {hero.eyebrow}
       </p>
       <h1
-        className="mt-3 font-[family-name:var(--font-montserrat)] text-[clamp(1.75rem,3.2vw,2.75rem)] font-bold leading-[1.08]"
+        className="mt-4 font-[family-name:var(--font-montserrat)] text-[clamp(1.85rem,2.8vw,3.25rem)] font-bold leading-[1.1]"
       >
         {hero.titleLead}
         <br />
         <span className="text-brand-green">{hero.titleAccent}</span>
       </h1>
-      <p className="mt-3 max-w-md text-[clamp(0.8rem,1.1vw,0.95rem)] leading-snug text-white/90">
+      <p className="mt-4 max-w-md text-sm leading-relaxed text-white/90 lg:text-base">
         {hero.description}
       </p>
     </div>
