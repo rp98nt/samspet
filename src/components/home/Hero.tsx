@@ -10,8 +10,6 @@ const heroImageMobile = "/images/hero/man-with-dog-mobile.png";
 /** Fixed px size — desktop background does not shrink with viewport */
 const HERO_BG_WIDTH_PX = 1659;
 const HERO_BG_HEIGHT_PX = 598;
-const HERO_BG_OFFSET_LEFT_PX = 20;
-const HERO_BG_OFFSET_DOWN_PX = 5;
 
 export function Hero() {
   return (
@@ -55,7 +53,7 @@ export function Hero() {
               style={{
                 width: HERO_BG_WIDTH_PX,
                 height: HERO_BG_HEIGHT_PX,
-                transform: `translate(calc(-50% - ${HERO_BG_OFFSET_LEFT_PX}px), calc(-50% + ${HERO_BG_OFFSET_DOWN_PX}px))`,
+                transform: "translate(-50%, -50%)",
               }}
             >
               <Image
