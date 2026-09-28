@@ -347,6 +347,27 @@ export const blogPosts = [
   },
 ] as const;
 
+export const contactPage = {
+  hero: {
+    title: "Get in Touch",
+    subtitle: "Have questions? We're here to help! Reach out and let's talk.",
+    image:
+      "https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=1920&q=80",
+  },
+  form: {
+    title: "Send Us a Message",
+    cta: "Send Message",
+  },
+  visit: {
+    title: "Visit Our Kennel",
+    description:
+      "Come see our facility, meet our team and tour our training spaces.",
+    image:
+      "https://images.unsplash.com/photo-1601758228041-f3b2795255f1?auto=format&fit=crop&w=600&q=80",
+  },
+  mapQuery: "Sam Pets RP Kennel Chhatrapati Sambhajinagar",
+} as const;
+
 export const socialLinks = [
   { label: "Facebook", href: "#" },
   { label: "Instagram", href: "#" },

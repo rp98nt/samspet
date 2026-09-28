@@ -4,6 +4,7 @@ import { PuppyTrainingSection } from "@/components/home/PuppyTrainingSection";
 import { AfterTrainingSection } from "@/components/home/AfterTrainingSection";
 import { BenefitsStrip } from "@/components/home/BenefitsStrip";
 import { BlogSection } from "@/components/home/BlogSection";
+import { ContactSection } from "@/components/home/ContactSection";
 import { CertificationsSection } from "@/components/home/CertificationsSection";
 import { ConsultationBanner } from "@/components/home/ConsultationBanner";
 import { Hero } from "@/components/home/Hero";
@@ -20,6 +21,7 @@ export default function Home() {
       <PuppyTrainingSection />
       <GroupPrivateTrainingSection />
       <BlogSection />
+      <ContactSection />
       <ServicesSection />
       <WhyChooseSection />
       <BenefitsStrip />

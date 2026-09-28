@@ -5,7 +5,7 @@ import { site, socialLinks } from "@/data/site";
 
 export function SiteFooter() {
   return (
-    <footer id="contact" className="bg-brand-charcoal text-white">
+    <footer className="bg-brand-charcoal text-white">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:grid-cols-3 lg:px-6">
         <div className="text-center sm:text-left">
           <PhoneIcon className="mx-auto h-8 w-8 text-brand-green sm:mx-0" />
