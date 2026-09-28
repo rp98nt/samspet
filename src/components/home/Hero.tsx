@@ -20,7 +20,10 @@ const HERO_BG_OFFSET_DOWN_PX = 15;
 
 export function Hero() {
   return (
-    <section className="home-hero-fill relative flex min-h-0 flex-1 flex-col bg-brand-charcoal">
+    <section
+      id="home"
+      className="home-hero-snap relative flex min-h-0 flex-col bg-brand-charcoal"
+    >
       {/* Mobile: one viewport — image + copy, form, feature bar */}
       <div
         className="grid min-h-0 flex-1 grid-rows-[minmax(0,34%)_minmax(0,1fr)_auto] lg:hidden"
