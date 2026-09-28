@@ -56,24 +56,24 @@ function TrainingCard({ icon, title, tagline, items, cta, ctaHref }: TrainingCar
 
   return (
     <article
-      className="flex flex-col rounded-2xl border border-white/10 bg-black/75 px-4 py-4 shadow-xl backdrop-blur-md sm:px-5 sm:py-5"
+      className="flex h-full min-h-0 flex-col rounded-2xl border border-white/10 bg-black/75 px-5 py-5 shadow-xl backdrop-blur-md sm:px-6 sm:py-6 lg:px-8 lg:py-7"
     >
-      <div className="flex items-start gap-2.5">
-        <Icon className="mt-0.5 h-6 w-6 shrink-0 text-brand-green sm:h-7 sm:w-7" />
+      <div className="flex items-start gap-3">
+        <Icon className="mt-0.5 h-7 w-7 shrink-0 text-brand-green sm:h-8 sm:w-8" />
         <div>
           <h3
-            className="font-[family-name:var(--font-montserrat)] text-sm font-bold leading-snug text-white sm:text-base"
+            className="font-[family-name:var(--font-montserrat)] text-base font-bold leading-snug text-white sm:text-lg lg:text-xl"
           >
             {title}
           </h3>
-          <p className="mt-0.5 text-[11px] text-white/65 sm:text-xs">{tagline}</p>
+          <p className="mt-1 text-sm text-white/70 sm:text-base">{tagline}</p>
         </div>
       </div>
-      <ul className="mt-3 flex-1 space-y-1.5 sm:mt-4 sm:space-y-2">
+      <ul className="mt-5 flex min-h-0 flex-1 flex-col justify-center gap-3 sm:mt-6 sm:gap-3.5 lg:gap-4">
         {items.map((item) => (
-          <li key={item} className="flex items-start gap-2 text-[11px] text-white/90 sm:text-xs">
+          <li key={item} className="flex items-start gap-2.5 text-sm leading-snug text-white/90 sm:text-base">
             <span
-              className="mt-0.5 flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-brand-green text-[9px] font-bold text-black"
+              className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand-green text-[10px] font-bold text-black"
               aria-hidden
             >
               ✓
@@ -84,7 +84,7 @@ function TrainingCard({ icon, title, tagline, items, cta, ctaHref }: TrainingCar
       </ul>
       <Link
         href={ctaHref}
-        className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-full bg-brand-green px-4 py-2.5 font-[family-name:var(--font-montserrat)] text-[10px] font-bold uppercase tracking-wide text-black transition hover:bg-brand-green-dark sm:mt-5 sm:py-3 sm:text-[11px]"
+        className="mt-5 inline-flex w-full shrink-0 items-center justify-center gap-2 rounded-full bg-brand-green px-5 py-3 font-[family-name:var(--font-montserrat)] text-xs font-bold uppercase tracking-wide text-black transition hover:bg-brand-green-dark sm:mt-6 sm:py-3.5 sm:text-sm"
       >
         {cta}
         <span aria-hidden>→</span>
@@ -112,20 +112,22 @@ export function GroupPrivateTrainingSection() {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/45 to-black/80" />
 
-        <div className="site-container relative z-10 pt-5 sm:pt-6 lg:pt-8">
-          <h2
-            id="group-private-training-title"
-            className="max-w-3xl font-[family-name:var(--font-montserrat)] text-xl font-bold leading-tight text-white sm:text-2xl lg:text-3xl xl:text-4xl"
-          >
-            {hero.title}
-          </h2>
-          <p className="mt-1 text-sm text-white/90 sm:mt-2 sm:text-base lg:text-lg">
-            {hero.subtitle}
-          </p>
-        </div>
+        <div className="site-container relative z-10 flex min-h-0 flex-1 flex-col pb-3 sm:pb-4 lg:pb-5">
+          <div className="shrink-0 pt-5 sm:pt-6 lg:pt-8">
+            <h2
+              id="group-private-training-title"
+              className="max-w-3xl font-[family-name:var(--font-montserrat)] text-xl font-bold leading-tight text-white sm:text-2xl lg:text-3xl xl:text-4xl"
+            >
+              {hero.title}
+            </h2>
+            <p className="mt-1 text-sm text-white/90 sm:mt-2 sm:text-base lg:text-lg">
+              {hero.subtitle}
+            </p>
+          </div>
 
-        <div className="site-container relative z-10 mt-auto flex flex-1 flex-col justify-end pb-3 sm:pb-4 lg:pb-5">
-          <div className="grid gap-3 sm:grid-cols-2 sm:gap-4 lg:gap-5">
+          <div
+            className="mt-4 grid min-h-0 flex-1 auto-rows-fr gap-4 sm:mt-5 sm:grid-cols-2 sm:gap-5 lg:mt-6 lg:gap-6"
+          >
             <TrainingCard
               icon="group"
               title={group.title}
