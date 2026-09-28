@@ -87,20 +87,20 @@ export function AboutUsSection() {
         </div>
 
         <div
-          className="relative mx-auto grid max-w-7xl items-center gap-6 px-4 py-[2.625rem] sm:gap-7 sm:py-12 lg:grid-cols-2 lg:gap-9 lg:px-6 lg:py-[3.75rem]"
+          className="relative mx-auto grid max-w-7xl items-center gap-4 px-4 py-[1.575rem] sm:gap-4 sm:py-[1.8rem] lg:grid-cols-2 lg:gap-5 lg:px-6 lg:py-9"
         >
           <div className="text-white">
             <h2
-              className="font-[family-name:var(--font-montserrat)] text-3xl font-bold sm:text-4xl lg:text-[2.45rem]"
+              className="font-[family-name:var(--font-montserrat)] text-2xl font-bold sm:text-3xl lg:text-[1.85rem]"
             >
               {hero.title}
             </h2>
-            <p className="mt-3 max-w-md text-sm leading-relaxed text-white/90 sm:text-base">
+            <p className="mt-2 max-w-md text-xs leading-relaxed text-white/90 sm:text-sm">
               {hero.subtitle}
             </p>
           </div>
           <div
-            className="relative mx-auto aspect-[4/3] w-full max-w-lg origin-center scale-[0.75] lg:mx-0 lg:ml-auto lg:aspect-auto lg:h-[210px] lg:max-w-none lg:scale-100"
+            className="relative mx-auto aspect-[4/3] w-full max-w-lg origin-center scale-[0.45] lg:mx-0 lg:ml-auto lg:aspect-auto lg:h-[126px] lg:max-w-none lg:scale-100"
           >
             <Image
               src={hero.portraitImage}
@@ -113,30 +113,30 @@ export function AboutUsSection() {
         </div>
       </section>
 
-      <section className="bg-white py-14 lg:py-20">
+      <section className="bg-white py-[2.625rem] lg:py-[3.75rem]">
         <div className="mx-auto max-w-7xl px-4 lg:px-6">
-          <div className="grid items-start gap-10 lg:grid-cols-12 lg:gap-8">
+          <div className="grid items-start gap-7 lg:grid-cols-12 lg:gap-6">
             <div className="lg:col-span-4">
               <h3
                 className="font-[family-name:var(--font-montserrat)] text-3xl font-bold text-zinc-900 sm:text-4xl"
               >
                 {story.title}
               </h3>
-              <div className="mt-6 space-y-4 text-sm leading-relaxed text-brand-muted sm:text-base">
+              <div className="mt-4 space-y-3 text-sm leading-relaxed text-brand-muted sm:text-base">
                 {story.paragraphs.map((paragraph) => (
                   <p key={paragraph.slice(0, 40)}>{paragraph}</p>
                 ))}
               </div>
               <Link
                 href={story.ctaHref}
-                className="mt-8 inline-flex items-center gap-2 rounded-full bg-brand-green px-8 py-3 font-[family-name:var(--font-montserrat)] text-xs font-bold uppercase tracking-wide text-black transition hover:bg-brand-green-dark sm:text-sm"
+                className="mt-6 inline-flex items-center gap-2 rounded-full bg-brand-green px-8 py-2.5 font-[family-name:var(--font-montserrat)] text-xs font-bold uppercase tracking-wide text-black transition hover:bg-brand-green-dark sm:text-sm"
               >
                 {story.cta}
                 <span aria-hidden>→</span>
               </Link>
             </div>
 
-            <div className="relative aspect-[3/4] overflow-hidden rounded-2xl shadow-lg lg:col-span-4 lg:aspect-auto lg:min-h-[420px]">
+            <div className="relative aspect-[3/4] overflow-hidden rounded-2xl shadow-lg lg:col-span-4 lg:aspect-auto lg:min-h-[315px]">
               <Image
                 src={story.trainerImage}
                 alt="Trainer with a dog"
@@ -147,9 +147,9 @@ export function AboutUsSection() {
             </div>
 
             <div
-              className="rounded-2xl bg-[#1a2618] px-5 py-6 shadow-xl sm:px-6 sm:py-8 lg:col-span-4"
+              className="rounded-2xl bg-[#1a2618] px-5 py-4 shadow-xl sm:px-6 sm:py-6 lg:col-span-4"
             >
-              <ul className="space-y-6">
+              <ul className="space-y-4">
                 {values.map((item) => (
                   <li key={item.title} className="flex gap-4">
                     <ValueIcon type={item.icon} />
@@ -169,8 +169,8 @@ export function AboutUsSection() {
         </div>
       </section>
 
-      <section className="border-t border-zinc-200 bg-[#f3f4f2] py-10 lg:py-12">
-        <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 px-4 sm:grid-cols-3 sm:gap-4 lg:px-6">
+      <section className="border-t border-zinc-200 bg-[#f3f4f2] py-7 lg:py-9">
+        <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 px-4 sm:grid-cols-3 sm:gap-3 lg:px-6">
           {stats.map((stat, index) => (
             <div
               key={stat.label}
@@ -179,11 +179,11 @@ export function AboutUsSection() {
               }`}
             >
               <p
-                className="font-[family-name:var(--font-montserrat)] text-4xl font-bold text-zinc-900 sm:text-5xl"
+                className="font-[family-name:var(--font-montserrat)] text-3xl font-bold text-zinc-900 sm:text-4xl"
               >
                 {stat.value}
               </p>
-              <p className="mt-2 text-sm text-brand-muted sm:text-base">{stat.label}</p>
+              <p className="mt-1.5 text-sm text-brand-muted sm:text-base">{stat.label}</p>
             </div>
           ))}
         </div>
