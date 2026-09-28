@@ -8,8 +8,9 @@ const heroImageDesktop = "/images/hero/man-with-dog.png";
 const heroImageMobile = "/images/hero/man-with-dog-mobile.png";
 
 /** Fixed px size — desktop background does not shrink with viewport */
-const HERO_BG_WIDTH_PX = 1659;
-const HERO_BG_HEIGHT_PX = 598;
+/** man-with-dog.png from media/manWithDog2.png */
+const HERO_BG_WIDTH_PX = 1959;
+const HERO_BG_HEIGHT_PX = 725;
 
 export function Hero() {
   return (
