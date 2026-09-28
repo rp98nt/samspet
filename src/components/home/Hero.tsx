@@ -10,7 +10,7 @@ const heroImageMobile = "/images/hero/man-with-dog-mobile.png";
 /** man-with-dog.png from media/manWithDog2.png — fixed px frame, scaled for display */
 const HERO_BG_NATIVE_WIDTH_PX = 1959;
 const HERO_BG_NATIVE_HEIGHT_PX = 725;
-const HERO_BG_DISPLAY_SCALE = 0.85;
+const HERO_BG_DISPLAY_SCALE = 0.8;
 const HERO_BG_WIDTH_PX = Math.round(
   HERO_BG_NATIVE_WIDTH_PX * HERO_BG_DISPLAY_SCALE,
 );
