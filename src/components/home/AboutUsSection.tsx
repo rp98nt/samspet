@@ -86,18 +86,22 @@ export function AboutUsSection() {
           />
         </div>
 
-        <div className="relative mx-auto grid max-w-7xl items-center gap-8 px-4 py-14 sm:py-16 lg:grid-cols-2 lg:gap-12 lg:px-6 lg:py-20">
+        <div
+          className="relative mx-auto grid max-w-7xl items-center gap-6 px-4 py-[2.625rem] sm:gap-7 sm:py-12 lg:grid-cols-2 lg:gap-9 lg:px-6 lg:py-[3.75rem]"
+        >
           <div className="text-white">
             <h2
-              className="font-[family-name:var(--font-montserrat)] text-4xl font-bold sm:text-5xl lg:text-[3.25rem]"
+              className="font-[family-name:var(--font-montserrat)] text-3xl font-bold sm:text-4xl lg:text-[2.45rem]"
             >
               {hero.title}
             </h2>
-            <p className="mt-4 max-w-md text-base leading-relaxed text-white/90 sm:text-lg">
+            <p className="mt-3 max-w-md text-sm leading-relaxed text-white/90 sm:text-base">
               {hero.subtitle}
             </p>
           </div>
-          <div className="relative mx-auto aspect-[4/3] w-full max-w-lg lg:mx-0 lg:ml-auto lg:aspect-auto lg:h-[280px] lg:max-w-none">
+          <div
+            className="relative mx-auto aspect-[4/3] w-full max-w-lg origin-center scale-[0.75] lg:mx-0 lg:ml-auto lg:aspect-auto lg:h-[210px] lg:max-w-none lg:scale-100"
+          >
             <Image
               src={hero.portraitImage}
               alt="Doberman portrait"
