@@ -22,7 +22,7 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="section-viewport relative flex flex-col bg-brand-charcoal"
+      className="home-section-viewport relative flex flex-col bg-brand-charcoal"
     >
       {/* Mobile: one viewport — image + copy, form, feature bar */}
       <div

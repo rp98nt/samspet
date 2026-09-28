@@ -33,7 +33,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="flex min-h-full flex-col font-sans antialiased">
         <TopBar />
         <SiteHeader />
-        <main className="flex flex-1 flex-col snap-y snap-proximity lg:-mt-[4.5rem]">
+        <main className="flex flex-1 flex-col snap-y snap-proximity">
           {children}
         </main>
         <SiteFooter />

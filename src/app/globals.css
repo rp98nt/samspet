@@ -13,6 +13,14 @@
   --brand-link: #4a90e2;
   --brand-chalk: #2d3436;
   --brand-chalk-accent: #a3c644;
+  --site-topbar-height: 5.5rem;
+  --site-header-height: 4.5rem;
+}
+
+@media (min-width: 640px) {
+  :root {
+    --site-topbar-height: 2.875rem;
+  }
 }
 
 @theme inline {
@@ -73,6 +81,18 @@ body {
   height: 100svh;
   min-height: 100svh;
   max-height: 100svh;
+  overflow: hidden;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+/* Home: top bar + main nav + hero (+ feature strip) = one screen */
+.home-section-viewport {
+  display: flex;
+  flex-direction: column;
+  height: calc(100svh - var(--site-topbar-height) - var(--site-header-height));
+  min-height: calc(100svh - var(--site-topbar-height) - var(--site-header-height));
+  max-height: calc(100svh - var(--site-topbar-height) - var(--site-header-height));
   overflow: hidden;
   scroll-snap-align: start;
   scroll-snap-stop: always;

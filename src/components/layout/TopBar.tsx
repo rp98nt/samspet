@@ -4,7 +4,9 @@ import { site } from "@/data/site";
 
 export function TopBar() {
   return (
-    <div className="border-b border-zinc-200 bg-white text-xs text-brand-muted sm:text-sm">
+    <div
+      className="site-top-bar shrink-0 border-b border-zinc-200 bg-white text-xs text-brand-muted sm:text-sm"
+    >
       <div className="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-2 text-center sm:flex-row sm:items-center sm:justify-between sm:text-left lg:px-6">
         <p className="flex items-center justify-center gap-2 sm:justify-start">
           <ClockIcon className="h-4 w-4 shrink-0 text-brand-green-dark" />

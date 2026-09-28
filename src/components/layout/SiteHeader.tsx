@@ -23,7 +23,9 @@ export function SiteHeader() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/10 bg-brand-charcoal/95 backdrop-blur-md lg:bg-black/80">
+    <header
+      className="site-main-header sticky top-0 z-50 shrink-0 border-b border-white/10 bg-brand-charcoal/95 backdrop-blur-md lg:bg-black/80"
+    >
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 lg:px-6">
         <Link href="#home" className="flex min-w-0 items-center gap-2 text-white sm:gap-3">
           <LogoMark className="h-10 w-10 shrink-0 text-white sm:h-12 sm:w-12" />
