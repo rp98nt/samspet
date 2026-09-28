@@ -57,13 +57,6 @@ export function HeroCopy({ layout }: HeroCopyProps) {
       <p className="mt-5 max-w-md text-base leading-relaxed text-white/90">
         {hero.description}
       </p>
-      <Link
-        href="#consultation"
-        className="mt-8 inline-flex items-center gap-2 rounded-full bg-brand-green px-8 py-3.5 font-[family-name:var(--font-montserrat)] text-sm font-bold uppercase tracking-wide text-black transition hover:bg-brand-green-dark"
-      >
-        {hero.cta}
-        <span aria-hidden>→</span>
-      </Link>
     </div>
   );
 }

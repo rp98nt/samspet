@@ -57,7 +57,7 @@ export function SiteHeader() {
 
         <nav
           id="primary-nav"
-          className={`${open ? "flex" : "hidden"} absolute left-0 right-0 top-full flex-col gap-1 border-b border-white/10 bg-black/90 px-4 py-4 shadow-md lg:static lg:flex lg:flex-row lg:items-center lg:gap-1 lg:border-0 lg:bg-transparent lg:p-0 lg:shadow-none`}
+          className={`${open ? "flex" : "hidden"} absolute left-0 right-0 top-full flex-col gap-1 border-b border-white/10 bg-black/90 px-4 py-4 shadow-md lg:static lg:ml-auto lg:flex lg:flex-row lg:items-center lg:gap-1 lg:border-0 lg:bg-transparent lg:p-0 lg:shadow-none`}
         >
           {navLinks.map((link) => {
             const isHome = link.label === "Home";
@@ -74,7 +74,23 @@ export function SiteHeader() {
               </Link>
             );
           })}
+          <Link
+            href="#consultation"
+            onClick={() => setOpen(false)}
+            className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-brand-green px-6 py-3 font-[family-name:var(--font-montserrat)] text-xs font-bold uppercase tracking-wide text-black transition hover:bg-brand-green-dark lg:hidden"
+          >
+            {site.hero.cta}
+            <span aria-hidden>→</span>
+          </Link>
         </nav>
+
+        <Link
+          href="#consultation"
+          className="hidden shrink-0 items-center gap-2 rounded-full bg-brand-green px-6 py-3 font-[family-name:var(--font-montserrat)] text-xs font-bold uppercase tracking-wide text-black transition hover:bg-brand-green-dark lg:inline-flex xl:px-8 xl:py-3.5 xl:text-sm"
+        >
+          {site.hero.cta}
+          <span aria-hidden>→</span>
+        </Link>
       </div>
     </header>
   );
