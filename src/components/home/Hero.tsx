@@ -10,14 +10,16 @@ export function Hero() {
       id="home"
       className="relative flex min-h-[calc(100svh-var(--site-header-height))] flex-col overflow-hidden bg-brand-charcoal"
     >
-      <Image
-        src={heroImage}
-        alt="Dog trainer standing with a Doberman"
-        fill
-        priority
-        className="object-cover object-center"
-        sizes="100vw"
-      />
+      <div className="absolute inset-0 scale-[0.9] origin-center">
+        <Image
+          src={heroImage}
+          alt="Dog trainer standing with a Doberman"
+          fill
+          priority
+          className="object-cover object-center"
+          sizes="100vw"
+        />
+      </div>
 
       <div className="pointer-events-none absolute inset-0" aria-hidden>
         <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-black/20 to-black/70" />
