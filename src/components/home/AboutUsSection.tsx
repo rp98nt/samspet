@@ -125,7 +125,7 @@ export function AboutUsSection() {
           <div className="grid min-h-0 w-full flex-1 grid-cols-1 items-stretch gap-3 max-lg:gap-3.5 sm:gap-5 lg:grid-cols-12 lg:gap-5">
             <div className="flex min-h-0 flex-col max-lg:order-1 lg:col-span-4">
               <h3
-                className="font-[family-name:var(--font-montserrat)] text-xl font-bold text-zinc-900 max-lg:text-left sm:text-3xl lg:text-2xl"
+                className="font-[family-name:var(--font-montserrat)] text-2xl font-bold text-zinc-900 max-lg:text-left max-lg:text-xl sm:text-3xl"
               >
                 {story.title}
               </h3>
