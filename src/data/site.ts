@@ -27,7 +27,7 @@ export const site = {
 
 export const heroFeatures = [
   { label: "Obedience Training", icon: "shield" },
-  { label: "Puppy Training", icon: "paw" },
+  { label: "Semi Adult Training", icon: "paw" },
   { label: "Behavior Modification", icon: "target" },
   { label: "Training Hostel", icon: "house" },
 ] as const;
@@ -83,7 +83,7 @@ export const aboutPage = {
 
 export const puppyTrainingPage = {
   hero: {
-    title: "Puppy Training",
+    title: "Semi Adult Training",
     subtitle: "The right start for a lifetime of good behavior.",
     image:
       "https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=1920&q=80",
