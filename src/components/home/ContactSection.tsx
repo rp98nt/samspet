@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { ClockIcon, MailIcon, PhoneIcon } from "@/components/icons";
+import { SiteFooter } from "@/components/layout/SiteFooter";
 import { PhoneLink } from "@/components/PhoneLink";
 import { contactPage, site } from "@/data/site";
 
@@ -33,7 +34,7 @@ function ContactIconBadge({ children }: { children: React.ReactNode }) {
 function ContactDetailsPanel() {
   return (
     <div
-      className="flex h-full min-h-0 w-full flex-col justify-center gap-4 sm:gap-5 lg:gap-6"
+      className="flex h-full min-h-0 w-full flex-col justify-center gap-3 sm:gap-4 lg:gap-5"
     >
       <div className="flex min-w-0 items-start gap-3">
         <ContactIconBadge>
@@ -98,7 +99,7 @@ function MapCard({
         {title}
       </p>
       <div
-        className="relative min-h-[9rem] flex-1 overflow-hidden rounded-xl bg-white shadow-md ring-1 ring-zinc-200 lg:min-h-[10rem]"
+        className="relative min-h-[8rem] flex-1 overflow-hidden rounded-xl bg-white shadow-md ring-1 ring-zinc-200 lg:min-h-[9rem]"
       >
         <iframe
           title={`Map: ${title}`}
@@ -150,7 +151,7 @@ function MapLocationColumn({
   location: (typeof contactPage.maps)[number];
 }) {
   return (
-    <div className="flex min-h-0 flex-1 flex-col gap-3">
+    <div className="flex min-h-0 flex-1 flex-col gap-2 sm:gap-3">
       <MapCard title={location.title} query={location.query} />
       <VisitCard visit={location.visit} />
     </div>
@@ -163,53 +164,59 @@ export function ContactSection() {
   return (
     <section
       id="contact"
-      className="flex h-[calc(100svh-var(--site-header-height))] min-h-0 flex-col overflow-hidden bg-[#f0f1ee]"
+      className="flex h-[100svh] w-full min-h-0 flex-col overflow-hidden bg-[#f0f1ee]"
       aria-labelledby="contact-hero-title"
     >
-      <div className="relative h-[18%] min-h-[6.5rem] shrink-0 sm:min-h-[7rem] lg:min-h-[7.5rem]">
-        <Image
-          src={hero.image}
-          alt=""
-          fill
-          className="object-cover object-center"
-          sizes="100vw"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/45 to-black/25" />
-        <div className="absolute inset-0 flex items-center">
-          <div className="site-container">
-            <h2
-              id="contact-hero-title"
-              className="font-[family-name:var(--font-montserrat)] text-2xl font-bold text-white sm:text-3xl lg:text-4xl"
-            >
-              {hero.title}
-            </h2>
-            <p className="mt-1 max-w-lg text-sm text-white/90 sm:mt-2 sm:text-base">
-              {hero.subtitle}
-            </p>
+      <div className="relative w-full shrink-0 overflow-hidden">
+        <div className="relative min-h-[6.5rem] w-full sm:min-h-[7rem] lg:min-h-[7.5rem]">
+          <Image
+            src={hero.image}
+            alt=""
+            fill
+            className="object-cover object-center"
+            sizes="100vw"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/45 to-black/25" />
+          <div className="absolute inset-0 flex items-center">
+            <div className="site-container w-full py-3 sm:py-4">
+              <h2
+                id="contact-hero-title"
+                className="font-[family-name:var(--font-montserrat)] text-2xl font-bold text-white sm:text-3xl lg:text-4xl"
+              >
+                {hero.title}
+              </h2>
+              <p className="mt-1 max-w-lg text-sm text-white/90 sm:mt-2 sm:text-base">
+                {hero.subtitle}
+              </p>
+            </div>
           </div>
         </div>
       </div>
 
-      <div className="site-container flex min-h-0 flex-1 flex-col overflow-y-auto py-3 sm:py-4 lg:py-5">
-        <div
-          className="grid min-h-0 flex-1 gap-4 sm:grid-cols-2 lg:grid-cols-12 lg:items-stretch lg:gap-5"
-        >
+      <div className="flex min-h-0 w-full flex-1 flex-col overflow-hidden">
+        <div className="site-container flex min-h-0 w-full flex-1 flex-col py-2 sm:py-3 lg:py-4">
           <div
-            className="flex min-h-0 flex-col gap-3 sm:col-span-2 lg:col-span-8 lg:h-full lg:gap-4"
+            className="grid min-h-0 flex-1 gap-3 sm:grid-cols-2 lg:grid-cols-12 lg:items-stretch lg:gap-4"
           >
-            <div className="flex min-h-0 flex-1 flex-col gap-3 sm:gap-4">
-              {maps.map((location) => (
-                <MapLocationColumn key={location.title} location={location} />
-              ))}
+            <div
+              className="flex min-h-0 flex-col gap-2 sm:col-span-2 lg:col-span-8 lg:h-full sm:gap-3"
+            >
+              <div className="flex min-h-0 flex-1 flex-col gap-2 sm:gap-3">
+                {maps.map((location) => (
+                  <MapLocationColumn key={location.title} location={location} />
+                ))}
+              </div>
+            </div>
+
+            <div
+              className="flex min-h-0 sm:col-span-2 lg:col-span-4 lg:h-full lg:items-stretch"
+            >
+              <ContactDetailsPanel />
             </div>
           </div>
-
-          <div
-            className="flex min-h-0 sm:col-span-2 lg:col-span-4 lg:h-full lg:items-stretch"
-          >
-            <ContactDetailsPanel />
-          </div>
         </div>
+
+        <SiteFooter compact className="w-full shrink-0" />
       </div>
     </section>
   );
