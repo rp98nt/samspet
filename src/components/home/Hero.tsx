@@ -3,12 +3,13 @@ import { HeroCopy } from "@/components/home/HeroCopy";
 import { HeroFeatureBar } from "@/components/home/HeroFeatureBar";
 
 const heroImage = "/images/hero/man-with-dog.png";
+/** Visible zoom: 1 = full height; lower = more letterboxing top/bottom (width stays edge-to-edge). */
 const HERO_BG_SCALE = 0.7;
 const HERO_BG_LIFT_PX = 10;
-/** Pre-scale size so the transform scale still fills the hero edge-to-edge */
-const HERO_BG_SIZE_PERCENT = 100 / HERO_BG_SCALE;
 
 export function Hero() {
+  const heroBgWidthPercent = 100 / HERO_BG_SCALE;
+
   return (
     <section
       id="home"
@@ -16,11 +17,11 @@ export function Hero() {
     >
       <div className="absolute inset-0 overflow-hidden">
         <div
-          className="absolute left-1/2 top-1/2"
+          className="absolute left-1/2 top-1/2 h-full"
           style={{
-            width: `${HERO_BG_SIZE_PERCENT}%`,
-            height: `${HERO_BG_SIZE_PERCENT}%`,
+            width: `${heroBgWidthPercent}%`,
             transform: `translate(-50%, calc(-50% - ${HERO_BG_LIFT_PX}px)) scale(${HERO_BG_SCALE})`,
+            transformOrigin: "center center",
           }}
         >
           <Image
