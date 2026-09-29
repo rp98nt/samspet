@@ -10,7 +10,7 @@ export function Hero() {
       id="home"
       className="relative flex min-h-[calc(100svh-var(--site-header-height))] flex-col overflow-hidden bg-brand-charcoal"
     >
-      <div className="absolute inset-0 origin-center scale-[0.92] -translate-y-[20px]">
+      <div className="absolute inset-0 origin-center scale-[0.90] -translate-y-[20px]">
         <Image
           src={heroImage}
           alt="Dog trainer standing with a Doberman"
