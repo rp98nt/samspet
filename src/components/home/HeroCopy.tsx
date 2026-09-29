@@ -6,7 +6,18 @@ export function HeroCopy() {
   const { hero, whatsappUrl } = site;
 
   return (
-    <div className="max-w-xl text-center text-white sm:text-left">
+    <div className="relative isolate max-w-xl text-center text-white sm:text-left">
+      <div
+        className="pointer-events-none absolute -inset-x-10 -inset-y-14 -z-10 sm:-inset-x-24 sm:-inset-y-16"
+        aria-hidden
+      >
+        <div
+          className="absolute inset-0 bg-[radial-gradient(ellipse_115%_95%_at_50%_50%,rgba(0,0,0,0.78)_0%,rgba(0,0,0,0.42)_38%,rgba(0,0,0,0.14)_58%,transparent_78%)] sm:bg-[radial-gradient(ellipse_130%_105%_at_8%_48%,rgba(0,0,0,0.8)_0%,rgba(0,0,0,0.45)_36%,rgba(0,0,0,0.12)_56%,transparent_76%)]"
+        />
+        <div
+          className="absolute inset-0 scale-110 bg-[radial-gradient(ellipse_90%_80%_at_50%_50%,rgba(0,0,0,0.55)_0%,transparent_68%)] blur-2xl sm:bg-[radial-gradient(ellipse_100%_85%_at_5%_50%,rgba(0,0,0,0.6)_0%,transparent_70%)]"
+        />
+      </div>
       <p
         className="flex items-center justify-center gap-2 font-[family-name:var(--font-montserrat)] text-[10px] font-semibold uppercase tracking-[0.18em] text-white/90 sm:justify-start sm:gap-3 sm:text-xs lg:tracking-[0.2em]"
       >
