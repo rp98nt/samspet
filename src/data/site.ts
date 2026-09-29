@@ -14,7 +14,7 @@ export const site = {
     "https://www.behance.net/gallery/199142029/Dog-Trainer-Website-Design-Website-Branding",
   logoTagline: "TRAIN • CARE • BUILD BONDS",
   whatsappUrl:
-    "https://wa.me/918552949196?text=Hi%2C%20I%27d%20like%20to%20book%20a%20consultation%20for%20dog%20training.",
+    "https://wa.me/917888182831?text=Hi%2C%20I%20want%20to%20book%20a%20consultation.%20My%20name%20is%20",
   hero: {
     eyebrow: "Professional Dog Training",
     titleLead: "Build a Better",
