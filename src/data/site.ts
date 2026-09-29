@@ -149,8 +149,7 @@ export const groupPrivateTrainingPage = {
   },
   quote: {
     text: "Disciplined today, freedom tomorrow.",
-    portrait:
-      "https://images.unsplash.com/photo-1558787532-7ed2d0a32f1f?auto=format&fit=crop&w=400&q=80",
+    portrait: "/images/quote/dummy-dog.jpg",
   },
 } as const;
 
