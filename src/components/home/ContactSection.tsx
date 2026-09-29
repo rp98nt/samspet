@@ -34,7 +34,7 @@ function ContactIconBadge({ children }: { children: React.ReactNode }) {
 function ContactDetailsPanel() {
   return (
     <div
-      className="flex h-full min-h-0 w-full flex-col justify-center gap-3 rounded-2xl bg-white px-4 py-3 shadow-sm ring-1 ring-zinc-200 sm:gap-3 sm:bg-transparent sm:p-0 sm:shadow-none sm:ring-0"
+      className="flex h-full min-h-0 w-full flex-col justify-center gap-3 rounded-2xl bg-white px-3 py-2.5 shadow-sm ring-1 ring-zinc-200 max-lg:grid max-lg:grid-cols-2 max-lg:gap-2 max-lg:py-2 sm:gap-3 sm:bg-transparent sm:p-0 sm:shadow-none sm:ring-0 lg:flex lg:flex-col"
     >
       <div className="flex min-w-0 items-start gap-2.5">
         <ContactIconBadge>
@@ -120,9 +120,11 @@ function VisitCard({
 }) {
   return (
     <div
-      className="flex shrink-0 gap-2.5 rounded-2xl bg-[#141f14] p-2.5 shadow-lg sm:gap-3 sm:p-3"
+      className="flex shrink-0 gap-2 rounded-2xl bg-[#141f14] p-2 shadow-lg max-lg:gap-2 max-lg:p-2 sm:gap-3 sm:p-3"
     >
-      <div className="relative h-12 w-12 shrink-0 overflow-hidden rounded-lg sm:h-14 sm:w-14">
+      <div
+        className="relative h-10 w-10 shrink-0 overflow-hidden rounded-lg max-lg:h-9 max-lg:w-9 sm:h-14 sm:w-14"
+      >
         <Image
           src={visit.image}
           alt=""
@@ -167,7 +169,9 @@ export function ContactSection() {
       className="snap-section flex w-full min-h-0 flex-col overflow-hidden bg-[#f0f1ee]"
       aria-labelledby="contact-hero-title"
     >
-      <div className="relative h-[6.25rem] w-full shrink-0 overflow-hidden sm:h-[7rem] lg:h-[7.25rem]">
+      <div
+        className="relative h-[6.25rem] w-full shrink-0 overflow-hidden max-lg:h-[5.25rem] sm:h-[7rem] lg:h-[7.25rem]"
+      >
         <Image
           src={hero.image}
           alt=""
@@ -192,11 +196,15 @@ export function ContactSection() {
       </div>
 
       <div className="section-body-scroll flex min-h-0 w-full flex-1 flex-col overflow-hidden">
-        <div className="site-container flex min-h-0 w-full flex-1 flex-col py-1.5 sm:py-2">
+        <div
+          className="site-container flex min-h-0 w-full flex-1 flex-col py-1.5 max-lg:flex-1 max-lg:py-2 sm:py-2"
+        >
           <div
-            className="grid min-h-0 flex-1 gap-3 sm:grid-cols-2 sm:gap-3 lg:grid-cols-12 lg:items-stretch lg:gap-4"
+            className="grid min-h-0 flex-1 gap-2.5 max-lg:gap-2 sm:grid-cols-2 sm:gap-3 lg:grid-cols-12 lg:items-stretch lg:gap-4"
           >
-            <div className="order-2 flex min-h-[10rem] flex-col sm:order-none sm:col-span-2 sm:min-h-0 lg:col-span-8 lg:h-full">
+            <div
+              className="order-2 flex min-h-0 flex-1 flex-col sm:order-none sm:col-span-2 lg:col-span-8 lg:h-full"
+            >
               <div className="flex min-h-0 flex-1 flex-col">
                 {maps.map((location) => (
                   <MapLocationColumn key={location.title} location={location} />
