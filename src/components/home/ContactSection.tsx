@@ -110,8 +110,53 @@ function MapCard({
   );
 }
 
+function VisitCard({
+  visit,
+}: {
+  visit: (typeof contactPage.maps)[number]["visit"];
+}) {
+  return (
+    <div
+      className="flex shrink-0 gap-3 rounded-2xl bg-[#141f14] p-3 shadow-lg sm:gap-4 sm:p-4"
+    >
+      <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-lg sm:h-16 sm:w-16">
+        <Image
+          src={visit.image}
+          alt=""
+          fill
+          className="object-cover"
+          sizes="64px"
+        />
+      </div>
+      <div className="min-w-0 text-white">
+        <h3
+          className="font-[family-name:var(--font-montserrat)] text-sm font-bold sm:text-base"
+        >
+          {visit.title}
+        </h3>
+        <p className="mt-1 text-xs leading-relaxed text-white/85 sm:text-sm">
+          {visit.description}
+        </p>
+      </div>
+    </div>
+  );
+}
+
+function MapLocationColumn({
+  location,
+}: {
+  location: (typeof contactPage.maps)[number];
+}) {
+  return (
+    <div className="flex min-h-0 flex-1 flex-col gap-3">
+      <MapCard title={location.title} query={location.query} />
+      <VisitCard visit={location.visit} />
+    </div>
+  );
+}
+
 export function ContactSection() {
-  const { hero, form, visit, maps } = contactPage;
+  const { hero, form, maps } = contactPage;
   const [submitted, setSubmitted] = useState(false);
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
@@ -158,31 +203,8 @@ export function ContactSection() {
               className="flex min-h-0 flex-col gap-3 sm:col-span-2 lg:col-span-8 lg:h-full lg:gap-4"
             >
               <div className="grid min-h-0 flex-1 grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4">
-                <MapCard title={maps[0].title} query={maps[0].query} />
-                <MapCard title={maps[1].title} query={maps[1].query} />
-              </div>
-              <div
-                className="flex shrink-0 gap-3 rounded-2xl bg-[#141f14] p-3 shadow-lg sm:gap-4 sm:p-4"
-              >
-                <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-lg sm:h-16 sm:w-16">
-                  <Image
-                    src={visit.image}
-                    alt=""
-                    fill
-                    className="object-cover"
-                    sizes="64px"
-                  />
-                </div>
-                <div className="min-w-0 text-white">
-                  <h3
-                    className="font-[family-name:var(--font-montserrat)] text-sm font-bold sm:text-base"
-                  >
-                    {visit.title}
-                  </h3>
-                  <p className="mt-1 text-xs leading-relaxed text-white/85 sm:text-sm">
-                    {visit.description}
-                  </p>
-                </div>
+                <MapLocationColumn location={maps[0]} />
+                <MapLocationColumn location={maps[1]} />
               </div>
             </div>
 
