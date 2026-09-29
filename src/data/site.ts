@@ -74,9 +74,9 @@ export const aboutPage = {
     },
   ],
   stats: [
-    { value: "5+", label: "Years of Experience" },
-    { value: "500+", label: "Happy Dogs" },
-    { value: "300+", label: "Successful Transformations" },
+    { value: "12+", label: "Years of Experience" },
+    { value: "1000+", label: "Successful Transformations" },
+    { value: "5000+", label: "Happy Customers" },
   ],
 } as const;
 
