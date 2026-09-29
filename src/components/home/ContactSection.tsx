@@ -81,6 +81,35 @@ function ContactIconBadge({ children }: { children: React.ReactNode }) {
   );
 }
 
+function MapCard({
+  title,
+  query,
+}: {
+  title: string;
+  query: string;
+}) {
+  return (
+    <div className="flex min-h-0 flex-col">
+      <p
+        className="mb-1.5 font-[family-name:var(--font-montserrat)] text-xs font-bold uppercase tracking-wide text-zinc-700 sm:text-sm"
+      >
+        {title}
+      </p>
+      <div
+        className="relative h-32 overflow-hidden rounded-xl bg-white shadow-md ring-1 ring-zinc-200 sm:h-36"
+      >
+        <iframe
+          title={`Map: ${title}`}
+          src={mapEmbedSrc(query)}
+          className="absolute inset-0 h-full w-full border-0"
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+        />
+      </div>
+    </div>
+  );
+}
+
 export function ContactSection() {
   const { hero, form, visit, maps } = contactPage;
   const [submitted, setSubmitted] = useState(false);
@@ -121,58 +150,18 @@ export function ContactSection() {
       </div>
 
       <div className="site-container min-h-0 flex-1 overflow-y-auto py-4 sm:py-5 lg:overflow-hidden lg:py-6">
-        <div className="grid gap-5 lg:grid-cols-12 lg:items-stretch lg:gap-6 lg:h-full">
-          <div className="flex flex-col gap-3 lg:order-1 lg:col-span-4 lg:min-h-0 lg:gap-4">
-            <div className="grid min-h-0 flex-1 grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-3">
-              {maps.map((map) => (
-                <div key={map.title} className="flex min-h-0 flex-col">
-                  <p
-                    className="mb-1.5 font-[family-name:var(--font-montserrat)] text-xs font-bold uppercase tracking-wide text-zinc-700 sm:text-sm"
-                  >
-                    {map.title}
-                  </p>
-                  <div
-                    className="relative min-h-[7rem] flex-1 overflow-hidden rounded-xl bg-white shadow-md ring-1 ring-zinc-200 sm:min-h-[8rem]"
-                  >
-                    <iframe
-                      title={`Map: ${map.title}`}
-                      src={mapEmbedSrc(map.query)}
-                      className="absolute inset-0 h-full w-full border-0"
-                      loading="lazy"
-                      referrerPolicy="no-referrer-when-downgrade"
-                    />
-                  </div>
-                </div>
-              ))}
+        <div className="flex min-h-0 flex-col gap-4 lg:gap-5 lg:h-full">
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-12 lg:gap-5 lg:items-start">
+            <div className="sm:col-span-1 lg:col-span-4">
+              <MapCard title={maps[0].title} query={maps[0].query} />
             </div>
-            <div
-              className="flex shrink-0 gap-3 rounded-2xl bg-[#141f14] p-3 shadow-lg sm:gap-4 sm:p-4"
-            >
-              <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-lg sm:h-20 sm:w-20">
-                <Image
-                  src={visit.image}
-                  alt=""
-                  fill
-                  className="object-cover"
-                  sizes="80px"
-                />
-              </div>
-              <div className="min-w-0 text-white">
-                <h3
-                  className="font-[family-name:var(--font-montserrat)] text-sm font-bold sm:text-base"
-                >
-                  {visit.title}
-                </h3>
-                <p className="mt-1 text-xs leading-relaxed text-white/85 sm:text-sm">
-                  {visit.description}
-                </p>
-              </div>
+            <div className="sm:col-span-1 lg:col-span-4">
+              <MapCard title={maps[1].title} query={maps[1].query} />
             </div>
-          </div>
 
-          <div className="flex justify-center lg:order-2 lg:col-span-4 lg:justify-center">
+            <div className="sm:col-span-2 lg:col-span-4">
             <div
-              className="glass-morphism-dark flex w-full max-w-[22rem] flex-col rounded-2xl p-5 sm:max-w-md sm:p-6 lg:max-w-[21rem]"
+              className="glass-morphism-dark flex h-full w-full max-w-[22rem] flex-col rounded-2xl p-5 sm:mx-auto sm:max-w-md sm:p-6 lg:mx-0 lg:max-w-none"
             >
               <h3
                 className="font-[family-name:var(--font-montserrat)] text-base font-bold text-brand-green sm:text-lg"
@@ -245,14 +234,43 @@ export function ContactSection() {
                 </form>
               )}
             </div>
+            </div>
           </div>
 
-          <div className="space-y-4 lg:order-3 lg:col-span-4 lg:space-y-5 lg:pl-2">
-            <div className="flex items-start gap-3">
+          <div className="grid gap-4 lg:grid-cols-12">
+            <div
+              className="flex gap-3 rounded-2xl bg-[#141f14] p-3 shadow-lg sm:gap-4 sm:p-4 lg:col-span-8"
+            >
+              <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-lg sm:h-16 sm:w-16">
+                <Image
+                  src={visit.image}
+                  alt=""
+                  fill
+                  className="object-cover"
+                  sizes="64px"
+                />
+              </div>
+              <div className="min-w-0 text-white">
+                <h3
+                  className="font-[family-name:var(--font-montserrat)] text-sm font-bold sm:text-base"
+                >
+                  {visit.title}
+                </h3>
+                <p className="mt-1 text-xs leading-relaxed text-white/85 sm:text-sm">
+                  {visit.description}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            className="grid shrink-0 grid-cols-1 gap-4 border-t border-zinc-300/80 pt-4 sm:grid-cols-2 lg:grid-cols-4 lg:gap-3 lg:pt-5"
+          >
+            <div className="flex min-w-0 items-center gap-3">
               <ContactIconBadge>
                 <PhoneIcon className="h-4 w-4 sm:h-5 sm:w-5" />
               </ContactIconBadge>
-              <div className="min-w-0 text-sm text-zinc-800">
+              <div className="min-w-0 text-xs text-zinc-800 sm:text-sm">
                 <p className="font-semibold text-zinc-900">Phone</p>
                 <PhoneLink
                   className="mt-0.5 block text-brand-muted"
@@ -260,11 +278,11 @@ export function ContactSection() {
                 />
               </div>
             </div>
-            <div className="flex items-start gap-3">
+            <div className="flex min-w-0 items-center gap-3">
               <ContactIconBadge>
                 <MailIcon className="h-4 w-4 sm:h-5 sm:w-5" />
               </ContactIconBadge>
-              <div className="min-w-0 text-sm text-zinc-800">
+              <div className="min-w-0 text-xs text-zinc-800 sm:text-sm">
                 <p className="font-semibold text-zinc-900">Email</p>
                 <a
                   href={`mailto:${site.email}`}
@@ -274,20 +292,20 @@ export function ContactSection() {
                 </a>
               </div>
             </div>
-            <div className="flex items-start gap-3">
+            <div className="flex min-w-0 items-center gap-3">
               <ContactIconBadge>
                 <LocationIcon className="h-4 w-4 sm:h-5 sm:w-5" />
               </ContactIconBadge>
-              <div className="min-w-0 text-sm text-zinc-800">
+              <div className="min-w-0 text-xs text-zinc-800 sm:text-sm">
                 <p className="font-semibold text-zinc-900">Location</p>
                 <p className="mt-0.5 text-brand-muted">{site.city}</p>
               </div>
             </div>
-            <div className="flex items-start gap-3">
+            <div className="flex min-w-0 items-center gap-3">
               <ContactIconBadge>
                 <ClockIcon className="h-4 w-4 sm:h-5 sm:w-5" />
               </ContactIconBadge>
-              <div className="min-w-0 text-sm text-zinc-800">
+              <div className="min-w-0 text-xs text-zinc-800 sm:text-sm">
                 <p className="font-semibold text-zinc-900">Hours</p>
                 <p className="mt-0.5 text-brand-muted">{site.hours}</p>
               </div>
