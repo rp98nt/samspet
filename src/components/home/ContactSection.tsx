@@ -7,11 +7,21 @@ import { PhoneLink } from "@/components/PhoneLink";
 import { contactPage, site } from "@/data/site";
 
 const fieldClass =
-  "w-full rounded-lg border border-white/20 bg-zinc-900/80 py-2 pl-9 pr-3 text-xs text-white placeholder:text-zinc-500 focus:border-brand-green focus:outline-none focus:ring-1 focus:ring-brand-green sm:text-sm";
+  "w-full rounded-md border border-zinc-600/80 bg-zinc-900/90 py-2.5 pl-10 pr-3 text-sm text-white placeholder:text-zinc-500 focus:border-brand-green focus:outline-none focus:ring-1 focus:ring-brand-green sm:py-3";
 
-function FieldIcon({ children }: { children: React.ReactNode }) {
+function FieldIcon({
+  children,
+  align = "center",
+}: {
+  children: React.ReactNode;
+  align?: "center" | "top";
+}) {
   return (
-    <span className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-zinc-500">
+    <span
+      className={`pointer-events-none absolute left-3 text-zinc-500 ${
+        align === "top" ? "top-3" : "top-1/2 -translate-y-1/2"
+      }`}
+    >
       {children}
     </span>
   );
@@ -108,8 +118,8 @@ export function ContactSection() {
       </div>
 
       <div className="site-container min-h-0 flex-1 overflow-y-auto py-4 sm:py-5 lg:overflow-hidden lg:py-6">
-        <div className="grid gap-4 lg:grid-cols-12 lg:gap-5 lg:h-full">
-          <div className="space-y-3 lg:col-span-3 lg:space-y-4">
+        <div className="grid gap-5 lg:grid-cols-12 lg:items-center lg:gap-6 lg:h-full">
+          <div className="space-y-4 lg:col-span-3 lg:space-y-5">
             <div className="flex items-start gap-3">
               <ContactIconBadge>
                 <PhoneIcon className="h-4 w-4 sm:h-5 sm:w-5" />
@@ -156,79 +166,84 @@ export function ContactSection() {
             </div>
           </div>
 
-          <div
-            className="rounded-2xl bg-[#141f14] px-4 py-4 shadow-lg sm:px-5 sm:py-5 lg:col-span-5 lg:flex lg:flex-col"
-          >
-            <h3
-              className="font-[family-name:var(--font-montserrat)] text-base font-bold text-white sm:text-lg"
+          <div className="flex justify-center lg:col-span-4 lg:justify-center">
+            <div
+              className="glass-morphism flex w-full max-w-[22rem] flex-col rounded-2xl p-5 sm:max-w-md sm:p-6 lg:max-w-[21rem]"
             >
-              {form.title}
-            </h3>
-            {submitted ? (
-              <p className="mt-4 text-sm text-brand-green">
-                Thank you! We&apos;ll get back to you soon.
-              </p>
-            ) : (
-              <form onSubmit={handleSubmit} className="mt-3 space-y-2.5 sm:mt-4 sm:space-y-3">
-                <div className="relative">
-                  <FieldIcon>
-                    <UserIcon className="h-4 w-4" />
-                  </FieldIcon>
-                  <input
-                    type="text"
-                    name="name"
-                    required
-                    placeholder="Full Name"
-                    className={fieldClass}
-                  />
-                </div>
-                <div className="relative">
-                  <FieldIcon>
-                    <MailIcon className="h-4 w-4" />
-                  </FieldIcon>
-                  <input
-                    type="email"
-                    name="email"
-                    required
-                    placeholder="Email Address"
-                    className={fieldClass}
-                  />
-                </div>
-                <div className="relative">
-                  <FieldIcon>
-                    <PhoneIcon className="h-4 w-4" />
-                  </FieldIcon>
-                  <input
-                    type="tel"
-                    name="phone"
-                    placeholder="Phone Number"
-                    className={fieldClass}
-                  />
-                </div>
-                <div className="relative">
-                  <FieldIcon>
-                    <ChatIcon className="h-4 w-4" />
-                  </FieldIcon>
-                  <textarea
-                    name="message"
-                    required
-                    rows={3}
-                    placeholder="Message"
-                    className={`${fieldClass} resize-none pt-2.5`}
-                  />
-                </div>
-                <button
-                  type="submit"
-                  className="mt-1 flex w-full items-center justify-center gap-2 rounded-full bg-brand-green py-2.5 font-[family-name:var(--font-montserrat)] text-xs font-bold uppercase tracking-wide text-black transition hover:bg-brand-green-dark sm:py-3 sm:text-sm"
+              <h3
+                className="font-[family-name:var(--font-montserrat)] text-base font-bold text-white sm:text-lg"
+              >
+                {form.title}
+              </h3>
+              {submitted ? (
+                <p className="mt-6 text-center text-sm leading-relaxed text-zinc-300">
+                  Thank you! We&apos;ll get back to you soon.
+                </p>
+              ) : (
+                <form
+                  onSubmit={handleSubmit}
+                  className="mt-5 flex flex-col gap-3.5 sm:mt-6 sm:gap-4"
                 >
-                  {form.cta}
-                  <span aria-hidden>→</span>
-                </button>
-              </form>
-            )}
+                  <div className="relative">
+                    <FieldIcon>
+                      <UserIcon className="h-4 w-4" />
+                    </FieldIcon>
+                    <input
+                      type="text"
+                      name="name"
+                      required
+                      placeholder="Full Name"
+                      className={fieldClass}
+                    />
+                  </div>
+                  <div className="relative">
+                    <FieldIcon>
+                      <MailIcon className="h-4 w-4" />
+                    </FieldIcon>
+                    <input
+                      type="email"
+                      name="email"
+                      required
+                      placeholder="Email Address"
+                      className={fieldClass}
+                    />
+                  </div>
+                  <div className="relative">
+                    <FieldIcon>
+                      <PhoneIcon className="h-4 w-4" />
+                    </FieldIcon>
+                    <input
+                      type="tel"
+                      name="phone"
+                      placeholder="Phone Number"
+                      className={fieldClass}
+                    />
+                  </div>
+                  <div className="relative">
+                    <FieldIcon align="top">
+                      <ChatIcon className="h-4 w-4" />
+                    </FieldIcon>
+                    <textarea
+                      name="message"
+                      required
+                      rows={4}
+                      placeholder="Message"
+                      className={`${fieldClass} resize-none pt-3`}
+                    />
+                  </div>
+                  <button
+                    type="submit"
+                    className="mt-1 flex w-full items-center justify-center gap-2 rounded-full bg-brand-green py-3 font-[family-name:var(--font-montserrat)] text-xs font-bold uppercase tracking-wide text-black transition hover:bg-brand-green-dark sm:text-sm"
+                  >
+                    {form.cta}
+                    <span aria-hidden>→</span>
+                  </button>
+                </form>
+              )}
+            </div>
           </div>
 
-          <div className="flex flex-col gap-3 lg:col-span-4 lg:gap-4 lg:min-h-0">
+          <div className="flex flex-col gap-3 lg:col-span-5 lg:gap-4 lg:min-h-0">
             <div className="relative min-h-[9rem] flex-1 overflow-hidden rounded-xl bg-white shadow-md ring-1 ring-zinc-200 sm:min-h-[10rem]">
               <iframe
                 title={`Map: ${site.name}`}
