@@ -172,10 +172,10 @@ export function ContactSection() {
 
           <div className="flex justify-center lg:order-2 lg:col-span-4 lg:justify-center">
             <div
-              className="glass-morphism flex w-full max-w-[22rem] flex-col rounded-2xl bg-zinc-900/88 p-5 shadow-xl sm:max-w-md sm:p-6 lg:max-w-[21rem]"
+              className="glass-morphism-dark flex w-full max-w-[22rem] flex-col rounded-2xl p-5 sm:max-w-md sm:p-6 lg:max-w-[21rem]"
             >
               <h3
-                className="font-[family-name:var(--font-montserrat)] text-base font-bold text-white sm:text-lg"
+                className="font-[family-name:var(--font-montserrat)] text-base font-bold text-brand-green sm:text-lg"
               >
                 {form.title}
               </h3>

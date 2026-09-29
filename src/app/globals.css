@@ -98,3 +98,19 @@ body {
     0 8px 32px rgba(0, 0, 0, 0.45),
     inset 0 1px 0 rgba(255, 255, 255, 0.14);
 }
+
+/** Dark glass for forms on light section backgrounds (contact page). */
+.glass-morphism-dark {
+  background: linear-gradient(
+    145deg,
+    rgba(26, 38, 24, 0.94) 0%,
+    rgba(20, 31, 20, 0.96) 50%,
+    rgba(12, 18, 12, 0.98) 100%
+  );
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  backdrop-filter: blur(20px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
