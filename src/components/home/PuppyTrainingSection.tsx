@@ -109,7 +109,7 @@ export function PuppyTrainingSection() {
   return (
     <section
       id="puppy-training"
-      className="snap-section flex h-[100svh] w-full min-h-0 flex-col overflow-hidden bg-white"
+      className="snap-section flex w-full min-h-0 flex-col overflow-hidden bg-white"
       aria-labelledby="puppy-training-title"
     >
       <div className="relative w-full shrink-0 overflow-hidden">

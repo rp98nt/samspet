@@ -28,9 +28,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${montserrat.variable} ${openSans.variable} h-full`}
     >
-      <body className="flex min-h-full flex-col font-sans antialiased">
+      <body className="flex h-svh flex-col overflow-hidden font-sans antialiased">
         <SiteHeader />
-        <main className="flex min-h-0 flex-1 flex-col">
+        <main className="site-scroll-main flex min-h-0 flex-1 flex-col overflow-x-hidden overflow-y-auto">
           {children}
         </main>
       </body>

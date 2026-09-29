@@ -71,7 +71,7 @@ export function AboutUsSection() {
   return (
     <section
       id="about"
-      className="snap-section flex h-[100svh] w-full min-h-0 flex-col overflow-hidden"
+      className="snap-section flex w-full min-h-0 flex-col overflow-hidden"
     >
       <div className="relative w-full shrink-0 overflow-hidden bg-[#141f14]">
         <div className="absolute inset-0">

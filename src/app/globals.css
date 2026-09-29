@@ -15,6 +15,7 @@
   --brand-chalk-accent: #a3c644;
   /* Updated at runtime from .site-main-header measured height */
   --site-header-height: 4.5rem;
+  --site-section-height: calc(100svh - var(--site-header-height));
 }
 
 @theme inline {
@@ -35,19 +36,26 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: var(--site-header-height);
+}
+
+.site-scroll-main {
   scroll-snap-type: y mandatory;
 }
 
 .snap-section {
+  height: var(--site-section-height);
+  max-height: var(--site-section-height);
+  min-height: var(--site-section-height);
   scroll-snap-align: start;
   scroll-snap-stop: always;
-  scroll-margin-top: var(--site-header-height);
 }
 
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+
+  .site-scroll-main {
     scroll-snap-type: none;
   }
 }
