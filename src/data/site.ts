@@ -378,12 +378,12 @@ export const contactPage = {
 export const socialLinks = [
   {
     label: "Facebook",
-    href: "#",
+    href: "https://www.facebook.com/share/19RvW3KZGC/",
     iconSrc: "/images/social/meta.svg",
   },
   {
     label: "Instagram",
-    href: "#",
+    href: "https://www.instagram.com/rp_dogtrainer?stkn=Mm9mdGZ2c2RyZm82",
     iconSrc: "/images/social/instagram.svg",
   },
 ] as const;

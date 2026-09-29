@@ -59,6 +59,8 @@ export function SiteFooter({
               <li key={social.label}>
                 <Link
                   href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-brand-link/20 hover:bg-brand-link/30"
                   aria-label={social.label}
                 >
