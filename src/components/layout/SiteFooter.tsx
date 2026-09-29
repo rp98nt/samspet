@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { CopyEmailLink } from "@/components/CopyEmailLink";
 import { MailIcon, PhoneIcon } from "@/components/icons";
 import { PhoneLink } from "@/components/PhoneLink";
 import { site, socialLinks } from "@/data/site";
@@ -18,12 +19,9 @@ export function SiteFooter() {
         <div className="text-center">
           <MailIcon className="mx-auto h-8 w-8 text-brand-green" />
           <p className="mt-3 text-xs font-bold uppercase tracking-widest">Email Us</p>
-          <a
-            href={`mailto:${site.email}`}
-            className="mt-2 inline-block text-brand-link hover:underline"
-          >
-            {site.email}
-          </a>
+          <CopyEmailLink
+            className="mt-2 inline-block cursor-pointer border-0 bg-transparent p-0 text-lg font-semibold text-brand-link no-underline hover:text-brand-green"
+          />
         </div>
         <div className="text-center sm:text-right">
           <p className="text-xs font-bold uppercase tracking-widest">Follow Us</p>
