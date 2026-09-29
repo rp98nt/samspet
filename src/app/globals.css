@@ -39,8 +39,7 @@ html {
 }
 
 .site-scroll-main {
-  scroll-behavior: smooth;
-  scroll-snap-type: y proximity;
+  scroll-snap-type: y mandatory;
 }
 
 .snap-section {
@@ -48,7 +47,7 @@ html {
   max-height: var(--site-section-height);
   min-height: var(--site-section-height);
   scroll-snap-align: start;
-  scroll-snap-stop: normal;
+  scroll-snap-stop: always;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -57,7 +56,6 @@ html {
   }
 
   .site-scroll-main {
-    scroll-behavior: auto;
     scroll-snap-type: none;
   }
 }

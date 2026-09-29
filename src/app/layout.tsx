@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Montserrat, Open_Sans } from "next/font/google";
-import { SmoothSectionSnap } from "@/components/layout/SmoothSectionSnap";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { site } from "@/data/site";
 import "./globals.css";
@@ -34,7 +33,6 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <main className="site-scroll-main flex min-h-0 flex-1 flex-col overflow-x-hidden overflow-y-auto">
           {children}
         </main>
-        <SmoothSectionSnap />
       </body>
     </html>
   );
