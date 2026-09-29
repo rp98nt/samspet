@@ -139,7 +139,7 @@ export function PuppyTrainingSection() {
         </div>
       </div>
 
-      <div className="site-container flex min-h-0 w-full flex-1 flex-col justify-center py-3 sm:py-4 lg:grid lg:grid-cols-2 lg:items-center lg:gap-8 lg:py-5">
+      <div className="section-body-scroll site-container flex min-h-0 w-full flex-1 flex-col justify-center py-3 sm:py-4 lg:grid lg:grid-cols-2 lg:items-center lg:gap-8 lg:py-5">
         <div>
           <h3
             className="font-[family-name:var(--font-montserrat)] text-xl font-bold text-zinc-900 sm:text-2xl"
@@ -198,9 +198,9 @@ export function PuppyTrainingSection() {
           />
           <div className="absolute inset-0 bg-black/25" />
           <div className="absolute inset-0 flex items-center">
-            <div className="site-container flex w-full justify-end">
+            <div className="site-container flex w-full justify-center sm:justify-end">
               <p
-                className="flex items-center gap-2 font-[family-name:var(--font-montserrat)] text-base italic text-white sm:text-lg lg:text-xl"
+                className="flex items-center justify-center gap-2 text-center font-[family-name:var(--font-montserrat)] text-sm italic text-white sm:text-base sm:justify-end sm:text-right lg:text-xl"
               >
                 {tagline.text}
                 <PawAccent className="h-5 w-5 text-brand-green sm:h-6 sm:w-6" />

@@ -90,7 +90,7 @@ export function AboutUsSection() {
         </div>
 
         <div
-          className="site-container relative grid items-center gap-3 py-4 sm:gap-4 sm:py-5 lg:grid-cols-2 lg:py-6"
+          className="site-container relative grid grid-cols-1 items-center gap-3 py-3 text-center sm:gap-4 sm:py-5 lg:grid-cols-2 lg:py-6 lg:text-left"
         >
           <div className="text-white">
             <h2
@@ -98,7 +98,7 @@ export function AboutUsSection() {
             >
               {hero.title}
             </h2>
-            <p className="mt-1.5 max-w-md text-xs leading-relaxed text-white/90 sm:text-sm">
+            <p className="mx-auto mt-1.5 max-w-md text-xs leading-relaxed text-white/90 sm:text-sm lg:mx-0">
               {hero.subtitle}
             </p>
           </div>
@@ -116,9 +116,9 @@ export function AboutUsSection() {
         </div>
       </div>
 
-      <div className="flex min-h-0 w-full flex-1 flex-col bg-white">
-        <div className="site-container flex min-h-0 flex-1 items-stretch py-4 sm:py-5 lg:py-6">
-          <div className="grid min-h-0 w-full flex-1 grid-cols-1 items-stretch gap-5 lg:grid-cols-12 lg:gap-5">
+      <div className="section-body-scroll flex min-h-0 w-full flex-1 flex-col bg-white">
+        <div className="site-container flex min-h-0 flex-1 items-stretch py-3 sm:py-5 lg:py-6">
+          <div className="grid min-h-0 w-full flex-1 grid-cols-1 items-stretch gap-4 sm:gap-5 lg:grid-cols-12 lg:gap-5">
             <div className="flex min-h-0 flex-col lg:col-span-4">
               <h3
                 className="font-[family-name:var(--font-montserrat)] text-2xl font-bold text-zinc-900 sm:text-3xl"
@@ -139,7 +139,7 @@ export function AboutUsSection() {
               </Link>
             </div>
 
-            <div className="relative min-h-[10rem] overflow-hidden rounded-2xl shadow-lg sm:min-h-[12rem] lg:col-span-4 lg:min-h-0">
+            <div className="relative min-h-[9rem] overflow-hidden rounded-2xl shadow-lg sm:min-h-[11rem] lg:col-span-4 lg:min-h-0">
               <Image
                 src={story.trainerImage}
                 alt="Trainer with a dog"
@@ -174,15 +174,15 @@ export function AboutUsSection() {
         </div>
       </div>
 
-      <div className="w-full shrink-0 border-t border-zinc-200 bg-[#f3f4f2] py-4 sm:py-5">
+      <div className="w-full shrink-0 border-t border-zinc-200 bg-[#f3f4f2] py-3 sm:py-5">
         <div className="site-container">
-          <div className="mx-auto grid w-full max-w-6xl grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-2 lg:grid-cols-4">
+          <div className="mx-auto grid w-full max-w-6xl grid-cols-2 gap-3 sm:gap-2 lg:grid-cols-4">
             {stats.map((stat, index) => (
               <div
                 key={stat.label}
                 className={`flex flex-col items-center text-center ${
-                  index > 0 ? "sm:border-l sm:border-zinc-300" : ""
-                }`}
+                  index % 2 === 1 ? "border-l border-zinc-300" : ""
+                } ${index > 0 ? "lg:border-l lg:border-zinc-300" : ""}`}
               >
                 <p
                   className="font-[family-name:var(--font-montserrat)] text-2xl font-bold text-zinc-900 sm:text-3xl"

@@ -57,7 +57,7 @@ export function BlogSection() {
         </div>
 
         <div
-          className="site-container relative grid items-center gap-3 py-3 sm:grid-cols-[1fr_auto] sm:gap-4 sm:py-4 lg:py-4"
+          className="site-container relative grid items-center gap-3 py-3 text-center sm:grid-cols-[1fr_auto] sm:gap-4 sm:py-4 sm:text-left lg:py-4"
         >
           <div className="text-white">
             <h2
@@ -66,7 +66,7 @@ export function BlogSection() {
             >
               {hero.title}
             </h2>
-            <p className="mt-1 max-w-xl text-xs text-white/90 sm:mt-1.5 sm:text-sm lg:text-base">
+            <p className="mx-auto mt-1 max-w-xl text-xs text-white/90 sm:mx-0 sm:mt-1.5 sm:text-sm lg:text-base">
               {hero.subtitle}
             </p>
           </div>
@@ -87,7 +87,7 @@ export function BlogSection() {
       </div>
 
       <div className="site-container flex min-h-0 w-full flex-1 flex-col py-3 sm:py-4">
-        <div className="flex shrink-0 flex-wrap gap-1.5 sm:gap-2">
+        <div className="flex shrink-0 flex-wrap justify-center gap-1.5 sm:justify-start sm:gap-2">
           {blogCategories.map((category) => {
             const isActive = category === activeCategory;
             return (
@@ -107,9 +107,9 @@ export function BlogSection() {
           })}
         </div>
 
-        <div className="mt-3 flex min-h-0 flex-1 flex-col sm:mt-4">
+        <div className="section-body-scroll mt-3 flex min-h-0 flex-1 flex-col sm:mt-4">
           <div
-            className="grid min-h-0 flex-1 gap-3 sm:grid-cols-2 lg:grid-cols-3 lg:grid-rows-2 lg:gap-4"
+            className="grid min-h-0 flex-1 gap-2.5 sm:gap-3 sm:grid-cols-2 lg:grid-cols-3 lg:grid-rows-2 lg:gap-4"
           >
             {filteredPosts.map((post) => (
               <article

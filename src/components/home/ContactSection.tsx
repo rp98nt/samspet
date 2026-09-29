@@ -34,7 +34,7 @@ function ContactIconBadge({ children }: { children: React.ReactNode }) {
 function ContactDetailsPanel() {
   return (
     <div
-      className="flex h-full min-h-0 w-full flex-col justify-center gap-2.5 sm:gap-3"
+      className="flex h-full min-h-0 w-full flex-col justify-center gap-3 rounded-2xl bg-white px-4 py-3 shadow-sm ring-1 ring-zinc-200 sm:gap-3 sm:bg-transparent sm:p-0 sm:shadow-none sm:ring-0"
     >
       <div className="flex min-w-0 items-start gap-2.5">
         <ContactIconBadge>
@@ -177,26 +177,26 @@ export function ContactSection() {
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/45 to-black/25" />
         <div className="absolute inset-0 flex items-center">
-          <div className="site-container w-full py-2 sm:py-3">
+          <div className="site-container w-full py-2 text-center sm:py-3 sm:text-left">
             <h2
               id="contact-hero-title"
               className="font-[family-name:var(--font-montserrat)] text-xl font-bold text-white sm:text-2xl lg:text-3xl"
             >
               {hero.title}
             </h2>
-            <p className="mt-0.5 max-w-lg text-xs text-white/90 sm:mt-1 sm:text-sm">
+            <p className="mx-auto mt-0.5 max-w-lg text-xs text-white/90 sm:mx-0 sm:mt-1 sm:text-sm">
               {hero.subtitle}
             </p>
           </div>
         </div>
       </div>
 
-      <div className="flex min-h-0 w-full flex-1 flex-col overflow-hidden">
+      <div className="section-body-scroll flex min-h-0 w-full flex-1 flex-col overflow-hidden">
         <div className="site-container flex min-h-0 w-full flex-1 flex-col py-1.5 sm:py-2">
           <div
-            className="grid min-h-0 flex-1 gap-2 sm:grid-cols-2 sm:gap-3 lg:grid-cols-12 lg:items-stretch lg:gap-4"
+            className="grid min-h-0 flex-1 gap-3 sm:grid-cols-2 sm:gap-3 lg:grid-cols-12 lg:items-stretch lg:gap-4"
           >
-            <div className="flex min-h-0 flex-col sm:col-span-2 lg:col-span-8 lg:h-full">
+            <div className="order-2 flex min-h-[10rem] flex-col sm:order-none sm:col-span-2 sm:min-h-0 lg:col-span-8 lg:h-full">
               <div className="flex min-h-0 flex-1 flex-col">
                 {maps.map((location) => (
                   <MapLocationColumn key={location.title} location={location} />
@@ -204,7 +204,7 @@ export function ContactSection() {
               </div>
             </div>
 
-            <div className="flex min-h-0 sm:col-span-2 lg:col-span-4 lg:h-full">
+            <div className="order-1 flex min-h-0 sm:order-none sm:col-span-2 lg:col-span-4 lg:h-full">
               <ContactDetailsPanel />
             </div>
           </div>

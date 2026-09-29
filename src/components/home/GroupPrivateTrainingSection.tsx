@@ -116,20 +116,20 @@ export function GroupPrivateTrainingSection() {
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/45 to-black/80" />
 
         <div className="site-container relative z-10 flex min-h-0 flex-1 flex-col pb-3 sm:pb-4 lg:pb-5">
-          <div className="shrink-0 pt-5 sm:pt-6 lg:pt-8">
+          <div className="shrink-0 pt-4 text-center sm:pt-6 lg:pt-8 lg:text-left">
             <h2
               id="group-private-training-title"
-              className="max-w-3xl font-[family-name:var(--font-montserrat)] text-xl font-bold leading-tight text-white sm:text-2xl lg:text-3xl xl:text-4xl"
+              className="mx-auto max-w-3xl font-[family-name:var(--font-montserrat)] text-xl font-bold leading-tight text-white sm:text-2xl lg:mx-0 lg:text-3xl xl:text-4xl"
             >
               {hero.title}
             </h2>
-            <p className="mt-1 text-sm text-white/90 sm:mt-2 sm:text-base lg:text-lg">
+            <p className="mx-auto mt-1 max-w-xl text-sm text-white/90 sm:mt-2 sm:text-base lg:mx-0 lg:text-lg">
               {hero.subtitle}
             </p>
           </div>
 
           <div
-            className="mt-4 grid min-h-0 flex-1 auto-rows-fr gap-4 sm:mt-5 sm:grid-cols-2 sm:gap-5 lg:mt-6 lg:gap-6"
+            className="section-body-scroll mt-3 grid min-h-0 flex-1 auto-rows-fr grid-cols-1 gap-3 sm:mt-5 sm:gap-4 md:grid-cols-2 md:gap-5 lg:mt-6 lg:gap-6"
           >
             <TrainingCard
               icon="group"
@@ -154,7 +154,7 @@ export function GroupPrivateTrainingSection() {
       <div
         className="relative z-10 w-full shrink-0 bg-[#141f14]/95"
       >
-        <div className="site-container flex h-14 w-full items-center gap-4 sm:h-16 lg:h-[4.5rem]">
+        <div className="site-container flex h-auto min-h-14 w-full flex-col items-center gap-2 py-2.5 sm:h-16 sm:flex-row sm:gap-4 sm:py-0 lg:h-[4.5rem]">
         <div className="relative h-10 w-10 shrink-0 overflow-hidden rounded-full border-2 border-brand-green/40 sm:h-12 sm:w-12">
           <Image
             src={quote.portrait}
@@ -165,7 +165,7 @@ export function GroupPrivateTrainingSection() {
           />
         </div>
         <p
-          className="ml-auto flex items-center gap-2 text-right font-[family-name:var(--font-montserrat)] text-sm italic text-white sm:text-base lg:text-lg"
+          className="flex items-center justify-center gap-2 text-center font-[family-name:var(--font-montserrat)] text-sm italic text-white sm:ml-auto sm:justify-end sm:text-right sm:text-base lg:text-lg"
         >
           {quote.text}
           <PawAccent className="h-5 w-5 shrink-0 text-brand-green sm:h-6 sm:w-6" />
