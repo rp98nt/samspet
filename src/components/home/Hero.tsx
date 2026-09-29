@@ -3,6 +3,9 @@ import { HeroCopy } from "@/components/home/HeroCopy";
 import { HeroFeatureBar } from "@/components/home/HeroFeatureBar";
 
 const heroImage = "/images/hero/man-with-dog.png";
+const HERO_IMAGE_WIDTH = 1657;
+const HERO_IMAGE_HEIGHT = 702;
+const heroImageWidthCss = `calc(100cqh * ${HERO_IMAGE_WIDTH} / ${HERO_IMAGE_HEIGHT})`;
 
 export function Hero() {
   return (
@@ -11,16 +14,23 @@ export function Hero() {
       className="relative flex h-full min-h-0 flex-col overflow-hidden bg-black"
     >
       <div className="relative flex min-h-0 min-w-0 flex-1 flex-col">
-        <div className="pointer-events-none absolute inset-0 overflow-hidden">
-          <Image
-            src={heroImage}
-            alt="Dog trainer standing with a Doberman"
-            fill
-            priority
-            quality={90}
-            className="h-full w-full object-contain object-center"
-            sizes="100vw"
-          />
+        <div
+          className="pointer-events-none absolute inset-0 overflow-hidden [container-type:size]"
+        >
+          <div
+            className="absolute top-0 left-1/2 h-full -translate-x-1/2"
+            style={{ width: `max(100cqw, ${heroImageWidthCss})` }}
+          >
+            <Image
+              src={heroImage}
+              alt="Dog trainer standing with a Doberman"
+              fill
+              priority
+              quality={90}
+              className="object-contain object-center"
+              sizes="100vw"
+            />
+          </div>
         </div>
 
         <div className="pointer-events-none absolute inset-0" aria-hidden>
