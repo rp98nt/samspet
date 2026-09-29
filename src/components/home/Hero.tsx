@@ -3,13 +3,11 @@ import { HeroCopy } from "@/components/home/HeroCopy";
 import { HeroFeatureBar } from "@/components/home/HeroFeatureBar";
 
 const heroImage = "/images/hero/man-with-dog.png";
-/** Visible zoom: 1 = full height; lower = more letterboxing top/bottom (width stays edge-to-edge). */
+/** Uniform scale of the full image (1 = native fit; lower = smaller with black margins). */
 const HERO_BG_SCALE = 0.7;
 const HERO_BG_LIFT_PX = 10;
 
 export function Hero() {
-  const heroBgWidthPercent = 100 / HERO_BG_SCALE;
-
   return (
     <section
       id="home"
@@ -17,11 +15,9 @@ export function Hero() {
     >
       <div className="absolute inset-0 overflow-hidden">
         <div
-          className="absolute left-1/2 top-1/2 h-full"
+          className="absolute inset-0 origin-center"
           style={{
-            width: `${heroBgWidthPercent}%`,
-            transform: `translate(-50%, calc(-50% - ${HERO_BG_LIFT_PX}px)) scale(${HERO_BG_SCALE})`,
-            transformOrigin: "center center",
+            transform: `translateY(-${HERO_BG_LIFT_PX}px) scale(${HERO_BG_SCALE})`,
           }}
         >
           <Image
@@ -29,7 +25,7 @@ export function Hero() {
             alt="Dog trainer standing with a Doberman"
             fill
             priority
-            className="object-cover object-center"
+            className="object-contain object-center"
             sizes="100vw"
           />
         </div>
