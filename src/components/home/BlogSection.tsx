@@ -41,10 +41,10 @@ export function BlogSection() {
   return (
     <section
       id="blog"
-      className="flex h-[calc(100svh-var(--site-header-height))] min-h-0 flex-col overflow-hidden bg-[#f0f1ee]"
+      className="flex h-[100svh] w-full min-h-0 flex-col overflow-hidden bg-[#f0f1ee]"
       aria-labelledby="blog-hero-title"
     >
-      <div className="relative shrink-0 bg-[#141f14] pb-4 sm:pb-5">
+      <div className="relative w-full shrink-0 bg-[#141f14] pb-4 sm:pb-5">
         <div className="absolute inset-0 overflow-hidden">
           <Image
             src={hero.backgroundImage}
