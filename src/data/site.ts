@@ -376,6 +376,14 @@ export const contactPage = {
 } as const;
 
 export const socialLinks = [
-  { label: "Facebook", href: "#", icon: "facebook" as const },
-  { label: "Instagram", href: "#", icon: "instagram" as const },
+  {
+    label: "Facebook",
+    href: "#",
+    iconSrc: "/images/social/meta.svg",
+  },
+  {
+    label: "Instagram",
+    href: "#",
+    iconSrc: "/images/social/instagram.svg",
+  },
 ] as const;
