@@ -7,7 +7,7 @@ import { blogCategories, blogPage, blogPosts } from "@/data/site";
 
 type BlogCategory = (typeof blogCategories)[number];
 
-const VISIBLE_POST_COUNT = 3;
+const VISIBLE_POST_COUNT = 6;
 
 function WaveDivider() {
   return (
@@ -107,9 +107,9 @@ export function BlogSection() {
           })}
         </div>
 
-        <div className="mt-3 sm:mt-4">
+        <div className="mt-3 flex min-h-0 flex-1 flex-col sm:mt-4">
           <div
-            className="grid items-start gap-3 sm:grid-cols-2 lg:grid-cols-3 lg:gap-4"
+            className="grid min-h-0 flex-1 gap-3 sm:grid-cols-2 lg:grid-cols-3 lg:grid-rows-2 lg:gap-4"
           >
             {filteredPosts.map((post) => (
               <article
