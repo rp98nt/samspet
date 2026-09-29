@@ -35,10 +35,11 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
 }
 
 .site-scroll-main {
+  scroll-behavior: smooth;
   scroll-snap-type: y mandatory;
 }
 
@@ -56,6 +57,7 @@ html {
   }
 
   .site-scroll-main {
+    scroll-behavior: auto;
     scroll-snap-type: none;
   }
 }
