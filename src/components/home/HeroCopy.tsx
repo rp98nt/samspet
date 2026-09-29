@@ -8,14 +8,14 @@ export function HeroCopy() {
   return (
     <div className="relative isolate max-w-xl text-center text-white sm:text-left">
       <div
-        className="pointer-events-none absolute -inset-x-10 -inset-y-14 -z-10 sm:-inset-x-24 sm:-inset-y-16"
+        className="pointer-events-none absolute -z-10 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 sm:left-0 sm:translate-x-0"
         aria-hidden
       >
         <div
-          className="absolute inset-0 bg-[radial-gradient(ellipse_115%_95%_at_50%_50%,rgba(0,0,0,0.78)_0%,rgba(0,0,0,0.42)_38%,rgba(0,0,0,0.14)_58%,transparent_78%)] sm:bg-[radial-gradient(ellipse_130%_105%_at_8%_48%,rgba(0,0,0,0.8)_0%,rgba(0,0,0,0.45)_36%,rgba(0,0,0,0.12)_56%,transparent_76%)]"
+          className="h-56 w-[min(100vw,32rem)] rounded-full bg-black/55 blur-[5rem] sm:h-64 sm:w-[36rem] sm:bg-black/50 sm:blur-[6.5rem]"
         />
         <div
-          className="absolute inset-0 scale-110 bg-[radial-gradient(ellipse_90%_80%_at_50%_50%,rgba(0,0,0,0.55)_0%,transparent_68%)] blur-2xl sm:bg-[radial-gradient(ellipse_100%_85%_at_5%_50%,rgba(0,0,0,0.6)_0%,transparent_70%)]"
+          className="absolute left-1/2 top-1/2 h-40 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full bg-black/35 blur-[4rem] sm:left-24 sm:translate-x-0"
         />
       </div>
       <p

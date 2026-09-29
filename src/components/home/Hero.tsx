@@ -35,10 +35,12 @@ export function Hero() {
 
         <div className="pointer-events-none absolute inset-0" aria-hidden>
           <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/15 to-black/65" />
-          <div className="absolute inset-y-0 left-0 w-full max-w-3xl bg-gradient-to-r from-black/80 via-black/45 to-transparent" />
+          <div
+            className="absolute inset-0 bg-[radial-gradient(ellipse_90%_120%_at_0%_50%,rgba(0,0,0,0.5)_0%,rgba(0,0,0,0.18)_42%,transparent_72%)]"
+          />
         </div>
 
-        <div className="site-container relative z-10 flex min-h-0 flex-1 flex-col justify-center py-8 sm:py-10">
+        <div className="site-container relative z-10 flex min-h-0 flex-1 flex-col justify-center overflow-visible py-8 sm:py-10">
           <HeroCopy />
         </div>
       </div>
