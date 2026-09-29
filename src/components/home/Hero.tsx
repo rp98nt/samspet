@@ -3,9 +3,9 @@ import { HeroCopy } from "@/components/home/HeroCopy";
 import { HeroFeatureBar } from "@/components/home/HeroFeatureBar";
 
 const heroImage = "/images/hero/man-with-dog.png";
-const HERO_BG_SCALE = 0.9;
+const HERO_BG_SCALE = 0.81;
 const HERO_BG_LIFT_PX = 10;
-/** Pre-scale size so scale(0.9) still fills the hero edge-to-edge */
+/** Pre-scale size so the transform scale still fills the hero edge-to-edge */
 const HERO_BG_SIZE_PERCENT = 100 / HERO_BG_SCALE;
 
 export function Hero() {
