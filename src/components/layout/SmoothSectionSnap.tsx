@@ -4,24 +4,63 @@ import { useEffect } from "react";
 
 const MAIN_SELECTOR = ".site-scroll-main";
 const SECTION_SELECTOR = ".snap-section";
-/** Slightly slower than native snap, still responsive per wheel tick */
-const SNAP_DURATION_MS = 460;
+const SCROLL_SETTLE_MS = 130;
+const SNAP_DURATION_MS = 680;
 
 function easeOutCubic(progress: number) {
   return 1 - (1 - progress) ** 3;
 }
 
-function getSections(main: HTMLElement) {
-  return Array.from(main.querySelectorAll<HTMLElement>(SECTION_SELECTOR));
+function animateScrollTo(
+  main: HTMLElement,
+  targetTop: number,
+  onComplete?: () => void,
+) {
+  const startTop = main.scrollTop;
+  const distance = targetTop - startTop;
+  if (Math.abs(distance) < 2) {
+    onComplete?.();
+    return;
+  }
+
+  const startTime = performance.now();
+  let frameId = 0;
+
+  const step = (now: number) => {
+    const elapsed = now - startTime;
+    const progress = Math.min(elapsed / SNAP_DURATION_MS, 1);
+    main.scrollTop = startTop + distance * easeOutCubic(progress);
+
+    if (progress < 1) {
+      frameId = requestAnimationFrame(step);
+    } else {
+      onComplete?.();
+    }
+  };
+
+  cancelAnimationFrame(frameId);
+  frameId = requestAnimationFrame(step);
 }
 
-function sectionIndexAtScroll(sections: HTMLElement[], scrollTop: number) {
-  let index = 0;
-  for (let i = 0; i < sections.length; i++) {
-    const top = sections[i].offsetTop;
-    if (top <= scrollTop + 12) index = i;
+function getNearestSectionTop(main: HTMLElement) {
+  const sections = Array.from(
+    main.querySelectorAll<HTMLElement>(SECTION_SELECTOR),
+  );
+  if (sections.length === 0) return null;
+
+  const scrollTop = main.scrollTop;
+  let nearest = sections[0];
+  let nearestDistance = Math.abs(nearest.offsetTop - scrollTop);
+
+  for (const section of sections.slice(1)) {
+    const distance = Math.abs(section.offsetTop - scrollTop);
+    if (distance < nearestDistance) {
+      nearest = section;
+      nearestDistance = distance;
+    }
   }
-  return index;
+
+  return { top: nearest.offsetTop, distance: nearestDistance };
 }
 
 export function SmoothSectionSnap() {
@@ -30,24 +69,12 @@ export function SmoothSectionSnap() {
       return;
     }
 
-    const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)");
-    if (!finePointer.matches) {
-      return;
-    }
-
     const main = document.querySelector<HTMLElement>(MAIN_SELECTOR);
     if (!main) return;
 
-    let sections = getSections(main);
-    let targetIndex = sectionIndexAtScroll(sections, main.scrollTop);
+    let settleTimer: ReturnType<typeof setTimeout> | undefined;
     let isAnimating = false;
-    let frameId = 0;
     let snapSuspended = false;
-
-    const refreshSections = () => {
-      sections = getSections(main);
-      targetIndex = Math.min(targetIndex, sections.length - 1);
-    };
 
     const suspendSnap = () => {
       if (snapSuspended) return;
@@ -61,89 +88,61 @@ export function SmoothSectionSnap() {
       main.style.scrollSnapType = "";
     };
 
-    const cancelAnimation = () => {
-      cancelAnimationFrame(frameId);
-      frameId = 0;
-    };
+    const snapToNearest = () => {
+      if (isAnimating) return;
 
-    const goToIndex = (index: number) => {
-      refreshSections();
-      if (sections.length === 0) return;
-
-      const nextIndex = Math.max(0, Math.min(index, sections.length - 1));
-      targetIndex = nextIndex;
-      const targetTop = sections[nextIndex].offsetTop;
-
-      cancelAnimation();
-      isAnimating = true;
-      suspendSnap();
-
-      const startTop = main.scrollTop;
-      const distance = targetTop - startTop;
-      if (Math.abs(distance) < 2) {
-        isAnimating = false;
+      const nearest = getNearestSectionTop(main);
+      if (!nearest) {
         restoreSnap();
         return;
       }
 
-      const startTime = performance.now();
-
-      const step = (now: number) => {
-        const elapsed = now - startTime;
-        const progress = Math.min(elapsed / SNAP_DURATION_MS, 1);
-        main.scrollTop = startTop + distance * easeOutCubic(progress);
-
-        if (progress < 1) {
-          frameId = requestAnimationFrame(step);
-        } else {
-          main.scrollTop = targetTop;
-          isAnimating = false;
-          restoreSnap();
-        }
-      };
-
-      frameId = requestAnimationFrame(step);
-    };
-
-    const onWheel = (event: WheelEvent) => {
-      if (event.ctrlKey) return;
-
-      const delta = event.deltaY;
-      if (delta === 0) return;
-
-      event.preventDefault();
-
-      refreshSections();
-      if (sections.length === 0) return;
-
-      const direction = delta > 0 ? 1 : -1;
-      const baseIndex = isAnimating
-        ? targetIndex
-        : sectionIndexAtScroll(sections, main.scrollTop);
-      const nextIndex = baseIndex + direction;
-
-      if (nextIndex < 0 || nextIndex >= sections.length) {
+      const maxSnapDistance = main.clientHeight * 0.6;
+      if (nearest.distance < 2) {
+        restoreSnap();
+        return;
+      }
+      if (nearest.distance > maxSnapDistance) {
+        restoreSnap();
         return;
       }
 
-      goToIndex(nextIndex);
+      isAnimating = true;
+      suspendSnap();
+      animateScrollTo(main, nearest.top, () => {
+        isAnimating = false;
+        restoreSnap();
+      });
     };
 
-    const onResize = () => {
-      refreshSections();
+    const scheduleSettle = () => {
       if (isAnimating) return;
-      const idx = sectionIndexAtScroll(sections, main.scrollTop);
-      const section = sections[idx];
-      if (section) main.scrollTop = section.offsetTop;
+      suspendSnap();
+      if (settleTimer) clearTimeout(settleTimer);
+      settleTimer = setTimeout(snapToNearest, SCROLL_SETTLE_MS);
     };
 
-    main.addEventListener("wheel", onWheel, { passive: false });
-    window.addEventListener("resize", onResize);
+    const onScroll = () => {
+      if (isAnimating) return;
+      scheduleSettle();
+    };
+
+    const onPointerDown = () => {
+      if (isAnimating) return;
+      suspendSnap();
+    };
+
+    main.addEventListener("scroll", onScroll, { passive: true });
+    main.addEventListener("wheel", scheduleSettle, { passive: true });
+    main.addEventListener("pointerdown", onPointerDown, { passive: true });
+    main.addEventListener("touchend", scheduleSettle, { passive: true });
 
     return () => {
-      cancelAnimation();
-      main.removeEventListener("wheel", onWheel);
-      window.removeEventListener("resize", onResize);
+      if (settleTimer) clearTimeout(settleTimer);
+      main.removeEventListener("scroll", onScroll);
+      main.removeEventListener("wheel", scheduleSettle);
+      main.removeEventListener("pointerdown", onPointerDown);
+      main.removeEventListener("touchend", scheduleSettle);
       restoreSnap();
     };
   }, []);
