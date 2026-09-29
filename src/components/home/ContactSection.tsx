@@ -123,7 +123,7 @@ export function ContactSection() {
       <div className="site-container min-h-0 flex-1 overflow-y-auto py-4 sm:py-5 lg:overflow-hidden lg:py-6">
         <div className="grid gap-5 lg:grid-cols-12 lg:items-stretch lg:gap-6 lg:h-full">
           <div className="flex flex-col gap-3 lg:order-1 lg:col-span-4 lg:min-h-0 lg:gap-4">
-            <div className="grid min-h-0 flex-1 gap-3 sm:grid-cols-2 lg:grid-cols-1 lg:gap-3">
+            <div className="grid min-h-0 flex-1 grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-3">
               {maps.map((map) => (
                 <div key={map.title} className="flex min-h-0 flex-col">
                   <p
