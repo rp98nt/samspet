@@ -6,35 +6,54 @@ import { site, socialLinks } from "@/data/site";
 
 type SiteFooterProps = {
   compact?: boolean;
+  embedded?: boolean;
   className?: string;
 };
 
-export function SiteFooter({ compact = false, className = "" }: SiteFooterProps) {
+export function SiteFooter({
+  compact = false,
+  embedded = false,
+  className = "",
+}: SiteFooterProps) {
+  const tight = compact && embedded;
+  const iconClass = tight ? "h-6 w-6" : "h-8 w-8";
+  const linkClass = tight ? "text-sm font-semibold" : "text-lg font-semibold";
+
   return (
     <footer className={`bg-brand-charcoal text-white ${className}`.trim()}>
       <div
-        className={`mx-auto grid max-w-7xl px-4 sm:grid-cols-3 lg:px-6 ${
-          compact ? "gap-4 py-5 sm:gap-6 sm:py-6" : "gap-10 py-12"
+        className={`mx-auto grid w-full max-w-7xl px-4 sm:grid-cols-3 lg:px-6 ${
+          tight
+            ? "gap-2 py-3 sm:gap-4 sm:py-3.5"
+            : compact
+              ? "gap-4 py-5 sm:gap-6 sm:py-6"
+              : "gap-10 py-12"
         }`}
       >
         <div className="text-center sm:text-left">
-          <PhoneIcon className="mx-auto h-8 w-8 text-brand-green sm:mx-0" />
-          <p className="mt-3 text-xs font-bold uppercase tracking-widest">Call Us</p>
+          <PhoneIcon className={`mx-auto text-brand-green sm:mx-0 ${iconClass}`} />
+          <p className={`text-xs font-bold uppercase tracking-widest ${tight ? "mt-1.5" : "mt-3"}`}>
+            Call Us
+          </p>
           <PhoneLink
-            className="mt-2 block text-lg font-semibold"
+            className={`mt-1.5 block ${linkClass}`}
             linkClassName="hover:text-brand-green"
           />
         </div>
         <div className="text-center">
-          <MailIcon className="mx-auto h-8 w-8 text-brand-green" />
-          <p className="mt-3 text-xs font-bold uppercase tracking-widest">Email Us</p>
+          <MailIcon className={`mx-auto text-brand-green ${iconClass}`} />
+          <p className={`text-xs font-bold uppercase tracking-widest ${tight ? "mt-1.5" : "mt-3"}`}>
+            Email Us
+          </p>
           <CopyEmailLink
-            className="mt-2 inline-block cursor-pointer border-0 bg-transparent p-0 text-lg font-semibold text-brand-link no-underline hover:text-brand-green"
+            className={`mt-1.5 inline-block cursor-pointer border-0 bg-transparent p-0 font-semibold text-brand-link no-underline hover:text-brand-green ${tight ? "text-sm" : "text-lg"}`}
           />
         </div>
         <div className="text-center sm:text-right">
           <p className="text-xs font-bold uppercase tracking-widest">Follow Us</p>
-          <ul className="mt-4 flex flex-wrap justify-center gap-2 sm:justify-end">
+          <ul
+            className={`flex flex-wrap justify-center gap-2 sm:justify-end ${tight ? "mt-2" : "mt-4"}`}
+          >
             {socialLinks.map((social) => (
               <li key={social.label}>
                 <Link
@@ -50,8 +69,8 @@ export function SiteFooter({ compact = false, className = "" }: SiteFooterProps)
         </div>
       </div>
       <div
-        className={`border-t border-white/10 px-4 text-xs text-zinc-400 lg:px-6 ${
-          compact ? "py-2.5 sm:py-3" : "py-4"
+        className={`border-t border-white/10 px-4 text-zinc-400 lg:px-6 ${
+          tight ? "py-2 text-[10px] sm:text-[11px]" : compact ? "py-2.5 text-xs sm:py-3" : "py-4 text-xs"
         }`}
       >
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 sm:flex-row">
