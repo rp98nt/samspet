@@ -23,14 +23,12 @@ function FeatureIcon({ type }: { type: (typeof heroFeatures)[number]["icon"] }) 
           <path d="M12 11c-2.5 0-4.5 1.5-5 4 2 .5 4 .5 5 0 .5 2.5 3 4 5 4-.5-2.5-2.5-4-5-4Z" />
         </svg>
       );
-    case "brain":
+    case "target":
       return (
         <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden>
-          <path
-            d="M8 5a3 3 0 0 0-3 3v1a2 2 0 0 0 0 4v1a3 3 0 0 0 3 3m8-12a3 3 0 0 1 3 3v1a2 2 0 0 1 0 4v1a3 3 0 0 1-3 3M12 5v14"
-            stroke="currentColor"
-            strokeWidth="1.5"
-          />
+          <circle cx="12" cy="12" r="8" stroke="currentColor" strokeWidth="1.5" />
+          <circle cx="12" cy="12" r="3" stroke="currentColor" strokeWidth="1.5" />
+          <path d="M12 2v4M12 18v4M2 12h4M18 12h4" stroke="currentColor" strokeWidth="1.5" />
         </svg>
       );
     case "house":

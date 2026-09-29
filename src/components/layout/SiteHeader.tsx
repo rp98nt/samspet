@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { WhatsAppIcon } from "@/components/icons";
 import { navLinks, site } from "@/data/site";
 
 function LogoMark({ className }: { className?: string }) {
@@ -77,20 +78,25 @@ export function SiteHeader() {
             );
           })}
           <Link
-            href="#consultation"
+            href={site.whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             onClick={() => setOpen(false)}
             className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-brand-green px-6 py-3 font-[family-name:var(--font-montserrat)] text-xs font-bold uppercase tracking-wide text-black transition hover:bg-brand-green-dark lg:hidden"
           >
-            {site.hero.cta}
-            <span aria-hidden>→</span>
+            <WhatsAppIcon className="h-4 w-4 shrink-0" />
+            <span className="text-left leading-tight">{site.hero.cta}</span>
           </Link>
         </nav>
 
         <Link
-          href="#consultation"
-          className="hidden shrink-0 items-center rounded-full bg-brand-green px-4 py-2.5 font-[family-name:var(--font-montserrat)] text-[10px] font-bold uppercase tracking-wide text-black transition hover:bg-brand-green-dark lg:inline-flex xl:px-5 xl:text-xs"
+          href={site.whatsappUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hidden shrink-0 items-center gap-2 rounded-full bg-brand-green px-4 py-2.5 font-[family-name:var(--font-montserrat)] text-[10px] font-bold uppercase leading-tight tracking-wide text-black transition hover:bg-brand-green-dark lg:inline-flex xl:px-5 xl:text-xs"
         >
-          {site.hero.cta}
+          <WhatsAppIcon className="h-4 w-4 shrink-0" />
+          <span className="max-w-[9.5rem] text-left">{site.hero.cta}</span>
         </Link>
       </div>
     </header>

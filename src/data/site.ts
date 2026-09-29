@@ -13,20 +13,22 @@ export const site = {
   behanceReference:
     "https://www.behance.net/gallery/199142029/Dog-Trainer-Website-Design-Website-Branding",
   logoTagline: "TRAIN • CARE • BUILD BONDS",
+  whatsappUrl:
+    "https://wa.me/918552949196?text=Hi%2C%20I%27d%20like%20to%20book%20a%20consultation%20for%20dog%20training.",
   hero: {
     eyebrow: "Professional Dog Training",
-    titleLead: "Build a Better Bond With",
-    titleAccent: "Your Dog.",
+    titleLead: "Build a Better",
+    titleAccent: "Bond With Your Dog.",
     description:
       "Expert obedience training, behavior modification and personalized programs for a well-behaved, confident and happy dog.",
-    cta: "Book a Consultation",
+    cta: "Book Consultation via WhatsApp",
   },
 };
 
 export const heroFeatures = [
   { label: "Obedience Training", icon: "shield" },
   { label: "Puppy Training", icon: "paw" },
-  { label: "Behavior Modification", icon: "brain" },
+  { label: "Behavior Modification", icon: "target" },
   { label: "Board & Train", icon: "house" },
 ] as const;
 

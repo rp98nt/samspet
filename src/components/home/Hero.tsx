@@ -1,107 +1,35 @@
 import Image from "next/image";
-import { ConsultationForm } from "@/components/home/ConsultationForm";
 import { HeroCopy } from "@/components/home/HeroCopy";
 import { HeroFeatureBar } from "@/components/home/HeroFeatureBar";
 
-const heroImageDesktop = "/images/hero/man-with-dog.png";
-const heroImageMobile = "/images/hero/man-with-dog-mobile.png";
-
-/** man-with-dog.png from media/manWithDog2.png Ã¢ÂÂ fixed px frame, scaled for display */
-const HERO_BG_NATIVE_WIDTH_PX = 1959;
-const HERO_BG_NATIVE_HEIGHT_PX = 725;
-const HERO_BG_DISPLAY_SCALE = 1.35 * 0.8;
-const HERO_BG_WIDTH_PX = Math.round(
-  HERO_BG_NATIVE_WIDTH_PX * HERO_BG_DISPLAY_SCALE,
-);
-const HERO_BG_HEIGHT_PX = Math.round(
-  HERO_BG_NATIVE_HEIGHT_PX * HERO_BG_DISPLAY_SCALE,
-);
-const HERO_BG_OFFSET_DOWN_PX = 15;
+const heroImage = "/images/hero/man-with-dog.png";
 
 export function Hero() {
   return (
     <section
       id="home"
-      className="relative flex flex-col bg-brand-charcoal lg:h-[720px] lg:overflow-hidden"
+      className="relative flex min-h-[calc(100svh-var(--site-header-height))] flex-col overflow-hidden bg-brand-charcoal"
     >
-      {/* Mobile: copy over image; form below image */}
-      <div className="flex flex-col lg:hidden">
-        <div className="relative aspect-[575/725] w-full bg-[#1a1a1a]">
-          <Image
-            src={heroImageMobile}
-            alt="Dog trainer standing with a Doberman"
-            fill
-            priority
-            className="object-contain object-center"
-            sizes="100vw"
-          />
-          <div
-            className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/80 via-black/25 to-transparent"
-            aria-hidden
-          />
-          <div className="absolute inset-x-0 top-0 z-10 px-4 pb-4 pt-5 sm:px-5 sm:pt-6">
-            <HeroCopy layout="mobile" />
-          </div>
-        </div>
-        <div className="bg-brand-charcoal px-4 py-5 sm:px-5">
-          <ConsultationForm />
-        </div>
-        <HeroFeatureBar />
+      <Image
+        src={heroImage}
+        alt="Dog trainer standing with a Doberman"
+        fill
+        priority
+        className="object-cover object-center"
+        sizes="100vw"
+      />
+
+      <div className="pointer-events-none absolute inset-0" aria-hidden>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-black/20 to-black/70" />
+        <div className="absolute inset-y-0 left-0 w-full max-w-3xl bg-gradient-to-r from-black/80 via-black/45 to-transparent" />
       </div>
 
-      {/* Desktop: hero image + copy/form live above the feature bar (image not behind strip) */}
-      <div className="relative hidden min-h-0 flex-1 flex-col lg:flex">
-        <div className="relative flex min-h-0 flex-1 flex-col overflow-hidden">
-          <div className="absolute inset-0 bg-[#1a1a1a]">
-            <div
-              className="absolute left-1/2 top-1/2"
-              style={{
-                width: HERO_BG_WIDTH_PX,
-                height: HERO_BG_HEIGHT_PX,
-                transform: `translate(-50%, calc(-50% + ${HERO_BG_OFFSET_DOWN_PX}px))`,
-              }}
-            >
-              <Image
-                src={heroImageDesktop}
-                alt="Dog trainer standing with a Doberman"
-                fill
-                priority
-                className="object-contain object-center"
-                sizes={`${HERO_BG_WIDTH_PX}px`}
-              />
-            </div>
-          </div>
+      <div className="site-container relative z-10 flex min-h-[calc(100svh-var(--site-header-height))] flex-1 flex-col justify-center py-8 pb-28 sm:py-10 sm:pb-32 lg:pb-36">
+        <HeroCopy />
+      </div>
 
-          <div
-            className="pointer-events-none absolute inset-0 z-[1]"
-            aria-hidden
-          >
-            <div
-              className="absolute inset-y-0 left-0 w-[min(100%,42%)] bg-gradient-to-r from-black/80 via-black/55 to-transparent"
-            />
-            <div
-              className="absolute inset-y-0 right-0 w-[min(100%,42%)] bg-gradient-to-l from-black/80 via-black/55 to-transparent"
-            />
-          </div>
-
-          <div
-            className="site-container relative z-10 flex min-h-0 flex-1 flex-col lg:py-0"
-          >
-            <div className="grid min-h-0 flex-1 grid-cols-12 gap-6 lg:items-stretch">
-              <div className="flex items-center lg:col-span-4">
-                <HeroCopy layout="desktop" />
-              </div>
-              <div className="hidden lg:block lg:col-span-4" aria-hidden />
-              <div className="flex h-full min-h-0 items-center justify-end lg:col-span-4">
-                <ConsultationForm />
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="relative z-10 shrink-0 bg-brand-charcoal">
-          <HeroFeatureBar />
-        </div>
+      <div className="absolute inset-x-0 bottom-0 z-10">
+        <HeroFeatureBar />
       </div>
     </section>
   );
