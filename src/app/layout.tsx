@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Montserrat, Open_Sans } from "next/font/google";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { SiteHeader } from "@/components/layout/SiteHeader";
-import { TopBar } from "@/components/layout/TopBar";
 import { site } from "@/data/site";
 import "./globals.css";
 
@@ -31,7 +30,6 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${montserrat.variable} ${openSans.variable} h-full`}
     >
       <body className="flex min-h-full flex-col font-sans antialiased">
-        <TopBar />
         <SiteHeader />
         <main className="flex flex-1 flex-col">
           {children}
