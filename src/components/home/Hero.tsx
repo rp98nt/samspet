@@ -3,22 +3,35 @@ import { HeroCopy } from "@/components/home/HeroCopy";
 import { HeroFeatureBar } from "@/components/home/HeroFeatureBar";
 
 const heroImage = "/images/hero/man-with-dog.png";
+const HERO_BG_SCALE = 0.9;
+const HERO_BG_LIFT_PX = 10;
+/** Pre-scale size so scale(0.9) still fills the hero edge-to-edge */
+const HERO_BG_SIZE_PERCENT = 100 / HERO_BG_SCALE;
 
 export function Hero() {
   return (
     <section
       id="home"
-      className="relative flex min-h-[calc(100svh-var(--site-header-height))] flex-col overflow-hidden bg-brand-charcoal"
+      className="relative flex min-h-[calc(100svh-var(--site-header-height))] flex-col overflow-hidden bg-black"
     >
-      <div className="absolute inset-0 origin-center scale-[0.90] -translate-y-[20px]">
-        <Image
-          src={heroImage}
-          alt="Dog trainer standing with a Doberman"
-          fill
-          priority
-          className="object-cover object-center"
-          sizes="100vw"
-        />
+      <div className="absolute inset-0 overflow-hidden">
+        <div
+          className="absolute left-1/2 top-1/2"
+          style={{
+            width: `${HERO_BG_SIZE_PERCENT}%`,
+            height: `${HERO_BG_SIZE_PERCENT}%`,
+            transform: `translate(-50%, calc(-50% - ${HERO_BG_LIFT_PX}px)) scale(${HERO_BG_SCALE})`,
+          }}
+        >
+          <Image
+            src={heroImage}
+            alt="Dog trainer standing with a Doberman"
+            fill
+            priority
+            className="object-cover object-center"
+            sizes="100vw"
+          />
+        </div>
       </div>
 
       <div className="pointer-events-none absolute inset-0" aria-hidden>

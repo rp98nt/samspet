@@ -25,7 +25,7 @@ export function SiteHeader() {
 
   return (
     <header
-      className="site-main-header sticky top-0 z-50 shrink-0 border-b border-white/10 bg-brand-charcoal/95 backdrop-blur-md lg:bg-black/80"
+      className="site-main-header sticky top-0 z-50 shrink-0 border-b border-white/10 bg-black"
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 lg:px-6">
         <Link href="#home" className="flex min-w-0 items-center gap-2 text-white sm:gap-3">
