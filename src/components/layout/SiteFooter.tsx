@@ -61,16 +61,16 @@ export function SiteFooter({
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-brand-link/20 hover:bg-brand-link/30"
+                  className="inline-flex opacity-90 transition hover:opacity-100"
                   aria-label={social.label}
                 >
                   <Image
                     src={social.iconSrc}
                     alt=""
-                    width={20}
-                    height={20}
+                    width={24}
+                    height={24}
                     unoptimized
-                    className="h-5 w-5 shrink-0"
+                    className="h-6 w-6 shrink-0"
                   />
                 </Link>
               </li>
