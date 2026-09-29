@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <>
       <div
-        className="flex h-[calc(100svh-var(--site-header-height,4.5rem))] max-h-[calc(100svh-var(--site-header-height,4.5rem))] min-h-0 shrink-0 flex-col"
+        className="snap-section flex h-[calc(100svh-var(--site-header-height,4.5rem))] max-h-[calc(100svh-var(--site-header-height,4.5rem))] min-h-0 shrink-0 flex-col"
       >
         <Hero />
       </div>

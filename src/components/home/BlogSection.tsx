@@ -41,7 +41,7 @@ export function BlogSection() {
   return (
     <section
       id="blog"
-      className="flex h-[100svh] w-full min-h-0 flex-col overflow-hidden bg-[#f0f1ee]"
+      className="snap-section flex h-[100svh] w-full min-h-0 flex-col overflow-hidden bg-[#f0f1ee]"
       aria-labelledby="blog-hero-title"
     >
       <div className="relative w-full shrink-0 bg-[#141f14] pb-4 sm:pb-5">
@@ -86,7 +86,7 @@ export function BlogSection() {
         <WaveDivider />
       </div>
 
-      <div className="site-container flex min-h-0 flex-1 flex-col py-3 sm:py-4">
+      <div className="site-container flex min-h-0 w-full flex-1 flex-col py-3 sm:py-4">
         <div className="flex shrink-0 flex-wrap gap-1.5 sm:gap-2">
           {blogCategories.map((category) => {
             const isActive = category === activeCategory;

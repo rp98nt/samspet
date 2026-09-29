@@ -164,7 +164,7 @@ export function ContactSection() {
   return (
     <section
       id="contact"
-      className="flex h-[100svh] w-full min-h-0 flex-col overflow-hidden bg-[#f0f1ee]"
+      className="snap-section flex h-[100svh] w-full min-h-0 flex-col overflow-hidden bg-[#f0f1ee]"
       aria-labelledby="contact-hero-title"
     >
       <div className="relative w-full shrink-0 overflow-hidden">

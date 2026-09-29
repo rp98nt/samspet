@@ -102,7 +102,7 @@ export function GroupPrivateTrainingSection() {
   return (
     <section
       id="group-private-training"
-      className="flex h-[100svh] w-full min-h-0 flex-col overflow-hidden bg-[#0a120a]"
+      className="snap-section flex h-[100svh] w-full min-h-0 flex-col overflow-hidden bg-[#0a120a]"
       aria-labelledby="group-private-training-title"
     >
       <div className="relative flex min-h-0 w-full flex-1 flex-col">
