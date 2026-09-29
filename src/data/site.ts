@@ -365,7 +365,16 @@ export const contactPage = {
     image:
       "https://images.unsplash.com/photo-1601758228041-f3b2795255f1?auto=format&fit=crop&w=600&q=80",
   },
-  mapQuery: "Sam Pets RP Kennel Chhatrapati Sambhajinagar",
+  maps: [
+    {
+      title: "Training Center",
+      query: "Chhatrapati Sambhajinagar Maharashtra dog training",
+    },
+    {
+      title: "Kennel & Boarding",
+      query: "Sam Pets RP Kennel Chhatrapati Sambhajinagar",
+    },
+  ],
 } as const;
 
 export const socialLinks = [

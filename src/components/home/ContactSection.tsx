@@ -9,6 +9,10 @@ import { contactPage, site } from "@/data/site";
 const fieldClass =
   "w-full rounded-md border border-zinc-600/80 bg-zinc-900/90 py-2.5 pl-10 pr-3 text-sm text-white placeholder:text-zinc-500 focus:border-brand-green focus:outline-none focus:ring-1 focus:ring-brand-green sm:py-3";
 
+function mapEmbedSrc(query: string) {
+  return `https://maps.google.com/maps?q=${encodeURIComponent(query)}&z=14&output=embed`;
+}
+
 function FieldIcon({
   children,
   align = "center",
@@ -78,9 +82,8 @@ function ContactIconBadge({ children }: { children: React.ReactNode }) {
 }
 
 export function ContactSection() {
-  const { hero, form, visit, mapQuery } = contactPage;
+  const { hero, form, visit, maps } = contactPage;
   const [submitted, setSubmitted] = useState(false);
-  const mapSrc = `https://maps.google.com/maps?q=${encodeURIComponent(mapQuery)}&z=14&output=embed`;
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -118,57 +121,58 @@ export function ContactSection() {
       </div>
 
       <div className="site-container min-h-0 flex-1 overflow-y-auto py-4 sm:py-5 lg:overflow-hidden lg:py-6">
-        <div className="grid gap-5 lg:grid-cols-12 lg:items-center lg:gap-6 lg:h-full">
-          <div className="space-y-4 lg:col-span-3 lg:space-y-5">
-            <div className="flex items-start gap-3">
-              <ContactIconBadge>
-                <PhoneIcon className="h-4 w-4 sm:h-5 sm:w-5" />
-              </ContactIconBadge>
-              <div className="min-w-0 text-sm text-zinc-800">
-                <p className="font-semibold text-zinc-900">Phone</p>
-                <PhoneLink
-                  className="mt-0.5 block text-brand-muted"
-                  linkClassName="hover:text-brand-green-dark"
+        <div className="grid gap-5 lg:grid-cols-12 lg:items-stretch lg:gap-6 lg:h-full">
+          <div className="flex flex-col gap-3 lg:order-1 lg:col-span-4 lg:min-h-0 lg:gap-4">
+            <div className="grid min-h-0 flex-1 gap-3 sm:grid-cols-2 lg:grid-cols-1 lg:gap-3">
+              {maps.map((map) => (
+                <div key={map.title} className="flex min-h-0 flex-col">
+                  <p
+                    className="mb-1.5 font-[family-name:var(--font-montserrat)] text-xs font-bold uppercase tracking-wide text-zinc-700 sm:text-sm"
+                  >
+                    {map.title}
+                  </p>
+                  <div
+                    className="relative min-h-[7rem] flex-1 overflow-hidden rounded-xl bg-white shadow-md ring-1 ring-zinc-200 sm:min-h-[8rem]"
+                  >
+                    <iframe
+                      title={`Map: ${map.title}`}
+                      src={mapEmbedSrc(map.query)}
+                      className="absolute inset-0 h-full w-full border-0"
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade"
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div
+              className="flex shrink-0 gap-3 rounded-2xl bg-[#141f14] p-3 shadow-lg sm:gap-4 sm:p-4"
+            >
+              <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-lg sm:h-20 sm:w-20">
+                <Image
+                  src={visit.image}
+                  alt=""
+                  fill
+                  className="object-cover"
+                  sizes="80px"
                 />
               </div>
-            </div>
-            <div className="flex items-start gap-3">
-              <ContactIconBadge>
-                <MailIcon className="h-4 w-4 sm:h-5 sm:w-5" />
-              </ContactIconBadge>
-              <div className="min-w-0 text-sm text-zinc-800">
-                <p className="font-semibold text-zinc-900">Email</p>
-                <a
-                  href={`mailto:${site.email}`}
-                  className="mt-0.5 block break-all text-brand-muted hover:text-brand-green-dark"
+              <div className="min-w-0 text-white">
+                <h3
+                  className="font-[family-name:var(--font-montserrat)] text-sm font-bold sm:text-base"
                 >
-                  {site.email}
-                </a>
-              </div>
-            </div>
-            <div className="flex items-start gap-3">
-              <ContactIconBadge>
-                <LocationIcon className="h-4 w-4 sm:h-5 sm:w-5" />
-              </ContactIconBadge>
-              <div className="min-w-0 text-sm text-zinc-800">
-                <p className="font-semibold text-zinc-900">Location</p>
-                <p className="mt-0.5 text-brand-muted">{site.city}</p>
-              </div>
-            </div>
-            <div className="flex items-start gap-3">
-              <ContactIconBadge>
-                <ClockIcon className="h-4 w-4 sm:h-5 sm:w-5" />
-              </ContactIconBadge>
-              <div className="min-w-0 text-sm text-zinc-800">
-                <p className="font-semibold text-zinc-900">Hours</p>
-                <p className="mt-0.5 text-brand-muted">{site.hours}</p>
+                  {visit.title}
+                </h3>
+                <p className="mt-1 text-xs leading-relaxed text-white/85 sm:text-sm">
+                  {visit.description}
+                </p>
               </div>
             </div>
           </div>
 
-          <div className="flex justify-center lg:col-span-4 lg:justify-center">
+          <div className="flex justify-center lg:order-2 lg:col-span-4 lg:justify-center">
             <div
-              className="glass-morphism flex w-full max-w-[22rem] flex-col rounded-2xl p-5 sm:max-w-md sm:p-6 lg:max-w-[21rem]"
+              className="glass-morphism flex w-full max-w-[22rem] flex-col rounded-2xl bg-zinc-900/88 p-5 shadow-xl sm:max-w-md sm:p-6 lg:max-w-[21rem]"
             >
               <h3
                 className="font-[family-name:var(--font-montserrat)] text-base font-bold text-white sm:text-lg"
@@ -243,37 +247,49 @@ export function ContactSection() {
             </div>
           </div>
 
-          <div className="flex flex-col gap-3 lg:col-span-5 lg:gap-4 lg:min-h-0">
-            <div className="relative min-h-[9rem] flex-1 overflow-hidden rounded-xl bg-white shadow-md ring-1 ring-zinc-200 sm:min-h-[10rem]">
-              <iframe
-                title={`Map: ${site.name}`}
-                src={mapSrc}
-                className="absolute inset-0 h-full w-full border-0"
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              />
-            </div>
-            <div
-              className="flex gap-3 rounded-2xl bg-[#141f14] p-3 shadow-lg sm:gap-4 sm:p-4"
-            >
-              <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-lg sm:h-20 sm:w-20">
-                <Image
-                  src={visit.image}
-                  alt=""
-                  fill
-                  className="object-cover"
-                  sizes="80px"
+          <div className="space-y-4 lg:order-3 lg:col-span-4 lg:space-y-5 lg:pl-2">
+            <div className="flex items-start gap-3">
+              <ContactIconBadge>
+                <PhoneIcon className="h-4 w-4 sm:h-5 sm:w-5" />
+              </ContactIconBadge>
+              <div className="min-w-0 text-sm text-zinc-800">
+                <p className="font-semibold text-zinc-900">Phone</p>
+                <PhoneLink
+                  className="mt-0.5 block text-brand-muted"
+                  linkClassName="hover:text-brand-green-dark"
                 />
               </div>
-              <div className="min-w-0 text-white">
-                <h3
-                  className="font-[family-name:var(--font-montserrat)] text-sm font-bold sm:text-base"
+            </div>
+            <div className="flex items-start gap-3">
+              <ContactIconBadge>
+                <MailIcon className="h-4 w-4 sm:h-5 sm:w-5" />
+              </ContactIconBadge>
+              <div className="min-w-0 text-sm text-zinc-800">
+                <p className="font-semibold text-zinc-900">Email</p>
+                <a
+                  href={`mailto:${site.email}`}
+                  className="mt-0.5 block break-all text-brand-muted hover:text-brand-green-dark"
                 >
-                  {visit.title}
-                </h3>
-                <p className="mt-1 text-xs leading-relaxed text-white/85 sm:text-sm">
-                  {visit.description}
-                </p>
+                  {site.email}
+                </a>
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <ContactIconBadge>
+                <LocationIcon className="h-4 w-4 sm:h-5 sm:w-5" />
+              </ContactIconBadge>
+              <div className="min-w-0 text-sm text-zinc-800">
+                <p className="font-semibold text-zinc-900">Location</p>
+                <p className="mt-0.5 text-brand-muted">{site.city}</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <ContactIconBadge>
+                <ClockIcon className="h-4 w-4 sm:h-5 sm:w-5" />
+              </ContactIconBadge>
+              <div className="min-w-0 text-sm text-zinc-800">
+                <p className="font-semibold text-zinc-900">Hours</p>
+                <p className="mt-0.5 text-brand-muted">{site.hours}</p>
               </div>
             </div>
           </div>
