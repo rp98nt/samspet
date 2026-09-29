@@ -1,6 +1,11 @@
 import Link from "next/link";
 import { CopyEmailLink } from "@/components/CopyEmailLink";
-import { MailIcon, PhoneIcon } from "@/components/icons";
+import {
+  FacebookIcon,
+  InstagramIcon,
+  MailIcon,
+  PhoneIcon,
+} from "@/components/icons";
 import { PhoneLink } from "@/components/PhoneLink";
 import { site, socialLinks } from "@/data/site";
 
@@ -9,6 +14,11 @@ type SiteFooterProps = {
   embedded?: boolean;
   className?: string;
 };
+
+const socialIconComponents = {
+  facebook: FacebookIcon,
+  instagram: InstagramIcon,
+} as const;
 
 export function SiteFooter({
   compact = false,
@@ -54,17 +64,20 @@ export function SiteFooter({
           <ul
             className={`flex flex-wrap justify-center gap-2 sm:justify-end ${tight ? "mt-2" : "mt-4"}`}
           >
-            {socialLinks.map((social) => (
-              <li key={social.label}>
-                <Link
-                  href={social.href}
-                  className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-brand-link/20 text-xs font-bold text-brand-link hover:bg-brand-link/30"
-                  aria-label={social.label}
-                >
-                  {social.label[0]}
-                </Link>
-              </li>
-            ))}
+            {socialLinks.map((social) => {
+              const Icon = socialIconComponents[social.icon];
+              return (
+                <li key={social.label}>
+                  <Link
+                    href={social.href}
+                    className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-brand-link/20 text-brand-link hover:bg-brand-link/30"
+                    aria-label={social.label}
+                  >
+                    <Icon className="h-4 w-4" />
+                  </Link>
+                </li>
+              );
+            })}
           </ul>
         </div>
       </div>
