@@ -18,7 +18,7 @@ export function Hero() {
             fill
             priority
             quality={90}
-            className="h-full w-full object-cover object-center"
+            className="h-full w-full object-cover object-top"
             sizes="100vw"
           />
         </div>
