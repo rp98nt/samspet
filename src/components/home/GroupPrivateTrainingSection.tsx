@@ -102,10 +102,10 @@ export function GroupPrivateTrainingSection() {
   return (
     <section
       id="group-private-training"
-      className="flex h-[calc((100svh-var(--site-header-height))*1.001)] min-h-0 flex-col overflow-hidden bg-[#0a120a]"
+      className="flex h-[100svh] w-full min-h-0 flex-col overflow-hidden bg-[#0a120a]"
       aria-labelledby="group-private-training-title"
     >
-      <div className="relative flex min-h-0 flex-1 flex-col">
+      <div className="relative flex min-h-0 w-full flex-1 flex-col">
         <Image
           src={hero.image}
           alt=""
@@ -152,9 +152,9 @@ export function GroupPrivateTrainingSection() {
       </div>
 
       <div
-        className="relative z-10 shrink-0 bg-[#141f14]/95 sm:h-16 lg:h-[4.5rem]"
+        className="relative z-10 w-full shrink-0 bg-[#141f14]/95"
       >
-        <div className="site-container flex h-14 items-center gap-4 sm:h-16 lg:h-[4.5rem]">
+        <div className="site-container flex h-14 w-full items-center gap-4 sm:h-16 lg:h-[4.5rem]">
         <div className="relative h-10 w-10 shrink-0 overflow-hidden rounded-full border-2 border-brand-green/40 sm:h-12 sm:w-12">
           <Image
             src={quote.portrait}
