@@ -3,7 +3,7 @@ import Link from "next/link";
 import { aboutPage } from "@/data/site";
 
 function ValueIcon({ type }: { type: (typeof aboutPage.values)[number]["icon"] }) {
-  const className = "h-8 w-8 shrink-0 text-brand-green";
+  const className = "h-7 w-7 shrink-0 text-brand-green sm:h-8 sm:w-8";
   switch (type) {
     case "paw-gear":
       return (
@@ -69,8 +69,11 @@ export function AboutUsSection() {
   const { hero, story, values, stats } = aboutPage;
 
   return (
-    <div id="about">
-      <section className="relative overflow-hidden bg-[#141f14]">
+    <section
+      id="about"
+      className="flex h-[100svh] w-full min-h-0 flex-col overflow-hidden"
+    >
+      <div className="relative w-full shrink-0 overflow-hidden bg-[#141f14]">
         <div className="absolute inset-0">
           <Image
             src={hero.backgroundImage}
@@ -87,56 +90,56 @@ export function AboutUsSection() {
         </div>
 
         <div
-          className="site-container relative grid items-center gap-4 py-[1.575rem] sm:gap-4 sm:py-[1.8rem] lg:grid-cols-2 lg:gap-5 lg:py-9"
+          className="site-container relative grid items-center gap-3 py-4 sm:gap-4 sm:py-5 lg:grid-cols-2 lg:py-6"
         >
           <div className="text-white">
             <h2
-              className="font-[family-name:var(--font-montserrat)] text-2xl font-bold sm:text-3xl lg:text-[1.85rem]"
+              className="font-[family-name:var(--font-montserrat)] text-xl font-bold sm:text-2xl lg:text-[1.75rem]"
             >
               {hero.title}
             </h2>
-            <p className="mt-2 max-w-md text-xs leading-relaxed text-white/90 sm:text-sm">
+            <p className="mt-1.5 max-w-md text-xs leading-relaxed text-white/90 sm:text-sm">
               {hero.subtitle}
             </p>
           </div>
           <div
-            className="relative mx-auto aspect-[4/3] w-full max-w-lg origin-center scale-[0.45] lg:mx-0 lg:ml-auto lg:aspect-auto lg:h-[126px] lg:max-w-none lg:scale-100"
+            className="relative mx-auto aspect-[4/3] w-full max-w-[220px] sm:max-w-xs lg:mx-0 lg:ml-auto lg:aspect-auto lg:h-[7.5rem] lg:max-w-none"
           >
             <Image
               src={hero.portraitImage}
               alt="Doberman portrait"
               fill
               className="object-contain object-center lg:object-right"
-              sizes="(max-width: 1024px) 90vw, 480px"
+              sizes="(max-width: 1024px) 40vw, 480px"
             />
           </div>
         </div>
-      </section>
+      </div>
 
-      <section className="bg-white py-[2.625rem] lg:py-[3.75rem]">
-        <div className="site-container">
-          <div className="grid items-start gap-7 lg:grid-cols-12 lg:gap-6">
-            <div className="lg:col-span-4">
+      <div className="flex min-h-0 w-full flex-1 flex-col bg-white">
+        <div className="site-container flex min-h-0 flex-1 items-stretch py-4 sm:py-5 lg:py-6">
+          <div className="grid min-h-0 w-full flex-1 grid-cols-1 items-stretch gap-5 lg:grid-cols-12 lg:gap-5">
+            <div className="flex min-h-0 flex-col lg:col-span-4">
               <h3
-                className="font-[family-name:var(--font-montserrat)] text-3xl font-bold text-zinc-900 sm:text-4xl"
+                className="font-[family-name:var(--font-montserrat)] text-2xl font-bold text-zinc-900 sm:text-3xl"
               >
                 {story.title}
               </h3>
-              <div className="mt-4 space-y-3 text-sm leading-relaxed text-brand-muted sm:text-base">
+              <div className="mt-3 min-h-0 flex-1 space-y-2 overflow-y-auto text-sm leading-relaxed text-brand-muted sm:text-base">
                 {story.paragraphs.map((paragraph) => (
                   <p key={paragraph.slice(0, 40)}>{paragraph}</p>
                 ))}
               </div>
               <Link
                 href={story.ctaHref}
-                className="mt-6 inline-flex items-center gap-2 rounded-full bg-brand-green px-8 py-2.5 font-[family-name:var(--font-montserrat)] text-xs font-bold uppercase tracking-wide text-black transition hover:bg-brand-green-dark sm:text-sm"
+                className="mt-4 inline-flex w-fit shrink-0 items-center gap-2 rounded-full bg-brand-green px-6 py-2 font-[family-name:var(--font-montserrat)] text-xs font-bold uppercase tracking-wide text-black transition hover:bg-brand-green-dark sm:text-sm"
               >
                 {story.cta}
                 <span aria-hidden>→</span>
               </Link>
             </div>
 
-            <div className="relative aspect-[3/4] overflow-hidden rounded-2xl shadow-lg lg:col-span-4 lg:aspect-auto lg:min-h-[315px]">
+            <div className="relative min-h-[10rem] overflow-hidden rounded-2xl shadow-lg sm:min-h-[12rem] lg:col-span-4 lg:min-h-0">
               <Image
                 src={story.trainerImage}
                 alt="Trainer with a dog"
@@ -147,19 +150,21 @@ export function AboutUsSection() {
             </div>
 
             <div
-              className="rounded-2xl bg-[#1a2618] px-5 py-4 shadow-xl sm:px-6 sm:py-6 lg:col-span-4"
+              className="flex min-h-0 flex-col justify-center rounded-2xl bg-[#1a2618] px-4 py-3 shadow-xl sm:px-5 sm:py-4 lg:col-span-4"
             >
-              <ul className="space-y-4">
+              <ul className="space-y-3">
                 {values.map((item) => (
-                  <li key={item.title} className="flex gap-4">
+                  <li key={item.title} className="flex gap-3">
                     <ValueIcon type={item.icon} />
                     <div>
                       <p
-                        className="font-[family-name:var(--font-montserrat)] text-sm font-bold text-brand-green sm:text-base"
+                        className="font-[family-name:var(--font-montserrat)] text-sm font-bold text-brand-green"
                       >
                         {item.title}
                       </p>
-                      <p className="mt-1 text-sm text-white/85">{item.description}</p>
+                      <p className="mt-0.5 text-xs text-white/85 sm:text-sm">
+                        {item.description}
+                      </p>
                     </div>
                   </li>
                 ))}
@@ -167,29 +172,29 @@ export function AboutUsSection() {
             </div>
           </div>
         </div>
-      </section>
+      </div>
 
-      <section className="border-t border-zinc-200 bg-[#f3f4f2] py-7 lg:py-9">
+      <div className="w-full shrink-0 border-t border-zinc-200 bg-[#f3f4f2] py-4 sm:py-5">
         <div className="site-container">
-          <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 sm:grid-cols-3 sm:gap-3">
-          {stats.map((stat, index) => (
-            <div
-              key={stat.label}
-              className={`flex flex-col items-center text-center ${
-                index > 0 ? "sm:border-l sm:border-zinc-300" : ""
-              }`}
-            >
-              <p
-                className="font-[family-name:var(--font-montserrat)] text-3xl font-bold text-zinc-900 sm:text-4xl"
+          <div className="mx-auto grid w-full max-w-5xl grid-cols-1 gap-4 sm:grid-cols-3 sm:gap-2">
+            {stats.map((stat, index) => (
+              <div
+                key={stat.label}
+                className={`flex flex-col items-center text-center ${
+                  index > 0 ? "sm:border-l sm:border-zinc-300" : ""
+                }`}
               >
-                {stat.value}
-              </p>
-              <p className="mt-1.5 text-sm text-brand-muted sm:text-base">{stat.label}</p>
-            </div>
-          ))}
+                <p
+                  className="font-[family-name:var(--font-montserrat)] text-2xl font-bold text-zinc-900 sm:text-3xl"
+                >
+                  {stat.value}
+                </p>
+                <p className="mt-1 text-xs text-brand-muted sm:text-sm">{stat.label}</p>
+              </div>
+            ))}
           </div>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
   );
 }
