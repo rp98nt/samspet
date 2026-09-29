@@ -89,14 +89,14 @@ function MapCard({
   query: string;
 }) {
   return (
-    <div className="flex min-h-0 flex-col">
+    <div className="flex min-h-0 flex-1 flex-col">
       <p
-        className="mb-1.5 font-[family-name:var(--font-montserrat)] text-xs font-bold uppercase tracking-wide text-zinc-700 sm:text-sm"
+        className="mb-1.5 shrink-0 font-[family-name:var(--font-montserrat)] text-xs font-bold uppercase tracking-wide text-zinc-700 sm:text-sm"
       >
         {title}
       </p>
       <div
-        className="relative h-32 overflow-hidden rounded-xl bg-white shadow-md ring-1 ring-zinc-200 sm:h-36"
+        className="relative min-h-[9rem] flex-1 overflow-hidden rounded-xl bg-white shadow-md ring-1 ring-zinc-200 lg:min-h-[10rem]"
       >
         <iframe
           title={`Map: ${title}`}
@@ -125,7 +125,7 @@ export function ContactSection() {
       className="flex h-[calc(100svh-var(--site-header-height))] min-h-0 flex-col overflow-hidden bg-[#f0f1ee]"
       aria-labelledby="contact-hero-title"
     >
-      <div className="relative h-[22%] min-h-[7rem] shrink-0 sm:min-h-[8rem] lg:min-h-[9rem]">
+      <div className="relative h-[18%] min-h-[6.5rem] shrink-0 sm:min-h-[7rem] lg:min-h-[7.5rem]">
         <Image
           src={hero.image}
           alt=""
@@ -149,19 +149,46 @@ export function ContactSection() {
         </div>
       </div>
 
-      <div className="site-container min-h-0 flex-1 overflow-y-auto py-4 sm:py-5 lg:overflow-hidden lg:py-6">
-        <div className="flex min-h-0 flex-col gap-4 lg:gap-5 lg:h-full">
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-12 lg:gap-5 lg:items-start">
-            <div className="sm:col-span-1 lg:col-span-4">
-              <MapCard title={maps[0].title} query={maps[0].query} />
-            </div>
-            <div className="sm:col-span-1 lg:col-span-4">
-              <MapCard title={maps[1].title} query={maps[1].query} />
+      <div className="site-container flex min-h-0 flex-1 flex-col overflow-y-auto py-3 sm:py-4 lg:py-5">
+        <div className="flex min-h-0 flex-1 flex-col gap-3 lg:gap-4">
+          <div
+            className="grid min-h-0 flex-1 gap-4 sm:grid-cols-2 lg:grid-cols-12 lg:items-stretch lg:gap-5"
+          >
+            <div
+              className="flex min-h-0 flex-col gap-3 sm:col-span-2 lg:col-span-8 lg:h-full lg:gap-4"
+            >
+              <div className="grid min-h-0 flex-1 grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4">
+                <MapCard title={maps[0].title} query={maps[0].query} />
+                <MapCard title={maps[1].title} query={maps[1].query} />
+              </div>
+              <div
+                className="flex shrink-0 gap-3 rounded-2xl bg-[#141f14] p-3 shadow-lg sm:gap-4 sm:p-4"
+              >
+                <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-lg sm:h-16 sm:w-16">
+                  <Image
+                    src={visit.image}
+                    alt=""
+                    fill
+                    className="object-cover"
+                    sizes="64px"
+                  />
+                </div>
+                <div className="min-w-0 text-white">
+                  <h3
+                    className="font-[family-name:var(--font-montserrat)] text-sm font-bold sm:text-base"
+                  >
+                    {visit.title}
+                  </h3>
+                  <p className="mt-1 text-xs leading-relaxed text-white/85 sm:text-sm">
+                    {visit.description}
+                  </p>
+                </div>
+              </div>
             </div>
 
-            <div className="sm:col-span-2 lg:col-span-4">
+            <div className="flex min-h-0 sm:col-span-2 lg:col-span-4 lg:h-full">
             <div
-              className="glass-morphism-dark flex h-full w-full max-w-[22rem] flex-col rounded-2xl p-5 sm:mx-auto sm:max-w-md sm:p-6 lg:mx-0 lg:max-w-none"
+              className="glass-morphism-dark flex h-full min-h-0 w-full max-w-[22rem] flex-1 flex-col rounded-2xl p-5 sm:mx-auto sm:max-w-md sm:p-6 lg:mx-0 lg:max-w-none"
             >
               <h3
                 className="font-[family-name:var(--font-montserrat)] text-base font-bold text-brand-green sm:text-lg"
@@ -175,7 +202,7 @@ export function ContactSection() {
               ) : (
                 <form
                   onSubmit={handleSubmit}
-                  className="mt-5 flex flex-col gap-3.5 sm:mt-6 sm:gap-4"
+                  className="mt-5 flex min-h-0 flex-1 flex-col gap-3 sm:mt-6 sm:gap-3.5"
                 >
                   <div className="relative">
                     <FieldIcon>
@@ -219,9 +246,9 @@ export function ContactSection() {
                     <textarea
                       name="message"
                       required
-                      rows={4}
+                      rows={3}
                       placeholder="Message"
-                      className={`${fieldClass} resize-none pt-3`}
+                      className={`${fieldClass} min-h-[4.5rem] flex-1 resize-none pt-3 lg:min-h-[5rem]`}
                     />
                   </div>
                   <button
@@ -237,34 +264,8 @@ export function ContactSection() {
             </div>
           </div>
 
-          <div className="grid gap-4 lg:grid-cols-12">
-            <div
-              className="flex gap-3 rounded-2xl bg-[#141f14] p-3 shadow-lg sm:gap-4 sm:p-4 lg:col-span-8"
-            >
-              <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-lg sm:h-16 sm:w-16">
-                <Image
-                  src={visit.image}
-                  alt=""
-                  fill
-                  className="object-cover"
-                  sizes="64px"
-                />
-              </div>
-              <div className="min-w-0 text-white">
-                <h3
-                  className="font-[family-name:var(--font-montserrat)] text-sm font-bold sm:text-base"
-                >
-                  {visit.title}
-                </h3>
-                <p className="mt-1 text-xs leading-relaxed text-white/85 sm:text-sm">
-                  {visit.description}
-                </p>
-              </div>
-            </div>
-          </div>
-
           <div
-            className="grid shrink-0 grid-cols-1 gap-4 border-t border-zinc-300/80 pt-4 sm:grid-cols-2 lg:grid-cols-4 lg:gap-3 lg:pt-5"
+            className="grid shrink-0 grid-cols-1 gap-3 border-t border-zinc-300/80 bg-[#f0f1ee] pt-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-4 lg:pt-4"
           >
             <div className="flex min-w-0 items-center gap-3">
               <ContactIconBadge>
