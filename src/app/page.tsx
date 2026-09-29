@@ -10,7 +10,11 @@ import { Hero } from "@/components/home/Hero";
 export default function Home() {
   return (
     <>
-      <Hero />
+      <div
+        className="flex h-[calc(100svh-var(--site-header-height,4.5rem))] max-h-[calc(100svh-var(--site-header-height,4.5rem))] min-h-0 shrink-0 flex-col"
+      >
+        <Hero />
+      </div>
       <AboutUsSection />
       <PuppyTrainingSection />
       <GroupPrivateTrainingSection />

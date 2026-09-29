@@ -13,6 +13,7 @@
   --brand-link: #4a90e2;
   --brand-chalk: #2d3436;
   --brand-chalk-accent: #a3c644;
+  /* Updated at runtime from .site-main-header measured height */
   --site-header-height: 4.5rem;
 }
 

@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { WhatsAppIcon } from "@/components/icons";
 import { navLinks, site } from "@/data/site";
 
@@ -22,10 +22,34 @@ function LogoMark({ className }: { className?: string }) {
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
+  const headerRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const el = headerRef.current;
+    if (!el) return;
+
+    const syncHeaderHeight = () => {
+      document.documentElement.style.setProperty(
+        "--site-header-height",
+        `${el.getBoundingClientRect().height}px`,
+      );
+    };
+
+    syncHeaderHeight();
+    const observer = new ResizeObserver(syncHeaderHeight);
+    observer.observe(el);
+    window.addEventListener("resize", syncHeaderHeight);
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("resize", syncHeaderHeight);
+    };
+  }, [open]);
 
   return (
     <header
-      className="site-main-header sticky top-0 z-50 shrink-0 border-b border-white/10 bg-black"
+      ref={headerRef}
+      className="site-main-header relative z-50 shrink-0 border-b border-white/10 bg-black"
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 lg:px-6">
         <Link href="#home" className="flex min-w-0 items-center gap-2 text-white sm:gap-3">

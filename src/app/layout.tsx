@@ -31,7 +31,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body className="flex min-h-full flex-col font-sans antialiased">
         <SiteHeader />
-        <main className="flex flex-1 flex-col">
+        <main className="flex min-h-0 flex-1 flex-col">
           {children}
         </main>
         <SiteFooter />

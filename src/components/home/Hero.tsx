@@ -8,9 +8,8 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="relative flex min-h-[calc(100svh-var(--site-header-height))] flex-col overflow-hidden bg-black"
+      className="relative flex h-full min-h-0 flex-col overflow-hidden bg-black"
     >
-      {/* Image fills only the area above the feature bar (header bottom → feature bar top). */}
       <div className="relative flex min-h-0 min-w-0 flex-1 flex-col">
         <div className="pointer-events-none absolute inset-0 overflow-hidden">
           <Image
@@ -25,7 +24,7 @@ export function Hero() {
         </div>
 
         <div className="pointer-events-none absolute inset-0" aria-hidden>
-          <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-black/20 to-black/70" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/15 to-black/65" />
           <div className="absolute inset-y-0 left-0 w-full max-w-3xl bg-gradient-to-r from-black/80 via-black/45 to-transparent" />
         </div>
 
