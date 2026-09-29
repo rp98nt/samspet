@@ -22,7 +22,7 @@ export function ConsultationBanner() {
           friend needs.
         </p>
         <Link
-          href="#consultation"
+          href="#contact"
           className="shrink-0 rounded-md bg-brand-charcoal px-8 py-3 text-sm font-bold uppercase tracking-wide text-white hover:bg-black"
         >
           Request a Consultation
