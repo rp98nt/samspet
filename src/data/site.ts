@@ -46,7 +46,7 @@ export const aboutPage = {
       "We use modern, positive training techniques tailored to each dog's personality and your goals — from puppy foundations to behavior modification — so your companion becomes confident, calm, and happy at home and in the community.",
     ],
     cta: "Learn More",
-    ctaHref: "#services",
+    ctaHref: "#puppy-training",
     trainerImage: "/images/hero/man-with-dog.png",
   },
   values: [
@@ -130,7 +130,7 @@ export const groupPrivateTrainingPage = {
       "Suitable for all breeds & ages",
     ],
     cta: "View Group Classes",
-    ctaHref: "#schedule",
+    ctaHref: "#consultation",
   },
   private: {
     title: "Private Obedience Training",
