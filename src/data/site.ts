@@ -372,17 +372,6 @@ export const contactPage = {
           "https://images.unsplash.com/photo-1601758228041-f3b2795255f1?auto=format&fit=crop&w=600&q=80",
       },
     },
-    {
-      title: "Kennel & Boarding",
-      query: "Sam Pets RP Kennel Chhatrapati Sambhajinagar",
-      visit: {
-        title: "Visit Our Kennel",
-        description:
-          "Come see our facility, meet our team and tour our boarding spaces.",
-        image:
-          "https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=600&q=80",
-      },
-    },
   ],
 } as const;
 

@@ -202,9 +202,10 @@ export function ContactSection() {
             <div
               className="flex min-h-0 flex-col gap-3 sm:col-span-2 lg:col-span-8 lg:h-full lg:gap-4"
             >
-              <div className="grid min-h-0 flex-1 grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4">
-                <MapLocationColumn location={maps[0]} />
-                <MapLocationColumn location={maps[1]} />
+              <div className="flex min-h-0 flex-1 flex-col gap-3 sm:gap-4">
+                {maps.map((location) => (
+                  <MapLocationColumn key={location.title} location={location} />
+                ))}
               </div>
             </div>
 
