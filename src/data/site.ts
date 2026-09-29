@@ -360,10 +360,10 @@ export const contactPage = {
   },
   maps: [
     {
-      title: "Training Center",
+      title: "Store",
       query: "Chhatrapati Sambhajinagar Maharashtra dog training",
       visit: {
-        title: "Visit Our Training Center",
+        title: "Visit Our Store",
         description:
           "Tour our training floors, meet trainers, and see classes in action.",
         image:
