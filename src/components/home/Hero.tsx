@@ -4,7 +4,7 @@ import { HeroFeatureBar } from "@/components/home/HeroFeatureBar";
 
 const heroImage = "/images/hero/man-with-dog.png";
 /** Uniform scale of the full image (1 = native fit; lower = smaller with black margins). */
-const HERO_BG_SCALE = 0.7;
+const HERO_BG_SCALE = 0.8;
 const HERO_BG_LIFT_PX = 10;
 
 export function Hero() {
