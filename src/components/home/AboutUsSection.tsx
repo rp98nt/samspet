@@ -73,7 +73,9 @@ export function AboutUsSection() {
       id="about"
       className="snap-section flex w-full min-h-0 flex-col overflow-hidden"
     >
-      <div className="relative w-full shrink-0 overflow-hidden bg-[#141f14]">
+      <div
+        className="relative w-full shrink-0 overflow-hidden bg-[#141f14] max-lg:max-h-[7.5rem]"
+      >
         <div className="absolute inset-0">
           <Image
             src={hero.backgroundImage}
@@ -90,38 +92,40 @@ export function AboutUsSection() {
         </div>
 
         <div
-          className="site-container relative grid grid-cols-1 items-center gap-3 py-3 text-center sm:gap-4 sm:py-5 lg:grid-cols-2 lg:py-6 lg:text-left"
+          className="site-container relative grid max-lg:max-h-[7.5rem] max-lg:grid-cols-[minmax(0,1fr)_auto] max-lg:items-center max-lg:gap-2.5 max-lg:py-2 max-lg:text-left grid-cols-1 items-center gap-3 py-3 text-center sm:gap-4 sm:py-5 lg:grid-cols-2 lg:py-6 lg:text-left"
         >
-          <div className="text-white">
+          <div className="min-w-0 text-white max-lg:pr-1">
             <h2
-              className="font-[family-name:var(--font-montserrat)] text-xl font-bold sm:text-2xl lg:text-[1.75rem]"
+              className="font-[family-name:var(--font-montserrat)] font-bold max-lg:text-left max-lg:text-base max-lg:leading-tight text-xl sm:text-2xl lg:text-[1.75rem]"
             >
               {hero.title}
             </h2>
-            <p className="mx-auto mt-1.5 max-w-md text-xs leading-relaxed text-white/90 sm:text-sm lg:mx-0">
+            <p
+              className="mx-auto max-w-md max-lg:mx-0 max-lg:mt-0.5 max-lg:line-clamp-3 max-lg:text-left max-lg:text-[10px] max-lg:leading-snug mt-1.5 text-xs leading-relaxed text-white/90 sm:text-sm"
+            >
               {hero.subtitle}
             </p>
           </div>
           <div
-            className="relative mx-auto aspect-[4/3] w-full max-w-[220px] sm:max-w-xs lg:mx-0 lg:ml-auto lg:aspect-auto lg:h-[7.5rem] lg:max-w-none"
+            className="relative mx-auto aspect-[4/3] w-full max-w-[220px] shrink-0 max-lg:mx-0 max-lg:h-[4.5rem] max-lg:w-[5.25rem] max-lg:justify-self-end sm:max-w-xs lg:mx-0 lg:ml-auto lg:aspect-auto lg:h-[7.5rem] lg:max-w-none"
           >
             <Image
               src={hero.portraitImage}
               alt="Doberman portrait"
               fill
-              className="object-contain object-center lg:object-right"
-              sizes="(max-width: 1024px) 40vw, 480px"
+              className="object-contain object-center max-lg:object-right lg:object-right"
+              sizes="(max-width: 1024px) 28vw, 480px"
             />
           </div>
         </div>
       </div>
 
-      <div className="section-body-scroll flex min-h-0 w-full flex-1 flex-col bg-white">
-        <div className="site-container flex min-h-0 flex-1 items-stretch py-3 sm:py-5 lg:py-6">
-          <div className="grid min-h-0 w-full flex-1 grid-cols-1 items-stretch gap-4 sm:gap-5 lg:grid-cols-12 lg:gap-5">
-            <div className="flex min-h-0 flex-col lg:col-span-4">
+      <div className="section-body-scroll flex min-h-0 w-full flex-1 flex-col bg-white max-lg:min-h-0">
+        <div className="site-container flex min-h-0 flex-1 items-stretch py-2 max-lg:py-3 sm:py-5 lg:py-6">
+          <div className="grid min-h-0 w-full flex-1 grid-cols-1 items-stretch gap-3 max-lg:gap-3.5 sm:gap-5 lg:grid-cols-12 lg:gap-5">
+            <div className="flex min-h-0 flex-col max-lg:order-1 lg:col-span-4">
               <h3
-                className="font-[family-name:var(--font-montserrat)] text-2xl font-bold text-zinc-900 sm:text-3xl"
+                className="font-[family-name:var(--font-montserrat)] text-xl font-bold text-zinc-900 max-lg:text-left sm:text-3xl lg:text-2xl"
               >
                 {story.title}
               </h3>
@@ -139,7 +143,9 @@ export function AboutUsSection() {
               </Link>
             </div>
 
-            <div className="relative min-h-[9rem] overflow-hidden rounded-2xl shadow-lg sm:min-h-[11rem] lg:col-span-4 lg:min-h-0">
+            <div
+              className="relative min-h-[10.5rem] overflow-hidden rounded-2xl shadow-lg max-lg:order-2 sm:min-h-[11rem] lg:col-span-4 lg:min-h-0"
+            >
               <Image
                 src={story.trainerImage}
                 alt="Trainer with a dog"
@@ -150,7 +156,7 @@ export function AboutUsSection() {
             </div>
 
             <div
-              className="flex min-h-0 flex-col justify-center rounded-2xl bg-[#1a2618] px-4 py-3 shadow-xl sm:px-5 sm:py-4 lg:col-span-4"
+              className="flex min-h-0 flex-col justify-center rounded-2xl bg-[#1a2618] px-4 py-3 shadow-xl max-lg:order-3 max-lg:py-2.5 sm:px-5 sm:py-4 lg:col-span-4"
             >
               <ul className="space-y-3">
                 {values.map((item) => (
@@ -174,7 +180,7 @@ export function AboutUsSection() {
         </div>
       </div>
 
-      <div className="w-full shrink-0 border-t border-zinc-200 bg-[#f3f4f2] py-3 sm:py-5">
+      <div className="w-full shrink-0 border-t border-zinc-200 bg-[#f3f4f2] py-2.5 max-lg:py-2.5 sm:py-5">
         <div className="site-container">
           <div className="mx-auto grid w-full max-w-6xl grid-cols-2 gap-3 sm:gap-2 lg:grid-cols-4">
             {stats.map((stat, index) => (
