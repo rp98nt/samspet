@@ -378,7 +378,4 @@ export const contactPage = {
 export const socialLinks = [
   { label: "Facebook", href: "#" },
   { label: "Instagram", href: "#" },
-  { label: "LinkedIn", href: "#" },
-  { label: "Pinterest", href: "#" },
-  { label: "Twitter", href: "#" },
 ] as const;
