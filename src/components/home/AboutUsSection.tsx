@@ -176,7 +176,7 @@ export function AboutUsSection() {
 
       <div className="w-full shrink-0 border-t border-zinc-200 bg-[#f3f4f2] py-4 sm:py-5">
         <div className="site-container">
-          <div className="mx-auto grid w-full max-w-5xl grid-cols-1 gap-4 sm:grid-cols-3 sm:gap-2">
+          <div className="mx-auto grid w-full max-w-6xl grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-2 lg:grid-cols-4">
             {stats.map((stat, index) => (
               <div
                 key={stat.label}
