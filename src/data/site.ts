@@ -83,7 +83,7 @@ export const aboutPage = {
 
 export const puppyTrainingPage = {
   hero: {
-    title: "Semi Adult Training",
+    title: "Semi Adult Dog Training",
     subtitle: "The right start for a lifetime of good behavior.",
     image:
       "https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=1920&q=80",

@@ -109,21 +109,22 @@ export function PuppyTrainingSection() {
   return (
     <section
       id="puppy-training"
-      className="flex h-[calc(100svh-var(--site-header-height))] min-h-0 flex-col overflow-hidden bg-white"
+      className="flex h-[100svh] w-full min-h-0 flex-col overflow-hidden bg-white"
       aria-labelledby="puppy-training-title"
     >
-      <div className="relative h-[26%] min-h-[7.5rem] shrink-0 sm:h-[28%] lg:min-h-[9rem]">
-        <Image
-          src={hero.image}
-          alt=""
-          fill
-          className="object-cover object-center"
-          sizes="100vw"
-          priority={false}
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-black/25 to-transparent" />
-        <div className="absolute inset-0 flex items-center">
-          <div className="site-container">
+      <div className="relative w-full shrink-0 overflow-hidden">
+        <div className="relative min-h-[7.5rem] w-full lg:min-h-[9rem]">
+          <Image
+            src={hero.image}
+            alt=""
+            fill
+            className="object-cover object-center"
+            sizes="100vw"
+            priority={false}
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-black/25 to-transparent" />
+          <div className="absolute inset-0 flex items-center">
+            <div className="site-container py-4 sm:py-5 lg:py-6">
             <h2
               id="puppy-training-title"
               className="font-[family-name:var(--font-montserrat)] text-2xl font-bold text-white sm:text-3xl lg:text-4xl"
@@ -133,11 +134,12 @@ export function PuppyTrainingSection() {
             <p className="mt-1 max-w-md text-sm text-white/95 sm:mt-2 sm:text-base lg:text-lg">
               {hero.subtitle}
             </p>
+            </div>
           </div>
         </div>
       </div>
 
-      <div className="site-container flex min-h-0 flex-1 flex-col justify-center py-4 sm:py-5 lg:grid lg:grid-cols-2 lg:items-center lg:gap-10 lg:py-6">
+      <div className="site-container flex min-h-0 w-full flex-1 flex-col justify-center py-3 sm:py-4 lg:grid lg:grid-cols-2 lg:items-center lg:gap-8 lg:py-5">
         <div>
           <h3
             className="font-[family-name:var(--font-montserrat)] text-xl font-bold text-zinc-900 sm:text-2xl"
@@ -185,23 +187,25 @@ export function PuppyTrainingSection() {
         </div>
       </div>
 
-      <div className="relative h-14 shrink-0 sm:h-16 lg:h-[4.5rem]">
-        <Image
+      <div className="relative w-full shrink-0 overflow-hidden">
+        <div className="relative h-14 w-full sm:h-16 lg:h-[4.5rem]">
+          <Image
           src={tagline.image}
           alt=""
           fill
           className="object-cover object-[center_30%]"
           sizes="100vw"
-        />
-        <div className="absolute inset-0 bg-black/25" />
-        <div className="absolute inset-0 flex items-center">
-          <div className="site-container flex justify-end">
-          <p
-            className="flex items-center gap-2 font-[family-name:var(--font-montserrat)] text-base italic text-white sm:text-lg lg:text-xl"
-          >
-            {tagline.text}
-            <PawAccent className="h-5 w-5 text-brand-green sm:h-6 sm:w-6" />
-          </p>
+          />
+          <div className="absolute inset-0 bg-black/25" />
+          <div className="absolute inset-0 flex items-center">
+            <div className="site-container flex w-full justify-end">
+              <p
+                className="flex items-center gap-2 font-[family-name:var(--font-montserrat)] text-base italic text-white sm:text-lg lg:text-xl"
+              >
+                {tagline.text}
+                <PawAccent className="h-5 w-5 text-brand-green sm:h-6 sm:w-6" />
+              </p>
+            </div>
           </div>
         </div>
       </div>
