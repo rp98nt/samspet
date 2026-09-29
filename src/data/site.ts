@@ -29,7 +29,7 @@ export const heroFeatures = [
   { label: "Obedience Training", icon: "shield" },
   { label: "Puppy Training", icon: "paw" },
   { label: "Behavior Modification", icon: "target" },
-  { label: "Board & Train", icon: "house" },
+  { label: "Training Hostel", icon: "house" },
 ] as const;
 
 export const aboutPage = {
