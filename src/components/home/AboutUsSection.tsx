@@ -123,14 +123,22 @@ export function AboutUsSection() {
       <div className="section-body-scroll flex min-h-0 w-full flex-1 flex-col bg-white max-lg:min-h-0">
         <div className="site-container flex min-h-0 flex-1 items-stretch py-2 max-lg:py-3 sm:py-5 lg:py-6">
           <div className="grid min-h-0 w-full flex-1 grid-cols-1 items-stretch gap-3 max-lg:gap-3.5 sm:gap-5 lg:grid-cols-12 lg:gap-5">
-            <div className="flex min-h-0 flex-col max-lg:order-2 lg:col-span-4">
-              <h3
-                className="font-[family-name:var(--font-montserrat)] text-2xl font-bold text-zinc-900 max-lg:text-left max-lg:text-xl sm:text-3xl"
-              >
-                {story.title}
-              </h3>
+            <div
+              className="flex min-h-0 flex-col max-lg:order-2 max-lg:rounded-2xl max-lg:border max-lg:border-zinc-200/90 max-lg:bg-gradient-to-b max-lg:from-white max-lg:to-[#f5f6f4] max-lg:px-4 max-lg:py-4 max-lg:shadow-sm lg:col-span-4"
+            >
+              <div className="max-lg:mb-3 lg:contents">
+                <h3
+                  className="font-[family-name:var(--font-montserrat)] text-2xl font-bold text-zinc-900 max-lg:text-left max-lg:text-lg max-lg:tracking-tight sm:text-3xl"
+                >
+                  {story.title}
+                </h3>
+                <span
+                  className="mt-2 hidden h-1 w-10 rounded-full bg-brand-green max-lg:block"
+                  aria-hidden
+                />
+              </div>
               <div
-                className="mt-3 min-h-0 flex-1 space-y-2 overflow-y-auto text-sm leading-relaxed text-brand-muted max-lg:block lg:hidden sm:text-base"
+                className="mt-3 min-h-0 flex-1 space-y-2 overflow-y-auto text-sm leading-relaxed text-brand-muted max-lg:mt-0 max-lg:flex-none max-lg:overflow-visible max-lg:text-[0.9375rem] max-lg:leading-[1.65] max-lg:text-zinc-700 lg:hidden sm:text-base"
               >
                 <p>{story.mobileSummary}</p>
               </div>
@@ -143,7 +151,7 @@ export function AboutUsSection() {
               </div>
               <Link
                 href={story.ctaHref}
-                className="mt-4 inline-flex w-fit shrink-0 items-center gap-2 rounded-full bg-brand-green px-6 py-2 font-[family-name:var(--font-montserrat)] text-xs font-bold uppercase tracking-wide text-black transition hover:bg-brand-green-dark sm:text-sm"
+                className="mt-4 inline-flex w-fit shrink-0 items-center justify-center gap-2 rounded-full bg-brand-green px-6 py-2 font-[family-name:var(--font-montserrat)] text-xs font-bold uppercase tracking-wide text-black transition hover:bg-brand-green-dark max-lg:mt-5 max-lg:w-full max-lg:py-2.5 sm:text-sm lg:mt-4 lg:w-fit"
               >
                 {story.cta}
                 <span aria-hidden>→</span>
