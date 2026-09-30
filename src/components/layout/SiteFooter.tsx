@@ -24,6 +24,15 @@ export function SiteFooter({
     ? "max-lg:text-[10px] max-lg:tracking-wide"
     : "";
   const mobileTightLink = tight ? "max-lg:text-[11px] max-lg:font-semibold" : "";
+  const tightContactCol = tight
+    ? "max-lg:col-span-1 max-lg:flex max-lg:flex-col max-lg:items-center max-lg:text-center"
+    : "max-lg:col-span-1";
+  const tightContactHead = tight
+    ? "max-lg:flex max-lg:items-center max-lg:justify-center max-lg:gap-1.5"
+    : "";
+  const tightContactAlign = tight
+    ? "max-lg:text-center max-lg:leading-snug lg:text-left"
+    : "";
 
   return (
     <footer className={`bg-brand-charcoal text-white ${className}`.trim()}>
@@ -36,16 +45,12 @@ export function SiteFooter({
               : "gap-10 py-12"
         }`}
       >
-        <div className="text-center sm:text-left max-lg:col-span-1">
-          <div
-            className={
-              tight
-                ? "max-lg:flex max-lg:items-center max-lg:justify-start max-lg:gap-1.5"
-                : ""
-            }
-          >
+        <div
+          className={`text-center ${tight ? "lg:text-left" : "sm:text-left"} ${tightContactCol}`}
+        >
+          <div className={tightContactHead}>
             <PhoneIcon
-              className={`mx-auto shrink-0 text-brand-green sm:mx-0 ${iconClass} ${mobileTightIcon} max-lg:mx-0`}
+              className={`mx-auto shrink-0 text-brand-green ${tight ? "lg:mx-0" : "sm:mx-0"} ${iconClass} ${mobileTightIcon}`}
             />
             <p
               className={`text-xs font-bold uppercase tracking-widest ${mobileTightLabel} ${
@@ -56,20 +61,16 @@ export function SiteFooter({
             </p>
           </div>
           <PhoneLink
-            className={`mt-1.5 block ${linkClass} ${mobileTightLink} max-lg:mt-0.5 max-lg:text-left max-lg:leading-snug`}
+            className={`mt-1.5 block ${linkClass} ${mobileTightLink} max-lg:mt-0.5 ${tightContactAlign}`}
             linkClassName="hover:text-brand-green"
           />
         </div>
-        <div className="text-center sm:text-left max-lg:col-span-1 max-lg:text-left">
-          <div
-            className={
-              tight
-                ? "max-lg:flex max-lg:items-center max-lg:justify-start max-lg:gap-1.5"
-                : ""
-            }
-          >
+        <div
+          className={`text-center ${tight ? "lg:text-left" : "sm:text-left"} ${tightContactCol}`}
+        >
+          <div className={tightContactHead}>
             <MailIcon
-              className={`mx-auto shrink-0 text-brand-green sm:mx-0 ${iconClass} ${mobileTightIcon} max-lg:mx-0`}
+              className={`mx-auto shrink-0 text-brand-green ${tight ? "lg:mx-0" : "sm:mx-0"} ${iconClass} ${mobileTightIcon}`}
             />
             <p
               className={`text-xs font-bold uppercase tracking-widest ${mobileTightLabel} ${
@@ -80,14 +81,16 @@ export function SiteFooter({
             </p>
           </div>
           <CopyEmailLink
-            className={`mt-1.5 block cursor-pointer border-0 bg-transparent p-0 text-left font-semibold text-brand-link no-underline hover:text-brand-green ${tight ? "text-sm" : "text-lg"} ${mobileTightLink} max-lg:mt-0.5 max-lg:w-full max-lg:break-all max-lg:leading-snug`}
+            className={`mt-1.5 block cursor-pointer border-0 bg-transparent p-0 font-semibold text-brand-link no-underline hover:text-brand-green ${tight ? "text-sm" : "text-lg"} ${mobileTightLink} max-lg:mt-0.5 ${tight ? "max-lg:text-center max-lg:break-all lg:text-left" : "text-left"}`}
           />
         </div>
-        <div className="text-center sm:text-right max-lg:col-span-2">
+        <div
+          className={`text-center ${tight ? "lg:text-right max-lg:col-span-2 max-lg:flex max-lg:flex-col max-lg:items-center" : "sm:text-right max-lg:col-span-2"}`}
+        >
           <div
             className={
               tight
-                ? "max-lg:flex max-lg:items-center max-lg:justify-center max-lg:gap-2.5 lg:block"
+                ? "max-lg:flex max-lg:w-full max-lg:items-center max-lg:justify-center max-lg:gap-2.5 lg:block"
                 : ""
             }
           >
@@ -97,8 +100,8 @@ export function SiteFooter({
               Follow Us
             </p>
             <ul
-              className={`flex flex-wrap justify-center gap-2 sm:justify-end ${
-                tight ? "max-lg:mt-0 mt-2" : "mt-4"
+              className={`flex flex-wrap justify-center gap-2 ${
+                tight ? "max-lg:mt-0 max-lg:justify-center lg:mt-2 lg:justify-end" : "mt-4 sm:justify-end"
               }`}
             >
               {socialLinks.map((social) => (
