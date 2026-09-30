@@ -1,11 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ValueIcon } from "@/components/about/ValueIcon";
 import { SiteFooter } from "@/components/layout/SiteFooter";
-import { aboutPage } from "@/data/site";
+import { aboutStoryPage } from "@/data/aboutStory";
+import { aboutPage, site } from "@/data/site";
 
 export function AboutPageContent() {
-  const { hero, story, values, stats } = aboutPage;
+  const { hero, story, stats } = aboutPage;
+  const { title, subtitle, intro, sections, closing } = aboutStoryPage;
 
   return (
     <div className="flex min-h-0 flex-1 flex-col bg-[#f0f1ee]">
@@ -36,12 +37,12 @@ export function AboutPageContent() {
               <span aria-hidden>←</span> Back to home
             </Link>
             <h1
-              className="font-[family-name:var(--font-montserrat)] text-3xl font-bold sm:text-4xl lg:text-[2.5rem]"
+              className="font-[family-name:var(--font-montserrat)] text-3xl font-bold leading-tight sm:text-4xl lg:text-[2.5rem]"
             >
-              {hero.title}
+              {title}
             </h1>
-            <p className="mx-auto mt-3 max-w-md text-sm leading-relaxed text-white/90 sm:text-base lg:mx-0">
-              {hero.subtitle}
+            <p className="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-white/90 sm:text-base lg:mx-0">
+              {subtitle}
             </p>
           </div>
           <div
@@ -58,65 +59,70 @@ export function AboutPageContent() {
         </div>
       </div>
 
-      <div className="site-container py-10 sm:py-12 lg:py-14">
-        <div className="grid gap-8 lg:grid-cols-12 lg:gap-10">
-          <div className="lg:col-span-5">
-            <h2
-              className="font-[family-name:var(--font-montserrat)] text-2xl font-bold text-zinc-900 sm:text-3xl"
-            >
-              {story.title}
-            </h2>
-            <div className="mt-2 h-1 w-12 rounded-full bg-brand-green" aria-hidden />
-            <div className="mt-6 space-y-4 text-base leading-relaxed text-brand-muted">
-              {story.paragraphs.map((paragraph) => (
-                <p key={paragraph.slice(0, 40)}>{paragraph}</p>
-              ))}
-            </div>
-            <Link
-              href="/#contact"
-              className="mt-8 inline-flex items-center gap-2 rounded-full bg-brand-green px-6 py-3 font-[family-name:var(--font-montserrat)] text-xs font-bold uppercase tracking-wide text-black transition hover:bg-brand-green-dark sm:text-sm"
-            >
-              Get in touch
-              <span aria-hidden>→</span>
-            </Link>
-          </div>
-
-          <div className="relative min-h-[16rem] overflow-hidden rounded-2xl shadow-lg sm:min-h-[20rem] lg:col-span-7">
-            <Image
-              src={story.trainerImage}
-              alt="Trainer with a dog"
-              fill
-              className="object-cover object-center"
-              sizes="(max-width: 1024px) 100vw, 60vw"
-            />
-          </div>
+      <article className="site-container max-w-3xl py-10 sm:py-12 lg:max-w-4xl lg:py-14">
+        <div className="space-y-4 text-base leading-relaxed text-brand-muted sm:text-[1.0625rem] sm:leading-[1.75]">
+          {intro.map((paragraph) => (
+            <p key={paragraph.slice(0, 48)}>{paragraph}</p>
+          ))}
         </div>
 
-        <div
-          className="mt-10 rounded-2xl bg-[#1a2618] px-5 py-6 shadow-xl sm:mt-12 sm:px-8 sm:py-8"
+        <div className="relative my-10 min-h-[14rem] overflow-hidden rounded-2xl shadow-lg sm:my-12 sm:min-h-[18rem]">
+          <Image
+            src={story.trainerImage}
+            alt="Trainer with a dog"
+            fill
+            className="object-cover object-center"
+            sizes="(max-width: 1024px) 100vw, 896px"
+          />
+        </div>
+
+        <div className="space-y-10 sm:space-y-12">
+          {sections.map((block, index) => (
+            <section key={block.title ?? `section-${index}`}>
+              {block.title ? (
+                <h2
+                  className="font-[family-name:var(--font-montserrat)] text-xl font-bold text-zinc-900 sm:text-2xl"
+                >
+                  {block.title}
+                </h2>
+              ) : null}
+              <div
+                className={`space-y-4 text-base leading-relaxed text-brand-muted sm:text-[1.0625rem] sm:leading-[1.75] ${
+                  block.title ? "mt-4" : ""
+                }`}
+              >
+                {block.paragraphs.map((paragraph) => (
+                  <p key={paragraph.slice(0, 48)}>{paragraph}</p>
+                ))}
+              </div>
+            </section>
+          ))}
+        </div>
+
+        <section
+          className="mt-12 rounded-2xl border border-zinc-200/80 bg-white px-5 py-8 shadow-sm sm:mt-14 sm:px-8 sm:py-10"
         >
           <h2
-            className="font-[family-name:var(--font-montserrat)] text-xl font-bold text-white sm:text-2xl"
+            className="font-[family-name:var(--font-montserrat)] text-xl font-bold text-zinc-900 sm:text-2xl"
           >
-            What we stand for
+            {closing.title}
           </h2>
-          <ul className="mt-6 grid gap-5 sm:grid-cols-2">
-            {values.map((item) => (
-              <li key={item.title} className="flex gap-3">
-                <ValueIcon type={item.icon} />
-                <div>
-                  <p
-                    className="font-[family-name:var(--font-montserrat)] text-sm font-bold text-brand-green sm:text-base"
-                  >
-                    {item.title}
-                  </p>
-                  <p className="mt-1 text-sm text-white/85">{item.description}</p>
-                </div>
-              </li>
+          <div className="mt-4 space-y-4 text-base leading-relaxed text-brand-muted sm:text-[1.0625rem] sm:leading-[1.75]">
+            {closing.paragraphs.map((paragraph) => (
+              <p key={paragraph.slice(0, 48)}>{paragraph}</p>
             ))}
-          </ul>
-        </div>
-      </div>
+          </div>
+          <Link
+            href={site.whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-brand-green px-8 py-3 font-[family-name:var(--font-montserrat)] text-xs font-bold uppercase tracking-wide text-black transition hover:bg-brand-green-dark sm:text-sm"
+          >
+            {closing.ctaLabel}
+            <span aria-hidden>→</span>
+          </Link>
+        </section>
+      </article>
 
       <div className="w-full border-t border-zinc-200 bg-[#f3f4f2] py-8 sm:py-10">
         <div className="site-container">
