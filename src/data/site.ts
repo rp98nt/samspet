@@ -50,7 +50,7 @@ export const aboutPage = {
       "It is the story of how a bond with dogs became a purpose and a commitment to helping dogs and their families build better lives together.",
     ],
     mobileSummary:
-      "A childhood bond with dogs evolved into a lifelong calling. Through years of hands-on experience and formal certification, I've learned that true training relies on trust and communication. Today, my mission is simple: helping dogs and their families build better lives together.",
+      "A childhood bond with dogs evolved into a lifelong profession. Through years of hands-on experience and formal certification, I've learned that true training relies on trust and communication. Today, my mission is simple: helping dogs and their families build better lives together.",
     cta: "Learn More",
     ctaHref: "/about",
     trainerImage: "/images/hero/man-with-dog.png",
