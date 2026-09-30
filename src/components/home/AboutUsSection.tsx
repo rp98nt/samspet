@@ -156,7 +156,7 @@ export function AboutUsSection() {
             </div>
 
             <div
-              className="flex min-h-0 flex-col justify-center rounded-2xl bg-[#1a2618] px-4 py-3 shadow-xl max-lg:order-3 max-lg:py-2.5 sm:px-5 sm:py-4 lg:col-span-4"
+              className="hidden min-h-0 flex-col justify-center rounded-2xl bg-[#1a2618] px-4 py-3 shadow-xl sm:px-5 sm:py-4 lg:col-span-4 lg:flex"
             >
               <ul className="space-y-3">
                 {values.map((item) => (
