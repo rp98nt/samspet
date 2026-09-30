@@ -7,7 +7,8 @@ function CoverIcon({
 }: {
   type: (typeof puppyTrainingPage.cover.items)[number]["icon"];
 }) {
-  const className = "h-7 w-7 shrink-0 text-[#2d4a2d] sm:h-8 sm:w-8";
+  const className =
+    "h-[var(--m-icon)] w-[var(--m-icon)] shrink-0 text-[#2d4a2d] sm:h-8 sm:w-8";
   switch (type) {
     case "commands":
       return (
@@ -113,7 +114,7 @@ export function PuppyTrainingSection() {
       aria-labelledby="puppy-training-title"
     >
       <div className="relative w-full shrink-0 overflow-hidden">
-        <div className="relative min-h-[7.5rem] w-full lg:min-h-[9rem]">
+        <div className="relative min-h-[7.5rem] w-full max-lg:h-[clamp(4.5rem,13svh,7rem)] max-lg:min-h-0 lg:min-h-[9rem]">
           <Image
             src={hero.image}
             alt=""
@@ -124,14 +125,14 @@ export function PuppyTrainingSection() {
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-black/25 to-transparent" />
           <div className="absolute inset-0 flex items-center">
-            <div className="site-container py-4 sm:py-5 lg:py-6">
+            <div className="site-container py-4 max-lg:py-0 sm:py-5 lg:py-6">
             <h2
               id="puppy-training-title"
-              className="font-[family-name:var(--font-montserrat)] text-2xl font-bold text-white sm:text-3xl lg:text-4xl"
+              className="font-[family-name:var(--font-montserrat)] text-2xl font-bold text-white max-lg:text-[length:var(--m-fs-h2)] max-lg:leading-tight sm:text-3xl lg:text-4xl"
             >
               {hero.title}
             </h2>
-            <p className="mt-1 max-w-md text-sm text-white/95 sm:mt-2 sm:text-base lg:text-lg">
+            <p className="mt-1 max-w-md text-sm text-white/95 max-lg:mt-[calc(var(--m-gap)*0.4)] max-lg:text-[length:var(--m-fs)] max-lg:leading-snug sm:mt-2 sm:text-base lg:text-lg">
               {hero.subtitle}
             </p>
             </div>
@@ -139,36 +140,37 @@ export function PuppyTrainingSection() {
         </div>
       </div>
 
-      <div className="section-body-scroll site-container flex min-h-0 w-full flex-1 flex-col justify-center py-3 sm:py-4 lg:grid lg:grid-cols-2 lg:items-center lg:gap-8 lg:py-5">
+      {/* Body: on phones the two blocks are spaced evenly (top, between, bottom) */}
+      <div className="section-body-scroll site-container flex min-h-0 w-full flex-1 flex-col justify-center py-3 max-lg:justify-evenly max-lg:py-[var(--m-gap)] sm:py-4 lg:grid lg:grid-cols-2 lg:items-center lg:gap-8 lg:py-5">
         <div>
           <h3
-            className="font-[family-name:var(--font-montserrat)] text-xl font-bold text-zinc-900 sm:text-2xl"
+            className="font-[family-name:var(--font-montserrat)] text-xl font-bold text-zinc-900 max-lg:text-[length:var(--m-fs-title)] sm:text-2xl"
           >
             {cover.title}
           </h3>
-          <ul className="mt-3 space-y-2.5 sm:mt-4 sm:space-y-3">
+          <ul className="mt-3 space-y-2.5 max-lg:mt-[var(--m-gap)] max-lg:flex max-lg:flex-col max-lg:gap-[calc(var(--m-gap)*0.9)] max-lg:space-y-0 sm:mt-4 sm:space-y-3">
             {cover.items.map((item) => (
               <li key={item.label} className="flex items-center gap-3">
                 <CoverIcon type={item.icon} />
-                <span className="text-sm text-zinc-800 sm:text-base">{item.label}</span>
+                <span className="text-sm text-zinc-800 max-lg:text-[length:var(--m-fs)] sm:text-base">{item.label}</span>
               </li>
             ))}
           </ul>
         </div>
 
         <div
-          className="mt-5 rounded-2xl bg-[#141f14] px-5 py-5 shadow-lg sm:mt-6 sm:px-6 sm:py-6 lg:mt-0"
+          className="mt-5 rounded-2xl bg-[#141f14] px-5 py-5 shadow-lg max-lg:mt-0 max-lg:p-[var(--m-pad)] sm:mt-6 sm:px-6 sm:py-6 lg:mt-0"
         >
           <h3
-            className="font-[family-name:var(--font-montserrat)] text-lg font-bold text-brand-green sm:text-xl"
+            className="font-[family-name:var(--font-montserrat)] text-lg font-bold text-brand-green max-lg:text-[length:var(--m-fs-title)] sm:text-xl"
           >
             {early.title}
           </h3>
-          <ul className="mt-3 space-y-2 sm:mt-4 sm:space-y-2.5">
+          <ul className="mt-3 space-y-2 max-lg:mt-[var(--m-gap)] max-lg:flex max-lg:flex-col max-lg:gap-[calc(var(--m-gap)*0.9)] max-lg:space-y-0 sm:mt-4 sm:space-y-2.5">
             {early.benefits.map((benefit) => (
-              <li key={benefit} className="flex items-start gap-2.5 text-sm text-white sm:text-base">
+              <li key={benefit} className="flex items-start gap-2.5 text-sm text-white max-lg:items-center max-lg:text-[length:var(--m-fs)] sm:text-base">
                 <span
-                  className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand-green text-[10px] font-bold text-black"
+                  className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand-green text-[10px] font-bold text-black max-lg:mt-0 max-lg:h-[clamp(1rem,2.4svh,1.25rem)] max-lg:w-[clamp(1rem,2.4svh,1.25rem)]"
                   aria-hidden
                 >
                   ✓
@@ -179,7 +181,7 @@ export function PuppyTrainingSection() {
           </ul>
           <Link
             href={early.ctaHref}
-            className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full bg-brand-green px-6 py-3 font-[family-name:var(--font-montserrat)] text-xs font-bold uppercase tracking-wide text-black transition hover:bg-brand-green-dark sm:mt-6 sm:text-sm"
+            className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full bg-brand-green px-6 py-3 font-[family-name:var(--font-montserrat)] text-xs font-bold uppercase tracking-wide text-black transition hover:bg-brand-green-dark max-lg:mt-[var(--m-pad)] max-lg:py-[var(--m-cta-py)] sm:mt-6 sm:text-sm"
           >
             {early.cta}
             <span aria-hidden>→</span>
@@ -188,7 +190,7 @@ export function PuppyTrainingSection() {
       </div>
 
       <div className="relative w-full shrink-0 overflow-hidden">
-        <div className="relative h-14 w-full sm:h-16 lg:h-[4.5rem]">
+        <div className="relative h-14 w-full max-lg:h-[clamp(2.5rem,7svh,3.5rem)] sm:h-16 lg:h-[4.5rem]">
           <Image
           src={tagline.image}
           alt=""
@@ -200,7 +202,7 @@ export function PuppyTrainingSection() {
           <div className="absolute inset-0 flex items-center">
             <div className="site-container flex w-full justify-center sm:justify-end">
               <p
-                className="flex items-center justify-center gap-2 text-center font-[family-name:var(--font-montserrat)] text-sm italic text-white sm:text-base sm:justify-end sm:text-right lg:text-xl"
+                className="flex items-center justify-center gap-2 text-center font-[family-name:var(--font-montserrat)] text-sm italic text-white max-lg:text-[length:var(--m-fs)] sm:text-base sm:justify-end sm:text-right lg:text-xl"
               >
                 {tagline.text}
                 <PawAccent className="h-5 w-5 text-brand-green sm:h-6 sm:w-6" />

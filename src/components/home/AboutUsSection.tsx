@@ -11,8 +11,9 @@ export function AboutUsSection() {
       id="about"
       className="snap-section flex w-full min-h-0 flex-col overflow-hidden"
     >
+      {/* Hero strip: fixed proportion of the viewport on phones */}
       <div
-        className="relative w-full shrink-0 overflow-hidden bg-[#141f14] max-lg:max-h-[7.5rem]"
+        className="relative w-full shrink-0 overflow-hidden bg-[#141f14] max-lg:h-[clamp(4.5rem,11.5svh,6.5rem)]"
       >
         <div className="absolute inset-0">
           <Image
@@ -30,22 +31,22 @@ export function AboutUsSection() {
         </div>
 
         <div
-          className="site-container relative grid max-lg:max-h-[7.5rem] max-lg:grid-cols-[minmax(0,1fr)_auto] max-lg:items-center max-lg:gap-2.5 max-lg:py-2 max-lg:text-left grid-cols-1 items-center gap-3 py-3 text-center sm:gap-4 sm:py-5 lg:grid-cols-2 lg:py-6 lg:text-left"
+          className="site-container relative grid max-lg:h-full max-lg:grid-cols-[minmax(0,1fr)_auto] max-lg:items-center max-lg:gap-3 max-lg:py-0 grid-cols-1 items-center gap-3 py-3 text-center sm:gap-4 sm:py-5 lg:grid-cols-2 lg:py-6 lg:text-left"
         >
-          <div className="flex min-w-0 flex-col items-start text-left text-white max-lg:pr-1">
+          <div className="flex min-w-0 flex-col items-start text-left text-white">
             <h2
-              className="font-[family-name:var(--font-montserrat)] font-bold max-lg:text-base max-lg:leading-tight text-xl sm:text-2xl lg:text-[1.75rem]"
+              className="font-[family-name:var(--font-montserrat)] font-bold text-xl max-lg:text-[length:var(--m-fs-title)] max-lg:leading-tight sm:text-2xl lg:text-[1.75rem]"
             >
               {hero.title}
             </h2>
             <p
-              className="mt-1.5 max-w-md max-lg:mt-0.5 max-lg:line-clamp-3 max-lg:text-[10px] max-lg:leading-snug text-xs leading-relaxed text-white/90 sm:text-sm"
+              className="mt-1.5 max-w-md text-xs leading-relaxed text-white/90 max-lg:mt-[calc(var(--m-gap)*0.4)] max-lg:line-clamp-2 max-lg:text-[length:var(--m-fs-sm)] max-lg:leading-snug sm:text-sm"
             >
               {hero.subtitle}
             </p>
           </div>
           <div
-            className="relative mx-auto aspect-[4/3] w-full max-w-[220px] shrink-0 max-lg:mx-0 max-lg:h-[4.5rem] max-lg:w-[5.25rem] max-lg:justify-self-end sm:max-w-xs lg:mx-0 lg:ml-auto lg:aspect-auto lg:h-[7.5rem] lg:max-w-none"
+            className="relative mx-auto aspect-[4/3] w-full max-w-[220px] shrink-0 max-lg:mx-0 max-lg:h-[78%] max-lg:w-auto max-lg:max-w-none max-lg:justify-self-end sm:max-w-xs lg:mx-0 lg:ml-auto lg:aspect-auto lg:h-[7.5rem] lg:max-w-none"
           >
             <Image
               src={hero.portraitImage}
@@ -58,31 +59,32 @@ export function AboutUsSection() {
         </div>
       </div>
 
+      {/* Body: on phones the photo flexes to absorb spare height, gaps stay proportional */}
       <div
-        className="flex min-h-0 w-full flex-1 flex-col bg-white max-lg:overflow-visible lg:min-h-0 lg:flex-1 lg:overflow-y-auto"
+        className="flex min-h-0 w-full flex-1 flex-col bg-white max-lg:overflow-hidden lg:overflow-y-auto"
       >
         <div
-          className="site-container flex min-h-0 flex-1 items-stretch py-2 max-lg:flex-none max-lg:overflow-visible max-lg:py-2 sm:py-5 lg:py-6"
+          className="site-container flex min-h-0 flex-1 items-stretch py-2 max-lg:py-[var(--m-pad)] sm:py-5 lg:py-6"
         >
           <div
-            className="grid w-full grid-cols-1 items-stretch gap-3 max-lg:flex-none max-lg:gap-2.5 max-lg:overflow-visible sm:gap-5 lg:min-h-0 lg:flex-1 lg:grid-cols-12 lg:gap-5"
+            className="grid w-full grid-cols-1 items-stretch gap-3 max-lg:flex max-lg:min-h-0 max-lg:flex-col max-lg:gap-[var(--m-pad)] sm:gap-5 lg:min-h-0 lg:flex-1 lg:grid-cols-12 lg:gap-5"
           >
             <div
-              className="flex flex-col max-lg:order-2 max-lg:rounded-2xl max-lg:border max-lg:border-zinc-200/90 max-lg:bg-gradient-to-b max-lg:from-white max-lg:to-[#f5f6f4] max-lg:px-3 max-lg:py-3 max-lg:shadow-sm lg:col-span-4 lg:min-h-0"
+              className="flex flex-col max-lg:order-2 max-lg:shrink-0 max-lg:rounded-2xl max-lg:border max-lg:border-zinc-200/90 max-lg:bg-gradient-to-b max-lg:from-white max-lg:to-[#f5f6f4] max-lg:p-[var(--m-pad)] max-lg:shadow-sm lg:col-span-4 lg:min-h-0"
             >
-              <div className="max-lg:mb-3 lg:contents">
+              <div className="max-lg:mb-[var(--m-gap)] lg:contents">
                 <h3
-                  className="font-[family-name:var(--font-montserrat)] text-2xl font-bold text-zinc-900 max-lg:text-left max-lg:text-lg max-lg:tracking-tight sm:text-3xl"
+                  className="font-[family-name:var(--font-montserrat)] text-2xl font-bold text-zinc-900 max-lg:text-left max-lg:text-[length:var(--m-fs-title)] max-lg:tracking-tight sm:text-3xl"
                 >
                   {story.title}
                 </h3>
                 <span
-                  className="mt-2 hidden h-1 w-10 rounded-full bg-brand-green max-lg:block"
+                  className="mt-2 hidden h-1 w-10 rounded-full bg-brand-green max-lg:mt-[calc(var(--m-gap)*0.6)] max-lg:block"
                   aria-hidden
                 />
               </div>
               <div
-                className="mt-3 min-h-0 flex-1 space-y-2 overflow-y-auto text-sm leading-relaxed text-brand-muted max-lg:mt-0 max-lg:flex-none max-lg:overflow-visible max-lg:text-[0.9375rem] max-lg:leading-[1.65] max-lg:text-zinc-700 lg:hidden sm:text-base"
+                className="mt-3 min-h-0 flex-1 space-y-2 overflow-y-auto text-sm leading-relaxed text-brand-muted max-lg:mt-0 max-lg:flex-none max-lg:overflow-visible max-lg:text-[length:var(--m-fs)] max-lg:leading-[1.55] max-lg:text-zinc-700 lg:hidden sm:text-base"
               >
                 <p>{story.mobileSummary}</p>
               </div>
@@ -95,7 +97,7 @@ export function AboutUsSection() {
               </div>
               <Link
                 href={story.ctaHref}
-                className="mt-4 inline-flex w-fit shrink-0 items-center justify-center gap-2 rounded-full bg-brand-green px-6 py-2 font-[family-name:var(--font-montserrat)] text-xs font-bold uppercase tracking-wide text-black transition hover:bg-brand-green-dark max-lg:mt-5 max-lg:w-full max-lg:py-2.5 sm:text-sm lg:mt-4 lg:w-fit"
+                className="mt-4 inline-flex w-fit shrink-0 items-center justify-center gap-2 rounded-full bg-brand-green px-6 py-2 font-[family-name:var(--font-montserrat)] text-xs font-bold uppercase tracking-wide text-black transition hover:bg-brand-green-dark max-lg:mt-[var(--m-pad)] max-lg:w-full max-lg:py-[var(--m-cta-py)] sm:text-sm lg:mt-4 lg:w-fit"
               >
                 {story.cta}
                 <span aria-hidden>→</span>
@@ -103,7 +105,7 @@ export function AboutUsSection() {
             </div>
 
             <div
-              className="relative min-h-[8.5rem] overflow-hidden rounded-2xl shadow-lg max-lg:order-1 max-lg:shrink-0 sm:min-h-[11rem] lg:col-span-4 lg:min-h-0"
+              className="relative min-h-[8.5rem] overflow-hidden rounded-2xl shadow-lg max-lg:order-1 max-lg:min-h-[4rem] max-lg:flex-1 sm:min-h-[11rem] lg:col-span-4 lg:min-h-0"
             >
               <Image
                 src="/images/hero/man-with-dog-mobile.png"
@@ -139,12 +141,13 @@ export function AboutUsSection() {
         </div>
       </div>
 
+      {/* Stats: equal 2x2 cells on phones */}
       <div
-        className="w-full shrink-0 border-t border-zinc-200 bg-[#f3f4f2] py-2.5 max-lg:py-[0.4375rem] sm:py-5"
+        className="w-full shrink-0 border-t border-zinc-200 bg-[#f3f4f2] py-2.5 max-lg:py-[calc(var(--m-gap)*0.8)] sm:py-5"
       >
-        <div className="site-container max-lg:px-3">
+        <div className="site-container">
           <div
-            className="mx-auto grid w-full max-w-6xl grid-cols-2 gap-2 max-lg:gap-1.5 sm:gap-2 lg:grid-cols-4"
+            className="mx-auto grid w-full max-w-6xl grid-cols-2 gap-2 max-lg:gap-y-[calc(var(--m-gap)*0.8)] sm:gap-2 lg:grid-cols-4"
           >
             {stats.map((stat, index) => (
               <div
@@ -154,12 +157,12 @@ export function AboutUsSection() {
                 } ${index > 0 ? "lg:border-l lg:border-zinc-300" : ""}`}
               >
                 <p
-                  className="font-[family-name:var(--font-montserrat)] text-2xl font-bold leading-none text-zinc-900 max-lg:text-lg sm:text-3xl"
+                  className="font-[family-name:var(--font-montserrat)] text-2xl font-bold leading-none text-zinc-900 max-lg:text-[length:var(--m-fs-title)] sm:text-3xl"
                 >
                   {stat.value}
                 </p>
                 <p
-                  className="mt-1 text-xs leading-tight text-brand-muted max-lg:mt-0.5 max-lg:text-[10px] sm:text-sm"
+                  className="mt-1 text-xs leading-tight text-brand-muted max-lg:mt-[calc(var(--m-gap)*0.3)] max-lg:text-[length:var(--m-fs-sm)] sm:text-sm"
                 >
                   {stat.label}
                 </p>

@@ -16,6 +16,20 @@
   /* Updated at runtime from .site-main-header measured height */
   --site-header-height: 4.5rem;
   --site-section-height: calc(100svh - var(--site-header-height));
+
+  /*
+   * Fluid rhythm for phone layouts (used with max-lg: utilities only).
+   * Every value scales with the viewport height, so spacing, type and controls
+   * keep the same proportions on short (SE) and tall (Pro Max) phones alike.
+   */
+  --m-gap: clamp(0.4rem, 1.5svh, 1.1rem);
+  --m-pad: clamp(0.6rem, 2svh, 1.25rem);
+  --m-fs: clamp(0.72rem, 1.75svh, 0.9375rem);
+  --m-fs-sm: clamp(0.64rem, 1.4svh, 0.8125rem);
+  --m-fs-title: clamp(0.95rem, 2.4svh, 1.25rem);
+  --m-fs-h2: clamp(1.1rem, 3svh, 1.5rem);
+  --m-cta-py: clamp(0.45rem, 1.3svh, 0.75rem);
+  --m-icon: clamp(1.25rem, 3.2svh, 1.75rem);
 }
 
 @theme inline {
