@@ -195,30 +195,22 @@ export function AboutUsSection() {
         </div>
       </div>
 
-      <div
-        className="w-full shrink-0 border-t border-zinc-200 bg-[#f3f4f2] py-2.5 max-lg:min-h-[2.925rem] max-lg:py-1.5 sm:py-5"
-      >
-        <div className="site-container max-lg:px-2">
-          <div
-            className="mx-auto grid h-full w-full max-w-6xl grid-cols-4 gap-1 max-lg:gap-0.5 sm:gap-2"
-          >
+      <div className="w-full shrink-0 border-t border-zinc-200 bg-[#f3f4f2] py-2.5 max-lg:py-2.5 sm:py-5">
+        <div className="site-container">
+          <div className="mx-auto grid w-full max-w-6xl grid-cols-2 gap-3 sm:gap-2 lg:grid-cols-4">
             {stats.map((stat, index) => (
               <div
                 key={stat.label}
-                className={`flex flex-col items-center justify-center text-center ${
-                  index > 0 ? "border-l border-zinc-300" : ""
-                }`}
+                className={`flex flex-col items-center text-center ${
+                  index % 2 === 1 ? "border-l border-zinc-300" : ""
+                } ${index > 0 ? "lg:border-l lg:border-zinc-300" : ""}`}
               >
                 <p
-                  className="font-[family-name:var(--font-montserrat)] font-bold leading-tight text-zinc-900 max-lg:text-[0.9375rem] max-lg:leading-snug text-2xl sm:text-3xl"
+                  className="font-[family-name:var(--font-montserrat)] text-2xl font-bold text-zinc-900 sm:text-3xl"
                 >
                   {stat.value}
                 </p>
-                <p
-                  className="mt-1 text-xs text-brand-muted max-lg:mt-1 max-lg:text-[10px] max-lg:leading-snug sm:text-sm"
-                >
-                  {stat.label}
-                </p>
+                <p className="mt-1 text-xs text-brand-muted sm:text-sm">{stat.label}</p>
               </div>
             ))}
           </div>
