@@ -106,7 +106,7 @@ export function AboutUsSection() {
               className="relative min-h-[8.5rem] overflow-hidden rounded-2xl shadow-lg max-lg:order-1 max-lg:shrink-0 sm:min-h-[11rem] lg:col-span-4 lg:min-h-0"
             >
               <Image
-                src={story.trainerImage}
+                src="/images/hero/man-with-dog-mobile.png"
                 alt="Trainer with a dog"
                 fill
                 className="object-cover object-center"
