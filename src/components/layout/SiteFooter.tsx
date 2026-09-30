@@ -60,7 +60,7 @@ export function SiteFooter({
             linkClassName="hover:text-brand-green"
           />
         </div>
-        <div className="text-center max-lg:col-span-1">
+        <div className="text-center sm:text-left max-lg:col-span-1 max-lg:text-left">
           <div
             className={
               tight
@@ -69,7 +69,7 @@ export function SiteFooter({
             }
           >
             <MailIcon
-              className={`mx-auto shrink-0 text-brand-green ${iconClass} ${mobileTightIcon} max-lg:mx-0`}
+              className={`mx-auto shrink-0 text-brand-green sm:mx-0 ${iconClass} ${mobileTightIcon} max-lg:mx-0`}
             />
             <p
               className={`text-xs font-bold uppercase tracking-widest ${mobileTightLabel} ${
@@ -80,7 +80,7 @@ export function SiteFooter({
             </p>
           </div>
           <CopyEmailLink
-            className={`mt-1.5 inline-block cursor-pointer border-0 bg-transparent p-0 font-semibold text-brand-link no-underline hover:text-brand-green ${tight ? "text-sm" : "text-lg"} ${mobileTightLink} max-lg:mt-0.5`}
+            className={`mt-1.5 block cursor-pointer border-0 bg-transparent p-0 text-left font-semibold text-brand-link no-underline hover:text-brand-green ${tight ? "text-sm" : "text-lg"} ${mobileTightLink} max-lg:mt-0.5 max-lg:w-full max-lg:break-all max-lg:leading-snug`}
           />
         </div>
         <div className="text-center sm:text-right max-lg:col-span-2">
