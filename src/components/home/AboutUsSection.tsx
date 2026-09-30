@@ -123,7 +123,7 @@ export function AboutUsSection() {
       <div className="section-body-scroll flex min-h-0 w-full flex-1 flex-col bg-white max-lg:min-h-0">
         <div className="site-container flex min-h-0 flex-1 items-stretch py-2 max-lg:py-3 sm:py-5 lg:py-6">
           <div className="grid min-h-0 w-full flex-1 grid-cols-1 items-stretch gap-3 max-lg:gap-3.5 sm:gap-5 lg:grid-cols-12 lg:gap-5">
-            <div className="flex min-h-0 flex-col max-lg:order-1 lg:col-span-4">
+            <div className="flex min-h-0 flex-col max-lg:order-2 lg:col-span-4">
               <h3
                 className="font-[family-name:var(--font-montserrat)] text-2xl font-bold text-zinc-900 max-lg:text-left max-lg:text-xl sm:text-3xl"
               >
@@ -151,7 +151,7 @@ export function AboutUsSection() {
             </div>
 
             <div
-              className="relative min-h-[10.5rem] overflow-hidden rounded-2xl shadow-lg max-lg:order-2 sm:min-h-[11rem] lg:col-span-4 lg:min-h-0"
+              className="relative min-h-[10.5rem] overflow-hidden rounded-2xl shadow-lg max-lg:order-1 sm:min-h-[11rem] lg:col-span-4 lg:min-h-0"
             >
               <Image
                 src={story.trainerImage}
