@@ -52,7 +52,7 @@ export const aboutPage = {
     mobileSummary:
       "A childhood bond with dogs evolved into a lifelong calling. Through years of hands-on experience and formal certification, I've learned that true training relies on trust and communication. Today, my mission is simple: helping dogs and their families build better lives together.",
     cta: "Learn More",
-    ctaHref: "#puppy-training",
+    ctaHref: "/about",
     trainerImage: "/images/hero/man-with-dog.png",
   },
   values: [
