@@ -42,10 +42,12 @@ export const aboutPage = {
       "https://images.unsplash.com/photo-1448375240586-882707db889b?auto=format&fit=crop&w=1920&q=80",
   },
   story: {
-    title: "Our Story",
+    title: "A Journey Built on Trust, Patience & Love",
     paragraphs: [
-      "At Sam Pets & RP's Kennel, we believe every dog deserves to be loved, understood, and guided with patience. What started as a passion for helping families connect with their pets has grown into a trusted training and care destination in Chhatrapati Sambhajinagar.",
-      "We use modern, positive training techniques tailored to each dog's personality and your goals — from puppy foundations to behavior modification — so your companion becomes confident, calm, and happy at home and in the community.",
+      "What began as a childhood connection with dogs gradually became a lifelong pursuit of understanding them.",
+      "From playing and teaching a mischievous dog as a schoolboy to caring for a critically ill puppy named Sammy, every experience shaped a deeper understanding of canine behavior, trust, patience, and communication. Over the years, that passion grew into professional training, backed by hands-on experience and formal certification.",
+      "This is more than the story of becoming a dog trainer.",
+      "It is the story of how a bond with dogs became a purpose and a commitment to helping dogs and their families build better lives together.",
     ],
     cta: "Learn More",
     ctaHref: "#puppy-training",
