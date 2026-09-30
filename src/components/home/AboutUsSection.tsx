@@ -181,11 +181,11 @@ export function AboutUsSection() {
       </div>
 
       <div
-        className="w-full shrink-0 border-t border-zinc-200 bg-[#f3f4f2] py-2.5 max-lg:py-1 sm:py-5"
+        className="w-full shrink-0 border-t border-zinc-200 bg-[#f3f4f2] py-2.5 max-lg:min-h-[2.925rem] max-lg:py-1.5 sm:py-5"
       >
         <div className="site-container max-lg:px-2">
           <div
-            className="mx-auto grid w-full max-w-6xl grid-cols-4 gap-1 max-lg:gap-0 sm:gap-2"
+            className="mx-auto grid h-full w-full max-w-6xl grid-cols-4 gap-1 max-lg:gap-0.5 sm:gap-2"
           >
             {stats.map((stat, index) => (
               <div
@@ -195,12 +195,12 @@ export function AboutUsSection() {
                 }`}
               >
                 <p
-                  className="font-[family-name:var(--font-montserrat)] font-bold leading-tight text-zinc-900 max-lg:text-sm max-lg:leading-none text-2xl sm:text-3xl"
+                  className="font-[family-name:var(--font-montserrat)] font-bold leading-tight text-zinc-900 max-lg:text-[0.9375rem] max-lg:leading-snug text-2xl sm:text-3xl"
                 >
                   {stat.value}
                 </p>
                 <p
-                  className="mt-1 text-xs text-brand-muted max-lg:mt-0.5 max-lg:text-[9px] max-lg:leading-tight sm:text-sm"
+                  className="mt-1 text-xs text-brand-muted max-lg:mt-1 max-lg:text-[10px] max-lg:leading-snug sm:text-sm"
                 >
                   {stat.label}
                 </p>
