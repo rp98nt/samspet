@@ -5,78 +5,53 @@ import { aboutStoryPage } from "@/data/aboutStory";
 import { aboutPage, site } from "@/data/site";
 
 export function AboutPageContent() {
-  const { hero, story, stats } = aboutPage;
+  const { story, stats } = aboutPage;
   const { title, subtitle, intro, sections, closing } = aboutStoryPage;
 
   return (
     <div className="flex min-h-0 flex-1 flex-col bg-[#f0f1ee]">
-      <div className="relative w-full overflow-hidden bg-[#141f14]">
-        <div className="absolute inset-0">
-          <Image
-            src={hero.backgroundImage}
-            alt=""
-            fill
-            className="object-cover object-center opacity-50 blur-sm"
-            sizes="100vw"
-            priority
-          />
-          <div
-            className="absolute inset-0 bg-gradient-to-r from-[#141f14]/95 via-[#141f14]/75 to-[#141f14]/40"
-            aria-hidden
-          />
-        </div>
-
-        <div
-          className="site-container relative grid items-center gap-4 py-8 text-center sm:gap-6 sm:py-10 lg:grid-cols-2 lg:py-12 lg:text-left"
-        >
-          <div className="text-white">
-            <Link
-              href="/#about"
-              className="mb-4 inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wide text-white/80 transition hover:text-brand-green"
-            >
-              <span aria-hidden>←</span> Back to home
-            </Link>
-            <h1
-              className="font-[family-name:var(--font-montserrat)] text-3xl font-bold leading-tight sm:text-4xl lg:text-[2.5rem]"
-            >
-              {title}
-            </h1>
-            <p className="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-white/90 sm:text-base lg:mx-0">
-              {subtitle}
-            </p>
-          </div>
-          <div
-            className="relative mx-auto aspect-[4/3] w-full max-w-sm lg:ml-auto lg:aspect-auto lg:h-[10rem] lg:max-w-none"
-          >
-            <Image
-              src={hero.portraitImage}
-              alt="Doberman portrait"
-              fill
-              className="object-contain object-center lg:object-right"
-              sizes="(max-width: 1024px) 80vw, 480px"
-            />
-          </div>
-        </div>
-      </div>
-
-      <article className="site-container max-w-3xl py-10 sm:py-12 lg:max-w-4xl lg:py-14">
-        <div className="space-y-4 text-base leading-relaxed text-brand-muted sm:text-[1.0625rem] sm:leading-[1.75]">
-          {intro.map((paragraph) => (
-            <p key={paragraph.slice(0, 48)}>{paragraph}</p>
-          ))}
-        </div>
-
-        <div className="relative my-10 min-h-[14rem] overflow-hidden rounded-2xl shadow-lg sm:my-12 sm:min-h-[18rem]">
+      <div
+        className="relative w-full shrink-0 overflow-hidden bg-zinc-900"
+      >
+        <div className="relative h-[12.5rem] w-full sm:h-[16rem] md:h-[20rem] lg:h-[22rem]">
           <Image
             src={story.trainerImage}
             alt="Trainer with a dog"
             fill
             className="object-cover object-center"
-            sizes="(max-width: 1024px) 100vw, 896px"
+            sizes="100vw"
+            priority
           />
         </div>
+      </div>
 
-        <div className="space-y-10 sm:space-y-12">
+      <article className="site-container max-w-3xl py-8 sm:py-10 lg:max-w-4xl lg:py-12">
+        <Link
+          href="/#about"
+          className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wide text-brand-muted transition hover:text-brand-green-dark"
+        >
+          <span aria-hidden>←</span> Back to home
+        </Link>
+        <h1
+          className="mt-4 font-[family-name:var(--font-montserrat)] text-3xl font-bold leading-tight text-zinc-900 sm:text-4xl lg:text-[2.5rem]"
+        >
+          {title}
+        </h1>
+        <p
+          className="mt-3 text-base font-medium leading-relaxed text-zinc-700 sm:text-lg"
+        >
+          {subtitle}
+        </p>
+
+        <div
+          className="mt-8 space-y-4 text-base leading-relaxed text-brand-muted sm:mt-10 sm:text-[1.0625rem] sm:leading-[1.75]"
+        >
+          {intro.map((paragraph) => (
+            <p key={paragraph.slice(0, 48)}>{paragraph}</p>
+          ))}
+        </div>
+
+        <div className="mt-10 space-y-10 sm:mt-12 sm:space-y-12">
           {sections.map((block, index) => (
             <section key={block.title ?? `section-${index}`}>
               {block.title ? (
