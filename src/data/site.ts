@@ -335,7 +335,7 @@ export const blogPosts = [
     category: "Health & Care" as const,
     date: "Feb 22, 2025",
     image:
-      "https://images.unsplash.com/photo-1608093278320-b12f74d78706?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?auto=format&fit=crop&w=800&q=80",
   },
   {
     title: "From Reactive to Relaxed: Max's Story",
