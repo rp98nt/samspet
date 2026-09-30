@@ -58,11 +58,17 @@ export function AboutUsSection() {
         </div>
       </div>
 
-      <div className="section-body-scroll flex min-h-0 w-full flex-1 flex-col bg-white max-lg:min-h-0">
-        <div className="site-container flex min-h-0 flex-1 items-stretch py-2 max-lg:py-3 sm:py-5 lg:py-6">
-          <div className="grid min-h-0 w-full flex-1 grid-cols-1 items-stretch gap-3 max-lg:gap-3.5 sm:gap-5 lg:grid-cols-12 lg:gap-5">
+      <div
+        className="flex min-h-0 w-full flex-1 flex-col bg-white max-lg:overflow-visible lg:min-h-0 lg:flex-1 lg:overflow-y-auto"
+      >
+        <div
+          className="site-container flex min-h-0 flex-1 items-stretch py-2 max-lg:flex-none max-lg:overflow-visible max-lg:py-2 sm:py-5 lg:py-6"
+        >
+          <div
+            className="grid w-full grid-cols-1 items-stretch gap-3 max-lg:flex-none max-lg:gap-2.5 max-lg:overflow-visible sm:gap-5 lg:min-h-0 lg:flex-1 lg:grid-cols-12 lg:gap-5"
+          >
             <div
-              className="flex min-h-0 flex-col max-lg:order-2 max-lg:rounded-2xl max-lg:border max-lg:border-zinc-200/90 max-lg:bg-gradient-to-b max-lg:from-white max-lg:to-[#f5f6f4] max-lg:px-4 max-lg:py-4 max-lg:shadow-sm lg:col-span-4"
+              className="flex flex-col max-lg:order-2 max-lg:rounded-2xl max-lg:border max-lg:border-zinc-200/90 max-lg:bg-gradient-to-b max-lg:from-white max-lg:to-[#f5f6f4] max-lg:px-3 max-lg:py-3 max-lg:shadow-sm lg:col-span-4 lg:min-h-0"
             >
               <div className="max-lg:mb-3 lg:contents">
                 <h3
@@ -81,7 +87,7 @@ export function AboutUsSection() {
                 <p>{story.mobileSummary}</p>
               </div>
               <div
-                className="mt-3 hidden min-h-0 flex-1 space-y-2 overflow-y-auto text-sm leading-relaxed text-brand-muted sm:text-base lg:block"
+                className="mt-3 hidden min-h-0 flex-1 space-y-2 text-sm leading-relaxed text-brand-muted sm:text-base lg:block lg:overflow-y-auto"
               >
                 {story.paragraphs.map((paragraph) => (
                   <p key={paragraph.slice(0, 40)}>{paragraph}</p>
@@ -97,7 +103,7 @@ export function AboutUsSection() {
             </div>
 
             <div
-              className="relative min-h-[10.5rem] overflow-hidden rounded-2xl shadow-lg max-lg:order-1 sm:min-h-[11rem] lg:col-span-4 lg:min-h-0"
+              className="relative min-h-[8.5rem] overflow-hidden rounded-2xl shadow-lg max-lg:order-1 max-lg:shrink-0 sm:min-h-[11rem] lg:col-span-4 lg:min-h-0"
             >
               <Image
                 src={story.trainerImage}
@@ -133,22 +139,30 @@ export function AboutUsSection() {
         </div>
       </div>
 
-      <div className="w-full shrink-0 border-t border-zinc-200 bg-[#f3f4f2] py-2.5 max-lg:py-2.5 sm:py-5">
-        <div className="site-container">
-          <div className="mx-auto grid w-full max-w-6xl grid-cols-2 gap-3 sm:gap-2 lg:grid-cols-4">
+      <div
+        className="w-full shrink-0 border-t border-zinc-200 bg-[#f3f4f2] py-2.5 max-lg:py-[0.4375rem] sm:py-5"
+      >
+        <div className="site-container max-lg:px-3">
+          <div
+            className="mx-auto grid w-full max-w-6xl grid-cols-2 gap-2 max-lg:gap-1.5 sm:gap-2 lg:grid-cols-4"
+          >
             {stats.map((stat, index) => (
               <div
                 key={stat.label}
-                className={`flex flex-col items-center text-center ${
+                className={`flex flex-col items-center justify-center text-center ${
                   index % 2 === 1 ? "border-l border-zinc-300" : ""
                 } ${index > 0 ? "lg:border-l lg:border-zinc-300" : ""}`}
               >
                 <p
-                  className="font-[family-name:var(--font-montserrat)] text-2xl font-bold text-zinc-900 sm:text-3xl"
+                  className="font-[family-name:var(--font-montserrat)] text-2xl font-bold leading-none text-zinc-900 max-lg:text-lg sm:text-3xl"
                 >
                   {stat.value}
                 </p>
-                <p className="mt-1 text-xs text-brand-muted sm:text-sm">{stat.label}</p>
+                <p
+                  className="mt-1 text-xs leading-tight text-brand-muted max-lg:mt-0.5 max-lg:text-[10px] sm:text-sm"
+                >
+                  {stat.label}
+                </p>
               </div>
             ))}
           </div>
