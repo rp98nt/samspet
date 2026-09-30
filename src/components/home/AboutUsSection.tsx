@@ -32,14 +32,14 @@ export function AboutUsSection() {
         <div
           className="site-container relative grid max-lg:max-h-[7.5rem] max-lg:grid-cols-[minmax(0,1fr)_auto] max-lg:items-center max-lg:gap-2.5 max-lg:py-2 max-lg:text-left grid-cols-1 items-center gap-3 py-3 text-center sm:gap-4 sm:py-5 lg:grid-cols-2 lg:py-6 lg:text-left"
         >
-          <div className="min-w-0 text-white max-lg:pr-1">
+          <div className="flex min-w-0 flex-col items-start text-left text-white max-lg:pr-1">
             <h2
-              className="font-[family-name:var(--font-montserrat)] font-bold max-lg:text-left max-lg:text-base max-lg:leading-tight text-xl sm:text-2xl lg:text-[1.75rem]"
+              className="font-[family-name:var(--font-montserrat)] font-bold max-lg:text-base max-lg:leading-tight text-xl sm:text-2xl lg:text-[1.75rem]"
             >
               {hero.title}
             </h2>
             <p
-              className="mx-auto max-w-md max-lg:mx-0 max-lg:mt-0.5 max-lg:line-clamp-3 max-lg:text-left max-lg:text-[10px] max-lg:leading-snug mt-1.5 text-xs leading-relaxed text-white/90 sm:text-sm"
+              className="mt-1.5 max-w-md max-lg:mt-0.5 max-lg:line-clamp-3 max-lg:text-[10px] max-lg:leading-snug text-xs leading-relaxed text-white/90 sm:text-sm"
             >
               {hero.subtitle}
             </p>
