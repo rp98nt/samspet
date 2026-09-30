@@ -129,7 +129,14 @@ export function AboutUsSection() {
               >
                 {story.title}
               </h3>
-              <div className="mt-3 min-h-0 flex-1 space-y-2 overflow-y-auto text-sm leading-relaxed text-brand-muted sm:text-base">
+              <div
+                className="mt-3 min-h-0 flex-1 space-y-2 overflow-y-auto text-sm leading-relaxed text-brand-muted max-lg:block lg:hidden sm:text-base"
+              >
+                <p>{story.mobileSummary}</p>
+              </div>
+              <div
+                className="mt-3 hidden min-h-0 flex-1 space-y-2 overflow-y-auto text-sm leading-relaxed text-brand-muted sm:text-base lg:block"
+              >
                 {story.paragraphs.map((paragraph) => (
                   <p key={paragraph.slice(0, 40)}>{paragraph}</p>
                 ))}
