@@ -195,7 +195,7 @@ export function ContactSection() {
         </div>
       </div>
 
-      <div className="section-body-scroll flex min-h-0 w-full flex-1 flex-col overflow-hidden">
+      <div className="section-body-scroll flex min-h-0 w-full flex-1 flex-col">
         <div
           className="site-container flex min-h-0 w-full flex-1 flex-col py-1.5 max-lg:flex-1 max-lg:py-[var(--m-gap)] sm:py-2"
         >

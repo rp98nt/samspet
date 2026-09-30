@@ -61,7 +61,7 @@ export function AboutUsSection() {
 
       {/* Body: on phones the photo flexes to absorb spare height, gaps stay proportional */}
       <div
-        className="flex min-h-0 w-full flex-1 flex-col bg-white max-lg:overflow-hidden lg:overflow-y-auto"
+        className="flex min-h-0 w-full flex-1 flex-col overflow-hidden bg-white"
       >
         <div
           className="site-container flex min-h-0 flex-1 items-stretch py-2 max-lg:py-[var(--m-pad)] sm:py-5 lg:py-6"
@@ -70,7 +70,7 @@ export function AboutUsSection() {
             className="grid w-full grid-cols-1 items-stretch gap-3 max-lg:flex max-lg:min-h-0 max-lg:flex-col max-lg:gap-[var(--m-pad)] sm:gap-5 lg:min-h-0 lg:flex-1 lg:grid-cols-12 lg:gap-5"
           >
             <div
-              className="flex flex-col max-lg:order-2 max-lg:shrink-0 max-lg:rounded-2xl max-lg:border max-lg:border-zinc-200/90 max-lg:bg-gradient-to-b max-lg:from-white max-lg:to-[#f5f6f4] max-lg:p-[var(--m-pad)] max-lg:shadow-sm lg:col-span-4 lg:min-h-0"
+              className="flex min-h-0 flex-col overflow-hidden max-lg:order-2 max-lg:shrink-0 max-lg:rounded-2xl max-lg:border max-lg:border-zinc-200/90 max-lg:bg-gradient-to-b max-lg:from-white max-lg:to-[#f5f6f4] max-lg:p-[var(--m-pad)] max-lg:shadow-sm lg:col-span-4"
             >
               <div className="max-lg:mb-[var(--m-gap)] lg:contents">
                 <h3
@@ -84,15 +84,17 @@ export function AboutUsSection() {
                 />
               </div>
               <div
-                className="mt-3 min-h-0 flex-1 space-y-2 overflow-y-auto text-sm leading-relaxed text-brand-muted max-lg:mt-0 max-lg:flex-none max-lg:overflow-visible max-lg:text-[length:var(--m-fs)] max-lg:leading-[1.55] max-lg:text-zinc-700 lg:hidden sm:text-base"
+                className="mt-3 min-h-0 flex-1 space-y-2 overflow-hidden text-sm leading-relaxed text-brand-muted max-lg:mt-0 max-lg:flex-none max-lg:text-[length:var(--m-fs)] max-lg:leading-[1.55] max-lg:text-zinc-700 lg:hidden sm:text-base"
               >
                 <p>{story.mobileSummary}</p>
               </div>
               <div
-                className="mt-3 hidden min-h-0 flex-1 space-y-2 text-sm leading-relaxed text-brand-muted sm:text-base lg:block lg:overflow-y-auto"
+                className="mt-3 hidden min-h-0 flex-1 space-y-1.5 overflow-hidden text-sm leading-relaxed text-brand-muted sm:text-base lg:block lg:text-xs lg:leading-snug"
               >
                 {story.paragraphs.map((paragraph) => (
-                  <p key={paragraph.slice(0, 40)}>{paragraph}</p>
+                  <p key={paragraph.slice(0, 40)} className="lg:line-clamp-2">
+                    {paragraph}
+                  </p>
                 ))}
               </div>
               <Link

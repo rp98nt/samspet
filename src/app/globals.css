@@ -84,9 +84,9 @@ body {
   @apply mx-auto w-full max-w-7xl px-4 lg:px-6;
 }
 
-/** Scrollable body within fixed-height snap sections on small screens */
+/** Flex body within fixed-height snap sections (main scroll only, no nested scroll) */
 .section-body-scroll {
-  @apply min-h-0 flex-1 overflow-y-auto lg:overflow-visible;
+  @apply min-h-0 flex-1 overflow-hidden;
 }
 
 .wood-texture {

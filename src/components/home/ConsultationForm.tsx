@@ -96,7 +96,7 @@ export function ConsultationForm({
         fitViewport
           ? "p-2.5 sm:p-3 lg:p-3.5"
           : compact
-            ? "max-h-[min(52vh,420px)] overflow-y-auto p-3"
+            ? "max-h-[min(52vh,420px)] overflow-hidden p-3"
             : "p-4 sm:p-6 lg:p-7"
       }`}
     >
