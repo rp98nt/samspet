@@ -42,7 +42,7 @@ export const aboutPage = {
       "https://images.unsplash.com/photo-1448375240586-882707db889b?auto=format&fit=crop&w=1920&q=80",
   },
   story: {
-    title: "A Journey Built on Trust, Patience & Love",
+    title: "My Story",
     paragraphs: [
       "What began as a childhood connection with dogs gradually became a lifelong pursuit of understanding them.",
       "From playing and teaching a mischievous dog as a schoolboy to caring for a critically ill puppy named Sammy, every experience shaped a deeper understanding of canine behavior, trust, patience, and communication. Over the years, that passion grew into professional training, backed by hands-on experience and formal certification.",
