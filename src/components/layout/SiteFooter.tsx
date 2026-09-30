@@ -138,10 +138,7 @@ export function SiteFooter({
           <p className="text-center sm:text-left">
             © 2026 {site.name}. All rights reserved.
           </p>
-          <p className="text-center sm:text-right">
-            Designed with{" "}
-            <span className="text-red-500" aria-hidden="true">♥</span> by AlienCore.
-          </p>
+          <p className="text-center sm:text-right">Designed by AlienCore</p>
         </div>
       </div>
     </footer>
